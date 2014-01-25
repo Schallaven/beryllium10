@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beryllium>
+  <savetolocaldatabase>true</savetolocaldatabase>
+  <provider>merck,wiki</provider>
+  <localdatabase>database\database.xml</localdatabase>
+  <language>89</language>
+</beryllium>

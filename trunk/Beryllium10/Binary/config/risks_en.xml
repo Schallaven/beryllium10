@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<risks>
+  <sentence number="1">Explosive when dry.</sentence>
+  <sentence number="2">Risk of explosion by shock, friction, fire or other sources of ignition.</sentence>
+  <sentence number="3">Extreme risk of explosion by shock, friction, fire or other sources of ignition.</sentence>
+  <sentence number="4">Forms very sensitive explosive metallic compounds.</sentence>
+  <sentence number="5">Heating may cause an explosion.</sentence>
+  <sentence number="6">Explosive with or without contact with air.</sentence>
+  <sentence number="7">May cause fire.</sentence>
+  <sentence number="8">Contact with combustible material may cause fire.</sentence>
+  <sentence number="9">Explosive when mixed with combustible material.</sentence>
+  <sentence number="10">Flammable.</sentence>
+
+  <sentence number="11" needless="10">Highly flammable.</sentence>
+  <sentence number="12" needless="10,11">Extremely flammable.</sentence>
+  <sentence number="14">Reacts violently with water.</sentence>
+  <sentence number="15">Contact with water liberates extremely flammable gases.</sentence>
+  <sentence number="15.1">Contact with acid liberates extremely flammable gases.</sentence>
+  <sentence number="16">Explosive when mixed with oxidizing substances.</sentence>
+  <sentence number="17">Spontaneously flammable in air.</sentence>
+  <sentence number="18">In use, may form flammable/explosive vapour-air mixture.</sentence>
+  <sentence number="19">May form explosive peroxides.</sentence>
+  <sentence number="20">Harmful by inhalation.</sentence>
+
+  <sentence number="21">Harmful in contact with skin.</sentence>
+  <sentence number="22">Harmful if swallowed.</sentence>
+  <sentence number="23">Toxic by inhalation.</sentence>
+  <sentence number="24">Toxic in contact with skin.</sentence>
+  <sentence number="25">Toxic if swallowed.</sentence>
+  <sentence number="26">Very toxic by inhalation.</sentence>
+  <sentence number="27">Very toxic in contact with skin.</sentence>
+  <sentence number="28">Very toxic if swallowed..</sentence>
+  <sentence number="29">Contact with water liberates toxic gas.</sentence>
+  <sentence number="30">Can become highly flammable in use.</sentence>
+
+  <sentence number="31">Contact with acids liberates toxic gas.</sentence>
+  <sentence number="32">Contact with acids liberates very toxic gas.</sentence>
+  <sentence number="33">Danger of cumulative effects.</sentence>
+  <sentence number="34">Causes burns.</sentence>
+  <sentence number="35">Causes severe burns.</sentence>
+  <sentence number="36">Irritating to eyes.</sentence>
+  <sentence number="37">Irritating to respiratory system.</sentence>
+  <sentence number="38">Irritating to skin.</sentence>
+  <sentence number="39">Danger of very serious irreversible effects.</sentence>
+  <sentence number="40">Possible risk of cancer.</sentence>
+
+  <sentence number="41">Risk of serious damage to eyes.</sentence>
+  <sentence number="42">May cause sensitization by inhalation.</sentence>
+  <sentence number="43">May cause sensitization by skin contact.</sentence>
+  <sentence number="44">Risk of explosion if heated under confinement.</sentence>
+  <sentence number="45">May cause cancer.</sentence>
+  <sentence number="46">May cause heritable genetic damage.</sentence>
+  <sentence number="48">Danger of serious damage to health by prolonged exposure.</sentence>
+  <sentence number="49">May cause cancer by inhalation.</sentence>
+  <sentence number="50">Very toxic to aquatic organisms.</sentence>
+
+  <sentence number="51">Toxic to aquatic organisms.</sentence>
+  <sentence number="52">Harmful to aquatic organisms.</sentence>
+  <sentence number="53">May cause long-term adverse effects in the aquatic environment.</sentence>
+  <sentence number="54">Toxic to flora.</sentence>
+  <sentence number="55">Toxic to fauna.</sentence>
+  <sentence number="56">Toxic to soil organisms.</sentence>
+  <sentence number="57">Toxic to bees.</sentence>
+  <sentence number="58">May cause long-term adverse effects in the environment.</sentence>
+  <sentence number="59">Dangerous for the ozone layer.</sentence>
+  <sentence number="60">May impair fertility.</sentence>
+
+  <sentence number="61">May cause harm to the unborn child.</sentence>
+  <sentence number="62">Possible risk of impaired fertility.</sentence>
+  <sentence number="63">Possible risk of harm to the unborn child.</sentence>
+  <sentence number="64">May cause harm to breastfed babies.</sentence>
+  <sentence number="65">Harmful: may cause lung damage if swallowed.</sentence>
+  <sentence number="66">Repeated exposure may cause skin dryness or cracking.</sentence>
+  <sentence number="67">Vapours may cause drowsiness and dizziness.</sentence>
+  <sentence number="68">Possible risks of irreversible effects.</sentence>
+
+
+  <sentence number="14/15">Reacts violently with water, liberating extremely flammable gases.</sentence>
+  <sentence number="15/29">Contact with water liberates toxic, extremely flammable gas.</sentence>
+  <sentence number="20/21">Harmful by inhalation and in contact with skin.</sentence>
+  <sentence number="20/22">Harmful by inhalation and if swallowed.</sentence>
+  <sentence number="20/21/22">Harmful by inhalation, in contact with skin and if swallowed.</sentence>
+  <sentence number="21/22">Harmful in contact with skin and if swallowed.</sentence>
+  <sentence number="23/24">Toxic by inhalation and in contact with skin.</sentence>
+  <sentence number="23/25">Toxic by inhalation and if swallowed.</sentence>
+  <sentence number="23/24/25">Toxic by inhalation, in contact with skin and if swallowed.</sentence>
+  <sentence number="24/25">Toxic in contact with skin and if swallowed.</sentence>
+
+  <sentence number="26/27">Very toxic by inhalation and in contact with skin.</sentence>
+  <sentence number="26/28">Very toxic by inhalation and if swallowed.</sentence>
+  <sentence number="26/27/28">Very toxic by inhalation, in contact with skin and if swallowed.</sentence>
+  <sentence number="27/28">Very toxic in contact with skin and if swallowed.</sentence>
+  <sentence number="36/37">Irritating to eyes and respiratory system.</sentence>
+  <sentence number="36/38">Irritating to eyes and skin.</sentence>
+  <sentence number="36/37/38">Irritating to eyes, respiratory system and skin.</sentence>
+  <sentence number="37/38">Irritating to respiratory system and skin.</sentence>
+
+  <sentence number="39/23">Toxic: danger of very serious irreversible effects through inhalation.</sentence>
+  <sentence number="39/24">Toxic: danger of very serious irreversible effects in contact with skin.</sentence>
+  <sentence number="39/25">Toxic: danger of very serious irreversible effects if swallowed.</sentence>
+  <sentence number="39/23/24">Toxic: danger of very serious irreversible effects through inhalation and in contact with skin.</sentence>
+  <sentence number="39/23/25">Toxic: danger of very serious irreversible effects through inhalation and if swallowed.</sentence>
+  <sentence number="39/24/25">Toxic: danger of very serious irreversible effects in contact with skin and if swallowed.</sentence>
+  <sentence number="39/23/24/25">Toxic: danger of very serious irreversible effects through inhalation, in contact with skin and if swallowed.</sentence>
+  <sentence number="39/26">Very toxic: danger of very serious irreversible effects through inhalation.</sentence>
+
+  <sentence number="39/27">Very toxic: danger of very serious irreversible effects in contact with skin.</sentence>
+  <sentence number="39/28">Very toxic: danger of very serious irreversible effects if swallowed.</sentence>
+  <sentence number="39/26/27">Very toxic: danger of very serious irreversible effects through inhalation and in contact with skin.</sentence>
+  <sentence number="39/26/28">Very toxic: danger of very serious irreversible effects through inhalation and if swallowed.</sentence>
+  <sentence number="39/27/28">Very toxic: danger of very serious irreversible effects in contact with skin and if swallowed.</sentence>
+  <sentence number="39/26/27/28">Very toxic: danger of very serious irreversible effects through inhalation, in contact with skin and if swallowed.</sentence>
+  <sentence number="42/43">May cause sensitization by inhalation and skin contact.</sentence>
+
+  <sentence number="48/20">Harmful: danger of serious damage to health by prolonged exposure through inhalation.</sentence>
+  <sentence number="48/21">Harmful: danger of serious damage to health by prolonged exposure in contact with skin.</sentence>
+  <sentence number="48/22">Harmful: danger of serious damage to health by prolonged exposure if swallowed.</sentence>
+  <sentence number="48/20/21">Harmful: danger of serious damage to health by prolonged exposure through inhalation and in contact with skin.</sentence>
+  <sentence number="48/20/22">Harmful: danger of serious damage to health by prolonged exposure through inhalation and if swallowed.</sentence>
+  <sentence number="48/21/22">Harmful: danger of serious damage to health by prolonged exposure in contact with skin and if swallowed.</sentence>
+  <sentence number="48/20/21/22">Harmful: danger of serious damage to health by prolonged exposure through inhalation, in contact with skin and if swallowed.</sentence>
+  <sentence number="48/23">Toxic: danger of serious damage to health by prolonged exposure through inhalation.</sentence>
+  <sentence number="48/24">Toxic: danger of serious damage to health by prolonged exposure in contact with skin.</sentence>
+  <sentence number="48/25">Toxic: danger of serious damage to health by prolonged exposure if swallowed.</sentence>
+
+  <sentence number="48/23/24">Toxic: danger of serious damage to health by prolonged exposure through inhalation and in contact with skin.</sentence>
+  <sentence number="48/23/25">Toxic: danger of serious damage to health by prolonged exposure through inhalation and if swallowed.</sentence>
+  <sentence number="48/24/25">Toxic: danger of serious damage to health by prolonged exposure in contact with skin and if swallowed.</sentence>
+  <sentence number="48/23/24/25">Toxic: danger of serious damage to health by prolonged exposure through inhalation, in contact with skin and if swallowed.</sentence>
+  <sentence number="50/53">Very toxic to aquatic organisms, may cause long-term adverse effects in the aquatic environment.</sentence>
+  <sentence number="51/53">Toxic to aquatic organisms, may cause long-term adverse effects in the aquatic environment.</sentence>
+  <sentence number="52/53">Harmful to aquatic organisms, may cause long-term adverse effects in the aquatic environment.</sentence>
+  <sentence number="68/20">Harmful: possible risk of irreversible effects through inhalation.</sentence>
+
+  <sentence number="68/21">Harmful: possible risk of irreversible effects in contact with skin.</sentence>
+  <sentence number="68/22">Harmful: possible risk of irreversible effects if swallowed.</sentence>
+  <sentence number="68/20/21">Harmful: possible risk of irreversible effects through inhalation and in contact with skin.</sentence>
+  <sentence number="68/20/22">Harmful: possible risk of irreversible effects through inhalation and if swallowed.</sentence>
+  <sentence number="68/21/22">Harmful: possible risk of irreversible effects in contact with skin and if swallowed.</sentence>
+  <sentence number="68/20/21/22">Harmful: possible risk of irreversible effects through inhalation, in contact with skin and if swallowed.</sentence>
+</risks>
