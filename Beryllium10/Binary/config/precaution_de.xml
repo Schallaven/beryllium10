@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<precaution>
+  <sentence number="101" dangerpoints="100">Ist ärztlicher Rat erforderlich, Verpackung oder Kennzeichnungsetikett bereithalten.</sentence>
+  <sentence number="102" dangerpoints="100">Darf nicht in die Hände von Kindern gelangen.</sentence>
+  <sentence number="103" dangerpoints="100">Vor Gebrauch Kennzeichnungsetikett lesen.</sentence>
+
+  <sentence number="201" dangerpoints="100">Vor Gebrauch besondere Anweisungen einholen.</sentence>
+  <sentence number="202" dangerpoints="200">Vor Gebrauch alle Sicherheitshinweise lesen und verstehen.</sentence>
+  <sentence number="210" dangerpoints="200">Von Zündquellen fernhalten. Nicht rauchen.</sentence>
+  <sentence number="211" dangerpoints="250">Nicht gegen offene Flamme oder andere Zündquelle sprühen.</sentence>
+  <sentence number="220" dangerpoints="300">Von brennbaren Materialien fernhalten/entfernt aufbewahren.</sentence>
+  <sentence number="221" dangerpoints="500">Mischen mit brennbaren Stoffen unbedingt verhindern.</sentence>
+  <sentence number="222" dangerpoints="500">Kontakt mit Luft nicht zulassen.</sentence>
+  <sentence number="223" dangerpoints="500">Kontakt mit Wasser wegen heftiger Reaktion und möglichem Aufflammen unbedingt verhindern.</sentence>
+  <sentence number="230" dangerpoints="350">Feucht halten mit angegebenem Reagenz.</sentence>
+  <sentence number="231" dangerpoints="500">Unter inertem Gas handhaben.</sentence>
+  <sentence number="232" dangerpoints="400">Vor Feuchtigkeit schützen.</sentence>
+  <sentence number="233" dangerpoints="300">Behälter dicht verschlossen halten.</sentence>
+  <sentence number="234" dangerpoints="400">Nur im Originalbehälter aufbewahren.</sentence>
+  <sentence number="235" dangerpoints="300">Kühl halten.</sentence>
+  <sentence number="240" dangerpoints="300">Behälter und zu befüllende Anlage erden.</sentence>
+  <sentence number="241" dangerpoints="500">Explosionsgeschützte elektrische Anlagen und Geräte verwenden.</sentence>
+  <sentence number="242" dangerpoints="300">Nur funkenfreies Werkzeug verwenden.</sentence>
+  <sentence number="243" dangerpoints="400">Maßnahmen gegen elektrostatische Aufladungen treffen.</sentence>
+  <sentence number="244" dangerpoints="300">Druckminderer frei von Fett und Öl halten.</sentence>
+  <sentence number="250" dangerpoints="300">Nicht schleifen / stoßen / reiben.</sentence>
+  <sentence number="251" dangerpoints="350">Behälter steht unter Druck: Nicht durchstechen oder verbrennen, auch nicht nach der Verwendung.</sentence>
+  <sentence number="260" dangerpoints="400">Dämpfe und Partikel nicht einatmen.</sentence>
+  <sentence number="261" dangerpoints="350">Einatmen von Dämpfen und Partikeln vermeiden.</sentence>
+  <sentence number="262" dangerpoints="350">Nicht in die Augen, auf die Haut oder auf die Kleidung gelangen lassen.</sentence>
+  <sentence number="263" dangerpoints="1000">Kontakt während der Schwangerschaft / und der Stillzeit vermeiden.</sentence>
+  <sentence number="264" dangerpoints="500">Nach Gebrauch … gründlich waschen.</sentence>
+  <sentence number="270" dangerpoints="200">Bei Gebrauch nicht essen, trinken oder rauchen.</sentence>
+  <sentence number="271" dangerpoints="300">Nur im Freien oder in gut belüfteten Räumen verwenden.</sentence>
+  <sentence number="272" dangerpoints="500">Kontaminierte Arbeitskleidung nicht außerhalb des Arbeitsplatzes tragen.</sentence>
+  <sentence number="273" dangerpoints="400">Freisetzung in die Umwelt vermeiden.</sentence>
+  <sentence number="280" dangerpoints="500">Schutzhandschuhe / Schutzkleidung / Augenschutz / Gesichtsschutz tragen.</sentence>
+  <sentence number="281" dangerpoints="400">Vorgeschriebene persönliche Schutzausrüstung verwenden.</sentence>
+  <sentence number="282" dangerpoints="600">Schutzhandschuhe / Gesichtsschild / Augenschutz mit Kälteisolierung tragen.</sentence>
+  <sentence number="283" dangerpoints="600">Schwer entflammbare / flammhemmende Kleidung tragen.</sentence>
+  <sentence number="284" dangerpoints="700">Atemschutz tragen.</sentence>
+  <sentence number="285" dangerpoints="600">Bei unzureichender Belüftung Atemschutz tragen.</sentence>
+  <sentence number="231+232" dangerpoints="600">Unter inertem Gas handhaben. Vor Feuchtigkeit schützen.</sentence>
+  <sentence number="235+410" dangerpoints="600">Kühl halten. Vor Sonnenbestrahlung schützen.</sentence>
+
+  <sentence number="301">Bei Verschlucken:</sentence>
+  <sentence number="302">Bei Berührung mit der Haut:</sentence>
+  <sentence number="303">Bei Berührung mit der Haut (oder dem Haar):</sentence>
+  <sentence number="304">Bei Einatmen:</sentence>
+  <sentence number="305">Bei Kontakt mit den Augen:</sentence>
+  <sentence number="306">Bei kontaminierter Kleidung:</sentence>
+  <sentence number="307">Bei Exposition:</sentence>
+  <sentence number="308">Bei Exposition oder falls betroffen:</sentence>
+  <sentence number="309">Bei Exposition oder Unwohlsein:</sentence>
+  <sentence number="310" dangerpoints="400">Sofort Giftinformationszentrum oder Arzt anrufen.</sentence>
+  <sentence number="311" dangerpoints="300">Giftinformationszentrum oder Arzt anrufen.</sentence>
+  <sentence number="312" dangerpoints="200">Bei Unwohlsein Giftinformationszentrum oder Arzt anrufen.</sentence>
+  <sentence number="313">Ärztlichen Rat einholen / ärztliche Hilfe hinzuziehen.</sentence>
+  <sentence number="314" dangerpoints="300">Bei Unwohlsein ärztlichen Rat einholen / ärztliche Hilfe hinzuziehen.</sentence>
+  <sentence number="315">Sofort ärztlichen Rat einholen / ärztliche Hilfe hinzuziehen.</sentence>
+  <sentence number="320" dangerpoints="400">Besondere Behandlung dringend erforderlich (siehe Kennzeichnungsetikett).</sentence>
+  <sentence number="321" dangerpoints="300">Besondere Behandlung (siehe Kennzeichnungsetikett).</sentence>
+  <sentence number="322" dangerpoints="200">Gezielte Maßnahmen (siehe Kennzeichnungsetikett).</sentence>
+  <sentence number="330">Mund ausspülen.</sentence>
+  <sentence number="331">Kein Erbrechen herbeiführen.</sentence>
+  <sentence number="332">Bei Hautreizung:</sentence>
+  <sentence number="333">Bei Hautreizung oder -ausschlag:</sentence>
+  <sentence number="334">In kaltes Wasser tauchen / nassen Verband anlegen.</sentence>
+  <sentence number="335">Lose Partikel von der Haut abbürsten.</sentence>
+  <sentence number="336">Vereiste Bereiche mit lauwarmem Wasser auftauen. Betroffenen Bereich nicht reiben.</sentence>
+  <sentence number="337">Bei anhaltender Augenreizung:</sentence>
+  <sentence number="338">Eventuell vorhandene Kontaktlinsen nach Möglichkeit entfernen. Weiter ausspülen.</sentence>
+  <sentence number="340">Die betroffene Person an die frische Luft bringen und in einer Position ruhigstellen, die das Atmen erleichtert.</sentence>
+  <sentence number="341">Bei Atembeschwerden an die frische Luft bringen und in einer Position ruhigstellen, die das Atmen erleichtert.</sentence>
+  <sentence number="342">Bei Symptomen der Atemwege:</sentence>
+  <sentence number="350">Behutsam mit viel Wasser und Seife waschen.</sentence>
+  <sentence number="351">Einige Minuten lang behutsam mit Wasser ausspülen.</sentence>
+  <sentence number="352">Mit viel Wasser und Seife waschen.</sentence>
+  <sentence number="353">Haut mit Wasser abwaschen / duschen.</sentence>
+  <sentence number="360">Kontaminierte Kleidung und Haut sofort mit viel Wasser abwaschen und danach Kleidung ausziehen.</sentence>
+  <sentence number="361" dangerpoints="500">Alle kontaminierten Kleidungsstücke sofort ausziehen.</sentence>
+  <sentence number="362" dangerpoints="350">Kontaminierte Kleidung ausziehen und vor erneutem Tragen waschen.</sentence>
+  <sentence number="363" dangerpoints="200">Kontaminierte Kleidung vor erneutem Tragen waschen.</sentence>
+  <sentence number="370">Bei Brand:</sentence>
+  <sentence number="371">Bei Großbrand und großen Mengen:</sentence>
+  <sentence number="372">Explosionsgefahr bei Brand.</sentence>
+  <sentence number="373">Keine Brandbekämpfung, wenn das Feuer explosive Stoffe / Gemische / Erzeugnisse erreicht.</sentence>
+  <sentence number="374">Brandbekämpfung mit üblichen Vorsichtsmaßnahmen aus angemessener Entfernung.</sentence>
+  <sentence number="375">Wegen Explosionsgefahr Brand aus der Entfernung bekämpfen.</sentence>
+  <sentence number="376">Undichtigkeit beseitigen, wenn gefahrlos möglich.</sentence>
+  <sentence number="377">Brand von ausströmendem Gas: Nicht löschen, bis Undichtigkeit gefahrlos beseitigt werden kann.</sentence>
+  <sentence number="378">… zum Löschen verwenden.</sentence>
+  <sentence number="380">Umgebung räumen.</sentence>
+  <sentence number="381" dangerpoints="300">Alle Zündquellen entfernen, wenn gefahrlos möglich.</sentence>
+  <sentence number="390" dangerpoints="300">Verschüttete Mengen aufnehmen, um Materialschäden zu vermeiden.</sentence>
+  <sentence number="391" dangerpoints="200">Verschüttete Mengen aufnehmen.</sentence>
+  <sentence number="301+310" dangerpoints="500">Bei Verschlucken: Sofort Giftinformationszentrum oder Arzt anrufen.</sentence>
+  <sentence number="301+312" dangerpoints="400">Bei Verschlucken: Bei Unwohlsein Giftinformationszentrum oder Arzt anrufen.</sentence>
+  <sentence number="301+330+331" dangerpoints="300">Bei Verschlucken: Mund ausspülen. Kein Erbrechen herbeiführen.</sentence>
+  <sentence number="302+334" dangerpoints="300">Bei Kontakt mit der Haut: In kaltes Wasser tauchen / nassen Verband anlegen.</sentence>
+  <sentence number="302+350" dangerpoints="300">Bei Kontakt mit der Haut: Behutsam mit viel Wasser und Seife waschen.</sentence>
+  <sentence number="302+352" dangerpoints="400">Bei Kontakt mit der Haut: Mit viel Wasser und Seife waschen.</sentence>
+  <sentence number="303+361+353" dangerpoints="500">Bei Kontakt mit der Haut (oder dem Haar): Alle beschmutzten, getränkten Kleidungsstücke sofort ausziehen. Haut mit Wasser abwaschen/duschen.</sentence>
+  <sentence number="304+340" dangerpoints="500">Bei Einatmen: An die frische Luft bringen und in einer Position ruhigstellen, die das Atmen erleichtert.</sentence>
+  <sentence number="304+341" dangerpoints="400">Bei Einatmen: Bei Atembeschwerden an die frische Luft bringen und in einer Position ruhigstellen, die das Atmen erleichtert.</sentence>
+  <sentence number="305+351+338" dangerpoints="600">Bei Kontakt mit den Augen: Einige Minuten lang behutsam mit Wasser spülen. Vorhandene Kontaktlinsen nach Möglichkeit entfernen. Weiter spülen.</sentence>
+  <sentence number="306+360" dangerpoints="400">Bei Kontakt mit der Kleidung: Kontaminierte Kleidung und Haut sofort mit viel Wasser abwaschen und danach Kleidung ausziehen.</sentence>
+  <sentence number="307+311" dangerpoints="500">Bei Exposition: Giftinformationszentrum oder Arzt anrufen.</sentence>
+  <sentence number="308+313" dangerpoints="400">Bei Exposition oder falls betroffen: Ärztlichen Rat Einholen / ärztliche Hilfe hinzuziehen.</sentence>
+  <sentence number="309+311" dangerpoints="300">Bei Exposition oder Unwohlsein: Giftinformationszentrum oder Arzt anrufen.</sentence>
+  <sentence number="332+313" dangerpoints="300">Bei Hautreizung: Ärztlichen Rat einholen / ärztliche Hilfe hinzuziehen.</sentence>
+  <sentence number="333+313" dangerpoints="300">Bei Hautreizung oder -ausschlag: Ärztlichen Rat einholen / ärztliche Hilfe hinzuziehen.</sentence>
+  <sentence number="335+334" dangerpoints="400">Lose Partikel von der Haut abbürsten. In kaltes Wasser tauchen /nassen Verband anlegen.</sentence>
+  <sentence number="337+313" dangerpoints="700">Bei anhaltender Augenreizung: Ärztlichen Rat einholen / ärztliche Hilfe hinzuziehen.</sentence>
+  <sentence number="342+311" dangerpoints="500">Bei Symptomen der Atemwege: Giftinformationszentrum oder Arzt anrufen.</sentence>
+  <sentence number="370+376" dangerpoints="300">Bei Brand: Undichtigkeit beseitigen, wenn gefahrlos möglich.</sentence>
+  <sentence number="370+378" dangerpoints="400">Bei Brand: … zum Löschen verwenden.</sentence>
+  <sentence number="370+380" dangerpoints="600">Bei Brand: Umgebung räumen.</sentence>
+  <sentence number="370+380+375" dangerpoints="800">Bei Brand: Umgebung räumen. Wegen Explosionsgefahr Brand aus der Entfernung bekämpfen.</sentence>
+  <sentence number="371+380+375" dangerpoints="1000">Bei Großbrand und großen Mengen: Umgebung räumen. Wegen Explosionsgefahr Brand aus der Entfernung bekämpfen.</sentence>
+
+  <sentence number="309+310" dangerpoints="450">Bei Exposition oder Unwohlsein: Sofort Giftinformationszentrum oder Arzt anrufen.</sentence>
+  <sentence number="307+310" dangerpoints="650">Bei Exposition: Sofort Giftinformationszentrum oder Arzt anrufen.</sentence>
+
+  <sentence number="401" dangerpoints="200">… aufbewahren.</sentence>
+  <sentence number="402" dangerpoints="200">An einem trockenen Ort aufbewahren.</sentence>
+  <sentence number="403" dangerpoints="200">An einem gut belüfteten Ort aufbewahren.</sentence>
+  <sentence number="404" dangerpoints="200">In einem geschlossenen Behälter aufbewahren.</sentence>
+  <sentence number="405" dangerpoints="200">Unter Verschluss aufbewahren.</sentence>
+  <sentence number="406" dangerpoints="400">In korrosionsbeständigem /… Behälter mit korrosionsbeständiger Auskleidung aufbewahren.</sentence>
+  <sentence number="407" dangerpoints="400">Luftspalt zwischen Stapeln / Paletten lassen.</sentence>
+  <sentence number="410" dangerpoints="300">Vor Sonnenbestrahlung schützen.</sentence>
+  <sentence number="411" dangerpoints="400">Bei Temperaturen von nicht mehr als … °C / … aufbewahren.</sentence>
+  <sentence number="412" dangerpoints="400">Nicht Temperaturen von mehr als 50 °C aussetzen.</sentence>
+  <sentence number="413" dangerpoints="400">Schüttgut in Mengen von mehr als … kg bei Temperaturen von nicht mehr als … °C aufbewahren.</sentence>
+  <sentence number="420" dangerpoints="500">Von anderen Materialien entfernt aufbewahren.</sentence>
+  <sentence number="422" dangerpoints="500">Inhalt in / unter … aufbewahren</sentence>
+  <sentence number="402+404" dangerpoints="400">In einem geschlossenen Behälter an einem trockenen Ort aufbewahren.</sentence>
+  <sentence number="403+233" dangerpoints="400">Behälter dicht verschlossen an einem gut belüfteten Ort aufbewahren.</sentence>
+  <sentence number="403+235" dangerpoints="400">Kühl an einem gut belüfteten Ort aufbewahren.</sentence>
+  <sentence number="410+403" dangerpoints="400">Vor Sonnenbestrahlung geschützt an einem gut belüfteten Ort aufbewahren.</sentence>
+  <sentence number="410+412" dangerpoints="500">Vor Sonnenbestrahlung schützen und nicht Temperaturen von mehr als 50 °C aussetzen.</sentence>
+  <sentence number="411+235" dangerpoints="500">Kühl und bei Temperaturen von nicht mehr als … °C aufbewahren.</sentence>
+
+  <sentence number="501" dangerpoints="200">Inhalt / Behälter … zuführen.</sentence>
+  <sentence number="502" dangerpoints="100">Informationen zur Wiederverwendung/Wiederverwertung beim Hersteller/Lieferanten erfragen.</sentence>
+
+</precaution>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<hazards>
+  <sentence number="1"></sentence>
+  <sentence number="200" dangerpoints="550">Unstable explosive.</sentence>
+  <sentence number="201" dangerpoints="700">Explosive; mass explosion hazard.</sentence>
+  <sentence number="202" dangerpoints="850">Explosive; severe projection hazard.</sentence>
+  <sentence number="203" dangerpoints="1000">Explosive; fire, blast or projection hazard.</sentence>
+  <sentence number="204" dangerpoints="900">Fire or projection hazard.</sentence>
+  <sentence number="205" dangerpoints="600">May mass explode in fire.</sentence>
+  <sentence number="220" dangerpoints="1000">Extremely flammable gas.</sentence>
+  <sentence number="221" dangerpoints="900">Flammable gas.</sentence>
+  <sentence number="222" dangerpoints="1000">Extremely flammable aerosol.</sentence>
+  <sentence number="223" dangerpoints="900">Flammable aerosol.</sentence>
+  <sentence number="224" dangerpoints="750">Extremely flammable liquid and vapour.</sentence>
+  <sentence number="225" dangerpoints="600">Highly flammable liquid and vapour.</sentence>
+  <sentence number="226" dangerpoints="450">Flammable liquid and vapour.</sentence>
+  <sentence number="227" dangerpoints="400">Flammable liquid.</sentence>
+  <sentence number="228" dangerpoints="400">Flammable solid.</sentence>
+  <sentence number="240" dangerpoints="700">Heating may cause an explosion.</sentence>
+  <sentence number="241" dangerpoints="800">Heating may cause a fire or explosion.</sentence>
+  <sentence number="242" dangerpoints="600">Heating may cause a fire.</sentence>
+  <sentence number="250" dangerpoints="1000">Catches fire spontaneously if exposed to air.</sentence>
+  <sentence number="251" dangerpoints="800">Self-heating; may catch fire.</sentence>
+  <sentence number="252" dangerpoints="600">Self-heating in large quantities; may catch fire.</sentence>
+  <sentence number="260" dangerpoints="1000">In contact with water releases flammable gases which may ignite spontaneously.</sentence>
+  <sentence number="261" dangerpoints="800">In contact with water releases flammable gas.</sentence>
+  <sentence number="270" dangerpoints="500">May cause or intensify fire; oxidizer.</sentence>
+  <sentence number="271" dangerpoints="650">May cause fire or explosion; strong oxidizer.</sentence>
+  <sentence number="272" dangerpoints="700">May intensify fire; oxidizer.</sentence>
+  <sentence number="280" dangerpoints="350">Contains gas under pressure; may explode if heated.</sentence>
+  <sentence number="281" dangerpoints="350">Contains refrigerated gas; may cause cryogenic burns or injury.</sentence>
+  <sentence number="290" dangerpoints="350">May be corrosive to metals.</sentence>
+
+  <sentence number="300" dangerpoints="750">Fatal if swallowed.</sentence>
+  <sentence number="301" dangerpoints="500">Toxic if swallowed.</sentence>
+  <sentence number="302" dangerpoints="250">Harmful if swallowed.</sentence>
+  <sentence number="304" dangerpoints="500">May be fatal if swallowed and enters airways.</sentence>
+  <sentence number="310" dangerpoints="850">Fatal in contact with skin.</sentence>
+  <sentence number="311" dangerpoints="600">Toxic in contact with skin.</sentence>
+  <sentence number="312" dangerpoints="350">Harmful in contact with skin.</sentence>
+  <sentence number="314" dangerpoints="450">Causes severe skin burns and eye damage.</sentence>
+  <sentence number="315" dangerpoints="250">Causes skin irritation.</sentence>
+  <sentence number="317" dangerpoints="250">May cause an allergic skin reaction.</sentence>
+  <sentence number="318" dangerpoints="350">Causes serious eye damage.</sentence>
+  <sentence number="319" dangerpoints="350">Causes serious eye irritation.</sentence>
+  <sentence number="330" dangerpoints="1000">Fatal if inhaled.</sentence>
+  <sentence number="331" dangerpoints="750">Toxic if inhaled.</sentence>
+  <sentence number="332" dangerpoints="500">Harmful if inhaled.</sentence>
+  <sentence number="334" dangerpoints="650">May cause allergy or asthma symptoms or breathing difficulties if inhaled.</sentence>
+  <sentence number="335" dangerpoints="400">May cause respiratory irritation.</sentence>
+  <sentence number="336" dangerpoints="450">May cause drowsiness or dizziness.</sentence>
+
+  <sentence number="340" dangerpoints="500">May cause genetic defects.</sentence>
+  <sentence number="341" dangerpoints="400">Suspected of causing genetic defects.</sentence>
+  <sentence number="350" dangerpoints="600">May cause cancer.</sentence>
+  <sentence number="350i" dangerpoints="800">May cause cancer by inhalation.</sentence>
+  <sentence number="351" dangerpoints="500">Suspected of causing cancer.</sentence>
+  <sentence number="360" dangerpoints="1000">May damage fertility or the unborn child.</sentence>
+  <sentence number="360F" dangerpoints="500">May damage fertility.</sentence>
+  <sentence number="360D" dangerpoints="1000">May damage the unborn child.</sentence>
+  <sentence number="360FD" dangerpoints="1000">May damage fertility. May damage the unborn child.</sentence>
+  <sentence number="360Fd" dangerpoints="1000">May damage fertility. Suspected of damaging the unborn child.</sentence>
+  <sentence number="360Df" dangerpoints="1000">May damage the unborn child. Suspected of damaging fertility.</sentence>
+  <sentence number="361" dangerpoints="1000">Suspected of damaging fertility or the unborn child.</sentence>
+  <sentence number="361f" dangerpoints="400">Suspected of damaging fertility.</sentence>
+  <sentence number="361d" dangerpoints="1000">Suspected of damaging the unborn child.</sentence>
+  <sentence number="361fd" dangerpoints="1000">Suspected of damaging fertility. Suspected of damaging the unborn child.</sentence>
+  <sentence number="362" dangerpoints="1000">May cause harm to breast-fed children.</sentence>
+  <sentence number="370" dangerpoints="800">Causes damage to organs.</sentence>
+  <sentence number="371" dangerpoints="600">May cause damage to organs.</sentence>
+  <sentence number="372" dangerpoints="800">Causes damage to organs through prolonged or repeated exposure.</sentence>
+  <sentence number="373" dangerpoints="600">May cause damage to organs through prolonged or repeated exposure.</sentence>
+
+  <sentence number="300+310" dangerpoints="1000">Fatal if swallowed or in contact with skin.</sentence>
+  <sentence number="300+310+330" dangerpoints="1000">Fatal if swallowed, in contact with skin, or if inhaled.</sentence>
+  <sentence number="300+330" dangerpoints="1000">Fatal if swallowed or if inhaled.</sentence>
+  <sentence number="301+311" dangerpoints="900">Toxic if swallowed or in contact with skin.</sentence>
+  <sentence number="301+311+331" dangerpoints="900">Toxic if swallowed, in contact with skin, or if inhaled.</sentence>
+  <sentence number="301+331" dangerpoints="900">Toxic if swallowed or if inhaled.</sentence>
+  <sentence number="302+312" dangerpoints="800">Harmful if swallowed or in contact with skin.</sentence>
+  <sentence number="302+312+332" dangerpoints="800">Harmful if swallowed, in contact with skin, or if inhaled.</sentence>
+  <sentence number="302+332" dangerpoints="800">Harmful if swallowed or if inhaled.</sentence>
+  <sentence number="310+330" dangerpoints="1000">Fatal in contact with skin or if inhaled.</sentence>
+  <sentence number="311+331" dangerpoints="900">Toxic in contact with skin or if inhaled.</sentence>
+  <sentence number="312+332" dangerpoints="800">Harmful in contact with skin or if inhaled.</sentence>
+
+  <sentence number="400" dangerpoints="900">Very toxic to aquatic life.</sentence>
+  <sentence number="410" dangerpoints="1000">Very toxic to aquatic life with long lasting effects.</sentence>
+  <sentence number="411" dangerpoints="800">Toxic to aquatic life with long lasting effects.</sentence>
+  <sentence number="412" dangerpoints="700">Harmful to aquatic life with long lasting effects.</sentence>
+  <sentence number="413" dangerpoints="600">May cause long lasting harmful effects to aquatic life.</sentence>
+  <sentence number="420" dangerpoints="500">Harms public health and the environment by destroying ozone in the upper atmosphere.</sentence>
+</hazards>

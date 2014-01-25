@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<precaution>
+  <sentence number="101" dangerpoints="100">If medical advice is needed, have product container or label at hand.</sentence>
+  <sentence number="102" dangerpoints="100">Keep out of reach of children.</sentence>
+  <sentence number="103" dangerpoints="100">Read label before use.</sentence>
+
+  <sentence number="201" dangerpoints="100">Obtain special instructions before use.</sentence>
+  <sentence number="202" dangerpoints="200">Do not handle until all safety precautions have been read and understood.</sentence>
+  <sentence number="210" dangerpoints="200">Keep away from sources of ignition. No smoking.</sentence>
+  <sentence number="211" dangerpoints="250">Do not spray on an open flame or other igntion source.</sentence>
+  <sentence number="220" dangerpoints="300">Keep/Store away from clothing and combustible materials.</sentence>
+  <sentence number="221" dangerpoints="500">Take any precaustion to avoid mixinn with combustibles.</sentence>
+  <sentence number="222" dangerpoints="500">Do not allow contact with air.</sentence>
+  <sentence number="223" dangerpoints="500">Keep away from any possible contact with water, because of violent reaction and possible flash fire.</sentence>
+  <sentence number="230" dangerpoints="350">Keep wetted with specified liquid.</sentence>
+  <sentence number="231" dangerpoints="500">Handle under inert gas.</sentence>
+  <sentence number="232" dangerpoints="400">Protect from moisture.</sentence>
+
+  <sentence number="233" dangerpoints="300">Keep container tightly closed.</sentence>
+  <sentence number="234" dangerpoints="400">Keep only in original container.</sentence>
+  <sentence number="235" dangerpoints="300">Keep cool.</sentence>
+  <sentence number="240" dangerpoints="300">Ground/bond container and receiving equipment.</sentence>
+  <sentence number="241" dangerpoints="500">Use explosion-proof electrical equipment.</sentence>
+  <sentence number="242" dangerpoints="300">Use only non-sparking tools.</sentence>
+  <sentence number="243" dangerpoints="400">Take precautionary measures against static discharge.</sentence>
+  <sentence number="244" dangerpoints="300">Keep reduction valves free from grease and oil.</sentence>
+  <sentence number="250" dangerpoints="300">Do not subject to grinding/shock/friction.</sentence>
+
+  <sentence number="251" dangerpoints="350">Pressurized container. Do not pierce or burn, even after use.</sentence>
+  <sentence number="260" dangerpoints="400">Do not breathe dust/fume/gas/mist/vapours/spray.</sentence>
+  <sentence number="261" dangerpoints="350">Avoid breathing dust/fume/gas/mist/vapours/spray.</sentence>
+  <sentence number="262" dangerpoints="350">Do not get in eyes, on skin, or on clothing.</sentence>
+  <sentence number="263" dangerpoints="1000">Avoid contact during pregnancy/while nursing.</sentence>
+  <sentence number="264" dangerpoints="500">Wash ... thoroughly after handling (see MSDS).</sentence>
+  <sentence number="270" dangerpoints="200">Do not eat, drink or smoke when using this product.</sentence>
+  <sentence number="271" dangerpoints="300">Use only outdoors or in a well-ventilated area.</sentence>
+  <sentence number="272" dangerpoints="500">Contaminated work clothing should not be allowed out of the workplace.</sentence>
+  <sentence number="273" dangerpoints="400">Avoid release to the environment.</sentence>
+
+  <sentence number="280" dangerpoints="500">Wear protective gloves/protective clothing/eye protection/face protection.</sentence>
+  <sentence number="281" dangerpoints="400">Use personal protective equipment as required.</sentence>
+  <sentence number="282" dangerpoints="600">Wear cold insulating gloves/face shield/eye protection.</sentence>
+  <sentence number="283" dangerpoints="600">Wear fire/flame resistant/retardant clothing.</sentence>
+  <sentence number="284" dangerpoints="700">Wear respiratory protection.</sentence>
+  <sentence number="285" dangerpoints="600">In case of inadequate ventilation wear respiratory protection.</sentence>
+  <sentence number="231+232" dangerpoints="600">Handle under inert gas. Protect from moisture.</sentence>
+  <sentence number="235+410" dangerpoints="600">Keep cool. Protect from sunlight.</sentence>
+
+  <sentence number="301">IF SWALLOWED:</sentence>
+  <sentence number="302">IF ON SKIN:</sentence>
+  <sentence number="303">IF ON SKIN (or hair):</sentence>
+  <sentence number="304">IF INHALED:</sentence>
+  <sentence number="305">IF IN EYES:</sentence>
+  <sentence number="306">IF ON CLOTHING:</sentence>
+  <sentence number="307">IF exposed:</sentence>
+  <sentence number="308">IF exposed or concerned:</sentence>
+  <sentence number="309">IF exposed or you feel unwell:</sentence>
+
+  <sentence number="310" dangerpoints="400">Immediately call a POISON CENTER or doctor/physician.</sentence>
+  <sentence number="311" dangerpoints="300">Call a POISON CENTER or doctor/physician.</sentence>
+  <sentence number="312" dangerpoints="200">Call a POISON CENTER or doctor/physician if you feel unwell.</sentence>
+  <sentence number="313">Get medical advice/attention.</sentence>
+  <sentence number="314" dangerpoints="300">Get Medical advice/attention if you feel unwell.</sentence>
+  <sentence number="315">Get immediate medical advice/attention.</sentence>
+  <sentence number="320" dangerpoints="400">Specific treatment is urgent (see MSDS).</sentence>
+  <sentence number="321" dangerpoints="300">Specific treatment (see MSDS).</sentence>
+  <sentence number="322" dangerpoints="200">Specific measures (see MSDS)</sentence>
+
+  <sentence number="330">Rinse mouth.</sentence>
+  <sentence number="331">Do NOT induce vomiting.</sentence>
+  <sentence number="332">If skin irritation occurs:</sentence>
+  <sentence number="333">If skin irritation or a rash occurs::</sentence>
+  <sentence number="334">Immerse in cool water/wrap in wet bandages.</sentence>
+  <sentence number="335">Brush off loose particles from skin.</sentence>
+  <sentence number="336">Thaw frosted parts with lukewarm water. Do not rub affected areas.</sentence>
+  <sentence number="337">If eye irritation persists:</sentence>
+  <sentence number="338">Remove contact lenses if present and easy to do. Continue rinsing.</sentence>
+  <sentence number="340">Remove victim to fresh air and keep at rest in a position comfortable for breathing.</sentence>
+  <sentence number="341">If breathing is difficult, remove victim to fresh air and keep at rest in a position comfortable for breathing.</sentence>
+
+  <sentence number="342">If experiencing respiratory symptoms:</sentence>
+  <sentence number="350">Gently wash with soap and water.</sentence>
+  <sentence number="351">Rinse continuously with water for several minutes.</sentence>
+  <sentence number="352">Wash with soap and water.</sentence>
+  <sentence number="353">Rinse skin with water/shower.</sentence>
+  <sentence number="360">Rinse immediately contaminated clothing and skin with plenty of water before removing clothes</sentence>
+  <sentence number="361" dangerpoints="500">Remove/Take off immediately all contaminated clothing.</sentence>
+  <sentence number="362" dangerpoints="350">Take off contaminated clothing and wash before reuse.</sentence>
+  <sentence number="363" dangerpoints="200">Wash contaminated clothing before reuse.</sentence>
+  <sentence number="370">In case of fire:</sentence>
+
+  <sentence number="371">In case of major fire and large quantities:</sentence>
+  <sentence number="372">Explosion risk in case of fire.</sentence>
+  <sentence number="373">DO NOT fight fire when fire reaches explosives.</sentence>
+  <sentence number="374">Fight fire with normal precautions from a reasonable distance.</sentence>
+  <sentence number="375">Fight fire remotely due to the risk of explosion.</sentence>
+  <sentence number="376">Stop leak if safe to do so.</sentence>
+  <sentence number="377">Leaking gas fire. Do not extinguish unless leak can be stopped safely.</sentence>
+  <sentence number="378">Use ... for extinction (see MSDS).</sentence>
+  <sentence number="380">Evacuate area.</sentence>
+  <sentence number="381" dangerpoints="300">Eliminate all ignition sources if safe to do so.</sentence>
+  <sentence number="390" dangerpoints="300">Absorb spillage to prevent material damage.</sentence>
+  <sentence number="391" dangerpoints="200">Collect spillagee.</sentence>
+
+  <sentence number="301+310" dangerpoints="500">IF SWALLOWED: Immediately call a POISON CENTER or doctor/physician.</sentence>
+  <sentence number="301+312" dangerpoints="400">IF SWALLOWED: Call a POISON CENTER or doctor/physician if you feel unwell.</sentence>
+  <sentence number="301+330+331" dangerpoints="300">IF SWALLOWED: Rinse mouth. Do NOT induce vomiting.</sentence>
+  <sentence number="302+334" dangerpoints="300">IF ON SKIN: Immerse in cool water/wrap in wet bandages.</sentence>
+  <sentence number="302+350" dangerpoints="300">IF ON SKIN: Gently wash with soap and water.</sentence>
+  <sentence number="302+352" dangerpoints="400">IF ON SKIN: Wash with soap and water.</sentence>
+  <sentence number="303+361+353" dangerpoints="500">IF ON SKIN (or hair): Remove/Take off immediately all contaminated clothing. Rinse skin with water/shower.</sentence>
+
+  <sentence number="304+340" dangerpoints="500">IF INHALED: Remove victim to fresh air and keep at rest in a position comfortable for breathing.</sentence>
+  <sentence number="304+341" dangerpoints="400">IF INHALED: If breathing is difficult, remove victim to fresh air and keep at rest in a position comfortable for breathing.</sentence>
+  <sentence number="305+351+338" dangerpoints="600">IF IN EYES: Rinse continuously with water for several minutes. Remove contact lenses if present and easy to do. Continue rinsing.</sentence>
+  <sentence number="306+360" dangerpoints="400">IF ON CLOTHING: Rinse immediately contaminated clothing and skin with plenty of water before removing clothes.</sentence>
+  <sentence number="307+311" dangerpoints="500">IF exposed: Call a POISON CENTER or doctor/physician.</sentence>
+  <sentence number="308+313" dangerpoints="400">IF exposed or concerned: Get medical advice/attention.</sentence>
+  <sentence number="309+311" dangerpoints="300">IF exposed or you feel unwell: Call a POISON CENTER or doctor/physician.</sentence>
+  <sentence number="332+313" dangerpoints="300">IF skin irritation occurs: Get medical advice/attention.</sentence>
+  <sentence number="333+313" dangerpoints="300">IF skin irritation or a rash occurs: Get medical advice/attention.</sentence>
+  <sentence number="335+334" dangerpoints="400">Brush off loose particles from skin. Immerse in cool water/wrap in wet bandages.</sentence>
+
+  <sentence number="337+313" dangerpoints="700">Get medical advice/attention.</sentence>
+  <sentence number="342+311" dangerpoints="500">Call a POISON CENTER or doctor/physician.</sentence>
+  <sentence number="370+376" dangerpoints="300">In case of fire: Stop leak if safe to do so.</sentence>
+  <sentence number="370+378" dangerpoints="400">In case of fire: Use ... for extinction (see MSDS).</sentence>
+  <sentence number="370+380" dangerpoints="600">In case of fire: Evacuate area.</sentence>
+  <sentence number="370+380+375" dangerpoints="800">In case of fire: Evacuate area. Fight fire remotely due to the risk of explosion.</sentence>
+  <sentence number="371+380+375" dangerpoints="1000">In case of major fire and large quantities: Evacuate area. Fight fire remotely due to the risk of explosion.</sentence>
+
+  <sentence number="309+310" dangerpoints="450">IF exposed or you feel unwell: Immediately call a POISON CENTER or doctor/physician.</sentence>
+  <sentence number="307+310" dangerpoints="650">IF exposed: Immediately call a POISON CENTER or doctor/physician.</sentence>
+
+  <sentence number="401" dangerpoints="200">Store ... (see MSDS).</sentence>
+  <sentence number="402" dangerpoints="200">Store in a dry place.</sentence>
+  <sentence number="403" dangerpoints="200">Store in a well ventilated place.</sentence>
+  <sentence number="404" dangerpoints="200">Store in a closed container.</sentence>
+  <sentence number="405" dangerpoints="200">Store locked up.</sentence>
+  <sentence number="406" dangerpoints="400">Store in a corrosive resistant container with a resistant inner liner.</sentence>
+  <sentence number="407" dangerpoints="400">Maintain air gap between stacks/pallets.</sentence>
+  <sentence number="410" dangerpoints="300">Protect from sunlight.</sentence>
+  <sentence number="411" dangerpoints="400">Store at temperatures not exceeding specified temperature (see MSDS).</sentence>
+
+  <sentence number="412" dangerpoints="400">Do not expose to temperatures exceeding 50 °C/122 °F.</sentence>
+  <sentence number="413" dangerpoints="400">Do not expose to temperatures exceeding 50 °C/122 °F.</sentence>
+  <sentence number="420" dangerpoints="500">Store away from other materials.</sentence>
+  <sentence number="422" dangerpoints="500">Store contents under ... (see MSDS).</sentence>
+  <sentence number="402+404" dangerpoints="400">Store in a dry place. Store in a closed container.</sentence>
+  <sentence number="403+233" dangerpoints="400">Store in a well ventilated place. Keep container tightly closed.</sentence>
+  <sentence number="403+235" dangerpoints="400">Store in a well ventilated place. Keep cool.</sentence>
+  <sentence number="410+403" dangerpoints="400">Protect from sunlight. Store in a well ventilated place.</sentence>
+  <sentence number="410+412" dangerpoints="500">Protect from sunlight. Do not expose to temperatures exceeding 50 °C/122 °F.</sentence>
+  <sentence number="411+235" dangerpoints="500">Store at temperatures not exceeding specified temperature (see MSDS). Keep cool.</sentence>
+
+  <sentence number="501" dangerpoints="200">Dispose of contents/container to ... (see MSDS).</sentence>
+
+</precaution>

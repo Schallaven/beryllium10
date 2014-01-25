@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<hazards>
+  <sentence number="1"></sentence>
+  <sentence number="200" dangerpoints="550">Instabil, explosiv.</sentence>
+  <sentence number="201" dangerpoints="700">Explosiv, Gefahr der Massenexplosion.</sentence>
+  <sentence number="202" dangerpoints="850">Explosiv; große Gefahr durch Splitter, Spreng- und Wurfstücke.</sentence>
+  <sentence number="203" dangerpoints="1000">Explosiv; Gefahr durch Feuer, Luftdruck oder Splitter, Spreng- und Wurfstücke.</sentence>
+  <sentence number="204" dangerpoints="900">Gefahr durch Feuer oder Splitter, Spreng- und Wurfstücke.</sentence>
+  <sentence number="205" dangerpoints="600">Gefahr der Massenexplosion bei Feuer.</sentence>
+  <sentence number="220" dangerpoints="1000">Extrem entzündbares Gas.</sentence>
+  <sentence number="221" dangerpoints="900">Entzündbares Gas.</sentence>
+  <sentence number="222" dangerpoints="1000">Extrem entzündbares Aerosol.</sentence>
+  <sentence number="223" dangerpoints="900">Entzündbares Aerosol.</sentence>
+  <sentence number="224" dangerpoints="750">Flüssigkeit und Dampf extrem entzündbar.</sentence>
+  <sentence number="225" dangerpoints="600">Flüssigkeit und Dampf leicht entzündbar.</sentence>
+  <sentence number="226" dangerpoints="450">Flüssigkeit und Dampf entzündbar.</sentence>
+  <sentence number="228" dangerpoints="400">Entzündbarer Feststoff.</sentence>
+  <sentence number="240" dangerpoints="700">Erwärmung kann Explosion verursachen.</sentence>
+  <sentence number="241" dangerpoints="800">Erwärmung kann Brand oder Explosion verursachen.</sentence>
+  <sentence number="242" dangerpoints="600">Erwärmung kann Brand verursachen.</sentence>
+  <sentence number="250" dangerpoints="1000">Entzündet sich in Berührung mit Luft von selbst.</sentence>
+  <sentence number="251" dangerpoints="800">Selbsterhitzungsfähig; kann in Brand geraten.</sentence>
+  <sentence number="252" dangerpoints="600">In großen Mengen selbsterhitzungsfähig; kann in Brand geraten.</sentence>
+  <sentence number="260" dangerpoints="1000">In Berührung mit Wasser entstehen entzündbare Gase, die sich spontan entzünden können.</sentence>
+  <sentence number="261" dangerpoints="800">In Berührung mit Wasser entstehen entzündbare Gase.</sentence>
+  <sentence number="270" dangerpoints="500">Kann Brand verursachen oder verstärken; Oxidationsmittel.</sentence>
+  <sentence number="271" dangerpoints="650">Kann Brand oder Explosion verursachen; starkes Oxidationsmittel.</sentence>
+  <sentence number="272" dangerpoints="700">Kann Brand verstärken; Oxidationsmittel.</sentence>
+  <sentence number="280" dangerpoints="350">Enthält Gas unter Druck; kann bei Erwärmung explodieren.</sentence>
+  <sentence number="281" dangerpoints="350">Enthält tiefgekühltes Gas; kann Kälteverbrennungen oder –Verletzungen verursachen.</sentence>
+  <sentence number="290" dangerpoints="350">Kann gegenüber Metallen korrosiv sein.</sentence>
+
+  <sentence number="300" dangerpoints="750">Lebensgefahr bei Verschlucken.</sentence>
+  <sentence number="301" dangerpoints="500">Giftig bei Verschlucken.</sentence>
+  <sentence number="302" dangerpoints="250">Gesundheitsschädlich bei Verschlucken.</sentence>
+  <sentence number="304" dangerpoints="500">Kann bei Verschlucken und Eindringen in die Atemwege tödlich sein.</sentence>
+  <sentence number="310" dangerpoints="850">Lebensgefahr bei Hautkontakt.</sentence>
+  <sentence number="311" dangerpoints="600">Giftig bei Hautkontakt.</sentence>
+  <sentence number="312" dangerpoints="350">Gesundheitsschädlich bei Hautkontakt.</sentence>
+  <sentence number="314" dangerpoints="450">Verursacht schwere Verätzungen der Haut und schwere Augenschäden.</sentence>
+  <sentence number="315" dangerpoints="250">Verursacht Hautreizungen.</sentence>
+  <sentence number="317" dangerpoints="250">Kann allergische Hautreaktionen verursachen.</sentence>
+  <sentence number="318" dangerpoints="350">Verursacht schwere Augenschäden.</sentence>
+  <sentence number="319" dangerpoints="350">Verursacht schwere Augenreizung.</sentence>
+  <sentence number="330" dangerpoints="1000">Lebensgefahr bei Einatmen.</sentence>
+  <sentence number="331" dangerpoints="750">Giftig bei Einatmen.</sentence>
+  <sentence number="332" dangerpoints="500">Gesundheitsschädlich bei Einatmen.</sentence>
+  <sentence number="334" dangerpoints="650">Kann bei Einatmen Allergie, asthmaartige Symptome oder Atembeschwerden verursachen.</sentence>
+  <sentence number="335" dangerpoints="400">Kann die Atemwege reizen.</sentence>
+  <sentence number="336" dangerpoints="450">Kann Schläfrigkeit und Benommenheit verursachen.</sentence>
+  <sentence number="340" dangerpoints="500">Kann genetische Defekte verursachen.</sentence>
+  <sentence number="341" dangerpoints="400">Kann vermutlich genetische Defekte verursachen.</sentence>
+  <sentence number="350" dangerpoints="600">Kann Krebs erzeugen.</sentence>
+  <sentence number="350i" dangerpoints="800">Kann bei Einatmen Krebs erzeugen.</sentence>
+  <sentence number="351" dangerpoints="500">Kann vermutlich Krebs erzeugen.</sentence>
+  <sentence number="360" dangerpoints="1000">Kann die Fruchtbarkeit beeinträchtigen oder das Kind im Mutterleib schädigen.</sentence>
+  <sentence number="360F" dangerpoints="500">Kann die Fruchtbarkeit beeinträchtigen.</sentence>
+  <sentence number="360D" dangerpoints="1000">Kann das Kind im Mutterleib schädigen.</sentence>
+  <sentence number="360FD" dangerpoints="1000">Kann die Fruchtbarkeit beeinträchtigen. Kann das Kind im Mutterleib schädigen.</sentence>
+  <sentence number="360Fd" dangerpoints="1000">Kann die Fruchtbarkeit beeinträchtigen. Kann vermutlich das Kind im Mutterleib schädigen.</sentence>
+  <sentence number="360Df" dangerpoints="1000">Kann das Kind im Mutterleib schädigen. Kann vermutlich die Fruchtbarkeit beeinträchtigen.</sentence>
+  <sentence number="361" dangerpoints="1000">Kann vermutlich die Fruchtbarkeit beeinträchtigen oder das Kind im Mutterleib schädigen.</sentence>
+  <sentence number="361f" dangerpoints="400">Kann vermutlich die Fruchtbarkeit beeinträchtigen.</sentence>
+  <sentence number="361d" dangerpoints="1000">Kann vermutlich das Kind im Mutterleib schädigen.</sentence>
+  <sentence number="361fd" dangerpoints="1000">Kann vermutlich die Fruchtbarkeit beeinträchtigen. Kann vermutlich das Kind im Mutterleib schädigen.</sentence>
+  <sentence number="362" dangerpoints="1000">Kann Säuglinge über die Muttermilch schädigen.</sentence>
+  <sentence number="370" dangerpoints="800">Schädigt die Organe.</sentence>
+  <sentence number="371" dangerpoints="600">Kann die Organe schädigen.</sentence>
+  <sentence number="372" dangerpoints="800">Schädigt die Organe.</sentence>
+  <sentence number="373" dangerpoints="600">Kann die Organe schädigen.</sentence>
+  <sentence number="300+310" dangerpoints="1000">Lebensgefahr bei Verschlucken oder Hautkontakt.</sentence>
+  <sentence number="300+310+330" dangerpoints="1000">Lebensgefahr bei Verschlucken, Hautkontakt oder Einatmen.</sentence>
+  <sentence number="300+330" dangerpoints="1000">Lebensgefahr bei Verschlucken oder Einatmen.</sentence>
+  <sentence number="301+311" dangerpoints="900">Giftig bei Verschlucken oder Hautkontakt.</sentence>
+  <sentence number="301+311+331" dangerpoints="900">Giftig bei Verschlucken, Hautkontakt oder Einatmen.</sentence>
+  <sentence number="301+331" dangerpoints="900">Giftig bei Verschlucken oder Einatmen.</sentence>
+  <sentence number="302+312" dangerpoints="800">Gesundheitsschädlich bei Verschlucken oder Hautkontakt.</sentence>
+  <sentence number="302+312+332" dangerpoints="800">Gesundheitsschädlich bei Verschlucken, Hautkontakt oder Einatmen.</sentence>
+  <sentence number="302+332" dangerpoints="800">Gesundheitsschädlich bei Verschlucken oder Einatmen.</sentence>
+  <sentence number="310+330" dangerpoints="1000">Lebensgefahr bei Hautkontakt oder Einatmen.</sentence>
+  <sentence number="311+331" dangerpoints="900">Giftig bei Hautkontakt oder Einatmen.</sentence>
+  <sentence number="312+332" dangerpoints="800">Gesundheitsschädlich bei Hautkontakt oder Einatmen.</sentence>
+
+  <sentence number="400" dangerpoints="900">Sehr giftig für Wasserorganismen.</sentence>
+  <sentence number="410" dangerpoints="1000">Sehr giftig für Wasserorganismen mit langfristiger Wirkung.</sentence>
+  <sentence number="411" dangerpoints="800">Giftig für Wasserorganismen, mit langfristiger Wirkung.</sentence>
+  <sentence number="412" dangerpoints="700">Schädlich für Wasserorganismen, mit langfristiger Wirkung.</sentence>
+  <sentence number="413" dangerpoints="600">Kann für Wasserorganismen schädlich sein, mit langfristiger Wirkung.</sentence>
+  <sentence number="420" dangerpoints="500">Schädigt die öffentliche Gesundheit und die Umwelt durch Ozonabbau in der äußeren Atmosphäre.</sentence>
+</hazards>
