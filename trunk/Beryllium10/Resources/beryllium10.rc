@@ -1,0 +1,145 @@
+// **********************************************************************************
+//   This file is part of Beryllium¹º.
+//
+//   Beryllium¹º is free software: you can redistribute it and/or modify
+//   it under the terms of the GNU General Public License as published by
+//   the Free Software Foundation, either version 3 of the License, or
+//   (at your option) any later version.
+//
+//   Beryllium¹º is distributed in the hope that it will be useful,
+//   but WITHOUT ANY WARRANTY; without even the implied warranty of
+//   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//   GNU General Public License for more details.
+//
+//   You should have received a copy of the GNU General Public License
+//   along with Beryllium¹º.  If not, see <http://www.gnu.org/licenses/>.
+//
+//   Diese Datei ist Teil von Beryllium¹º.
+//
+//   Beryllium¹º ist Freie Software: Sie können es unter den Bedingungen
+//   der GNU General Public License, wie von der Free Software Foundation,
+//   Version 3 der Lizenz oder (nach Ihrer Wahl) jeder späteren
+//   veröffentlichten Version, weiterverbreiten und/oder modifizieren.
+//
+//   Beryllium¹º wird in der Hoffnung, dass es nützlich sein wird, aber
+//   OHNE JEDE GEWÄHELEISTUNG, bereitgestellt; sogar ohne die implizite
+//   Gewährleistung der MARKTFÄHIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.
+//   Siehe die GNU General Public License für weitere Details.
+//
+//   Sie sollten eine Kopie der GNU General Public License zusammen mit
+//   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
+// **********************************************************************************
+
+
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+// Autobuild Include
+#include "../Code/AutoBuild.h"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Deutsch (Deutschland) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+1                       ICON                    "beryllium10.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+/////////////////////////////////////////////////////////////////////////////
+#define APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+1 VERSIONINFO
+ FILEVERSION FILEVER        
+ PRODUCTVERSION PRODUCTVER     
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40000L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "FileDescription", "Beryllium¹º Application"
+            VALUE "FileVersion", STRFILEVER     
+            VALUE "InternalName", "Beryllium¹º"
+            VALUE "LegalCopyright", "Copyright 2011"
+            VALUE "OriginalFilename", "Beryllium10.exe"
+            VALUE "ProductName", "Beryllium¹º Application"
+            VALUE "ProductVersion", STRPRODUCTVER  
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200
+    END
+END
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.\0"
+END
+
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Deutsch (Deutschland) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
