@@ -124,6 +124,10 @@ CBerylliumSubstanceSearchDialog::CBerylliumSubstanceSearchDialog( wxWindow *pare
 	// Lokale Datenbank suchen und öffnen
 	m_localdatabasename = ::wxGetApp().GetConfigData( "localdatabase" );
 
+	// Ersetzen potentielle "\" durch "/", damit unter Linux (wo ein "\" durchaus ein legitimies Zeichen ist)
+	// nicht die falsche Datei geladen wird. Windows akzeptiert sowohl "\" als auch "/".
+	m_localdatabasename.Replace( "\\", "/", true );
+
 	// Datei vorhanden und existiert auch?
 	if ( m_localdatabasename.length() > 0 )
 	{
@@ -195,7 +199,7 @@ void CBerylliumSubstanceSearchDialog::OnOK( wxCommandEvent &event )
 
 		// Datenbank speichern (falls vorhanden)
 		if ( m_localdatabasename.length() > 0 )
-			m_localdatabase.SaveToFile( m_localdatabasename.ToStdString() );
+			m_localdatabase.SaveToFile( m_localdatabasename );
 	}
 
 	// Auf 100% setzen
@@ -667,10 +671,14 @@ void CBerylliumSubstanceSearchDialog::OnSearchSelectLocalDatabase( wxCommandEven
 		// Pfad kopieren
 		m_localdatabasename = dbfile.GetFullPath();
 
+		// Ersetzen potentielle "\" durch "/", damit unter Linux (wo ein "\" durchaus ein legitimies Zeichen ist)
+        // nicht die falsche Datei geladen wird. Windows akzeptiert sowohl "\" als auch "/".
+        m_localdatabasename.Replace( "\\", "/", true );
+
 		// Speichern
 		::wxGetApp().SetConfigData( "localdatabase", m_localdatabasename);
 
 		// Diese Datenbank laden
-		m_localdatabase.LoadFromFile( m_localdatabasename.ToStdString() );
+		m_localdatabase.LoadFromFile( m_localdatabasename );
 	}
 }
