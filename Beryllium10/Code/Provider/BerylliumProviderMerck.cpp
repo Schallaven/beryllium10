@@ -271,8 +271,7 @@ void CBerylliumProviderMerck::LoadSearchDataCell( wxXmlNode *cell )
 }
 
 // Hilfsfunktion: Entfernt alle unwichtigen Dinge, um den String kleiner zu machen
-// Wichtig hierbei ist, dass wir mit std::string arbeiten. wxString kapituliert unter
-// Windows (UTF16) leider beim richtigen extrahieren von Substrings aus UTF8-Strings...
+// Mittlerweile konvertiert die Funktion automatisch von UTF8 zu was-auch-immer-wxString will.
 void CBerylliumProviderMerck::PreParseData()
 {
 	// Datei zum Lesen einladen
@@ -286,16 +285,14 @@ void CBerylliumProviderMerck::PreParseData()
     if ( !fi.IsOpened() )
     {
 #ifdef _DEBUG
-        wxMessageBox( wxString::Format("Fehler beim Öffnen: %d", fi.GetLastError()), "Lesevorgang, Merck");
+		wxMessageBox( wxString::Format("Fehler (%d) beim Öffnen: %s", ::wxSysErrorCode(), ::wxSysErrorMsg()), "Lesevorgang, Merck");
 #endif
 
         return;
     }
 
 	// Inhalt der Datei kommt in diesen String
-	// wxString funktioniert nicht wirklich mit dem auslesen und den ganzen Funktionen (Limitierung?)
-	// deswegen benutzt diese Implementierung hier immer noch std::(w)string
-	std::string szContent;
+	wxString szContent;
 
 	// Temporärer Buffer
 	char buf[200];
@@ -312,8 +309,8 @@ void CBerylliumProviderMerck::PreParseData()
 		// Wenn was gelesen wurde -> speichern
 		if ( count > 0 )
 		{
-			// Buffer hinzufügen
-			szContent += buf;
+			// Buffer hinzufügen (UTF8 konvertieren!)
+			szContent += wxString::FromUTF8(buf, count);
 		}
     } while ( !fi.Eof() );
 
@@ -321,7 +318,7 @@ void CBerylliumProviderMerck::PreParseData()
 	fi.Close();
 
 	// Extrahierter String
-	std::string szExtract;
+	wxString szExtract;
 
 	szExtract += "<merck>";
 
@@ -338,11 +335,12 @@ void CBerylliumProviderMerck::PreParseData()
 
 	szExtract += "</merck>";
 
-	// Content übernehmen
-	wxString data = szExtract;
+	// Content übernehmen/kopieren
+	wxString data(szExtract);
 
 	// Leere Brackets löschen
-	RemoveEmptyBrackets( data );
+	// Entfernt: 2014.01.26
+	//RemoveEmptyBrackets( data );
 
 	// Alle Script-Tags entfernen
 	RemoveBlockFromString( data, "<script", "</script>" );
@@ -412,7 +410,7 @@ void CBerylliumProviderMerck::PreParseData()
     if ( !fiW.IsOpened() )
     {
 #ifdef _DEBUG
-        wxMessageBox( wxString::Format("Fehler beim Öffnen: %d", fi.GetLastError()), "Schreibvorgang, Merck");
+		wxMessageBox( wxString::Format("Fehler (%d) beim Öffnen: %s", ::wxSysErrorCode(), ::wxSysErrorMsg()), "Schreibvorgang, Merck");
 #endif
 
         return;
