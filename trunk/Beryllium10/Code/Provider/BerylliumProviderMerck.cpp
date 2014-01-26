@@ -51,7 +51,7 @@ CBerylliumProviderMerck::~CBerylliumProviderMerck(void)
 
 // 1. Suchanfrage stellen
 bool CBerylliumProviderMerck::SearchForCompound( const wxString searchtext, bool bExactMatch = false )
-{	
+{
 	// TODO: Land extern setzen lassen (Beispielsweise über Config)
 	// Land kann und soll unabhängig von Sprache sein!
 	if ( iLanguage == wxLANGUAGE_ENGLISH )
@@ -71,11 +71,11 @@ bool CBerylliumProviderMerck::SearchForCompound( const wxString searchtext, bool
 	m_http.Connect( "www.merckmillipore.com" );
 
 	// Adresse setzen (Deutschland)
-	wxString merckaddress = "/is-bin/INTERSHOP.enfinity/WFS/Merck-DE-Site/de_DE/-/EUR/ViewSearch-ParametricSearchIndexQuery?WFSimpleSearch_NameOrID=%s"; 
+	wxString merckaddress = "/is-bin/INTERSHOP.enfinity/WFS/Merck-DE-Site/de_DE/-/EUR/ViewSearch-ParametricSearchIndexQuery?WFSimpleSearch_NameOrID=%s";
 
 	// UK?
 	if ( iCountry == 1 )
-		merckaddress = "/is-bin/INTERSHOP.enfinity/WFS/Merck-GB-Site/en_US/-/GBP/ViewSearch-ParametricSearchIndexQuery?WFSimpleSearch_NameOrID=%s"; 
+		merckaddress = "/is-bin/INTERSHOP.enfinity/WFS/Merck-GB-Site/en_US/-/GBP/ViewSearch-ParametricSearchIndexQuery?WFSimpleSearch_NameOrID=%s";
 
 	// InputStream erzeugen
 	wxInputStream *httpStream = m_http.GetInputStream( wxString::Format( merckaddress, searchtext ));
@@ -100,7 +100,7 @@ bool CBerylliumProviderMerck::SearchForCompound( const wxString searchtext, bool
 		dataStream.Close();
 
 		// Daten vorparsen
-		PreParseData();		
+		PreParseData();
 
 		// Ergebnisse laden.
 		bGotData = LoadSearchData();
@@ -130,7 +130,7 @@ void CBerylliumProviderMerck::GetDataOfCompound( const int iSerial, CBerylliumSu
 		{
 			// Namen setzen
 			substancename = m_results[i].name;
-			
+
 			// Daten holen
 			LoadDataFromUrl( m_results[i].data );
 
@@ -155,7 +155,7 @@ void CBerylliumProviderMerck::GetResults( std::vector< result > &m_list ) const
 
 // Lädt die Suchergebnisse
 bool CBerylliumProviderMerck::LoadSearchData()
-{	
+{
 	// XML-Dokument anlegen
 	wxXmlDocument doc;
 
@@ -175,7 +175,7 @@ bool CBerylliumProviderMerck::LoadSearchData()
 	// Wurzel Ast für Ast durchgehen
     wxXmlNode *node = doc.GetRoot()->GetChildren();
 
-	while (node) 
+	while (node)
 	{
 		// Nur Elemente sammeln
 		if ( node->GetType() != wxXML_ELEMENT_NODE )
@@ -188,7 +188,7 @@ bool CBerylliumProviderMerck::LoadSearchData()
 		}
 
 		// Wir suchen nach "table" mit dem Attribute summary=Suchergebnisse
-		if ( (node->GetName().compare("table") == 0) && 
+		if ( (node->GetName().compare("table") == 0) &&
 			((node->GetAttribute("summary").compare("Suchergebnisse") == 0) || (node->GetAttribute("summary").compare("Search results") == 0)) )
 		{
 			// Dann suchen wir nach allen Subelementen
@@ -221,7 +221,7 @@ bool CBerylliumProviderMerck::LoadSearchData()
 						LoadSearchDataCell( cell );
 
 					// Element-Index hochzählen
-					i++;						
+					i++;
 				}
 
 				// Nächster Ast
@@ -277,36 +277,48 @@ void CBerylliumProviderMerck::PreParseData()
 {
 	// Datei zum Lesen einladen
 #ifdef _DEBUG
-	FILE *fi = fopen( "temp/mercksearch.temp", "r" );
+	wxFile fi("./temp/mercksearch.temp", wxFile::read);
 #else
-	FILE *fi = fopen( "beryllium10.temp", "r" );
+	wxFile fi("beryllium10.temp", wxFile::read);
 #endif
 
+    // Datei öffnen fehlgeschlagen?
+    if ( !fi.IsOpened() )
+    {
+#ifdef _DEBUG
+        wxMessageBox( wxString::Format("Fehler beim Öffnen: %d", fi.GetLastError()), "Lesevorgang, Merck");
+#endif
+
+        return;
+    }
+
 	// Inhalt der Datei kommt in diesen String
+	// wxString funktioniert nicht wirklich mit dem auslesen und den ganzen Funktionen (Limitierung?)
+	// deswegen benutzt diese Implementierung hier immer noch std::(w)string
 	std::string szContent;
 
 	// Temporärer Buffer
-	char buf[257];
+	char buf[200];
 
 	// Alles einlesen
-	while ( !feof(fi) )
+	do
 	{
+	    // Buffer mit Nullen füllen
+	    memset(buf, 0x00, 200);
+
 		// Ein paar Bytes lesen
-		size_t count = fread( buf, 1, 256, fi );
+		size_t count = fi.Read(buf, 199);
 
 		// Wenn was gelesen wurde -> speichern
 		if ( count > 0 )
 		{
-			// Buffer abschließen
-			buf[count] = 0x00;
-
 			// Buffer hinzufügen
 			szContent += buf;
 		}
-	}
+    } while ( !fi.Eof() );
 
 	// Datei schließen (ENDE: Lesemodus)
-	fclose( fi );
+	fi.Close();
 
 	// Extrahierter String
 	std::string szExtract;
@@ -314,7 +326,7 @@ void CBerylliumProviderMerck::PreParseData()
 	szExtract += "<merck>";
 
 	// Nur die Tabelle mit den Suchergebnissen brauchen wir hier
-	// Geändert: 16.09.2010				
+	// Geändert: 16.09.2010
 	szExtract += ExtractFromString( szContent, "<table class=\"table01\" style=\"margin-bottom: 0pt\" summary=\"Suchergebnisse\"", "</table>" );
 	szExtract += ExtractFromString( szContent, "<table class=\"table01\" style=\"margin-bottom: 0pt\" summary=\"Search results\"", "</table>" );
 	szExtract += ExtractFromString( szContent, "<table class=\"table02\" summary=\"Product summary\"", "</table>" );
@@ -391,19 +403,33 @@ void CBerylliumProviderMerck::PreParseData()
 
 	// Datei zum Schreiben laden
 #ifdef _DEBUG
-	fi = fopen( "temp/mercksearch.temp", "w" );
+	wxFile fiW( "temp/mercksearch.temp", wxFile::write);
 #else
-	fi = fopen( "beryllium10.temp", "w" );	
+	wxFile fiW( "beryllium10.temp", wxFile::write);
 #endif
 
+    // Öffnen fehlgeschlagen?
+    if ( !fiW.IsOpened() )
+    {
+#ifdef _DEBUG
+        wxMessageBox( wxString::Format("Fehler beim Öffnen: %d", fi.GetLastError()), "Schreibvorgang, Merck");
+#endif
+
+        return;
+    }
+
 	// Inhalt reinschreiben
-	fwrite( data.c_str(), data.length(), 1, fi );
+	fiW.Write( data );
 
 	// Datei schließen (ENDE: Schreibmodus)
-	fclose( fi );
+	fiW.Close();
 }
 
 // Hilfsfunktion: Entfernt Größer/Kleiner Zeichen mit Leerzeichen
+// Anmerkung (26.01.2014): Funktioniert aus irgendwelchen Gründen nicht richtig
+// unter Linux... da die Funktion aber nicht mehr benötigt wird, wird sie nicht mehr
+// aufgerufen. Daten holen funktioniert trotzdem. Kann in zukünftigen Versionen möglicherweise
+// entfallen.
 void CBerylliumProviderMerck::RemoveEmptyBrackets( wxString &data )
 {
 	// Bool für "Innerhalb eines Strings?"
@@ -413,7 +439,7 @@ void CBerylliumProviderMerck::RemoveEmptyBrackets( wxString &data )
 	int iPos = -1;
 
 	// Alle Zeichen durchgehen
-	for ( unsigned int i = 0; i < data.length(); ++i )
+    for ( unsigned int i = 0; i < data.length(); ++i )
 	{
 		// String Anfang/Ende
 		if ( data[i] == '\"' )
@@ -451,7 +477,7 @@ void CBerylliumProviderMerck::RemoveEmptyBrackets( wxString &data )
 				iPos = i;
 			};
 
-		}		
+		}
 	}
 }
 
@@ -492,10 +518,10 @@ void CBerylliumProviderMerck::LoadDataFromUrl( wxString URL )
 		dataStream.Close();
 
 		// Daten vorparsen
-		PreParseData();		
+		PreParseData();
 
 		// Ergebnisse laden.
-		LoadSubstanceData();		
+		LoadSubstanceData();
 	}
 
 	// Stream löschen
@@ -505,7 +531,7 @@ void CBerylliumProviderMerck::LoadDataFromUrl( wxString URL )
 	m_http.Close();
 
 	//
-	return;	
+	return;
 }
 
 // Lädt die Daten der Substanz
@@ -536,7 +562,7 @@ void CBerylliumProviderMerck::LoadSubstanceData()
 	// Namen der Substanz löschen
 	tempdata.szNames.clear();
 
-	while (node) 
+	while (node)
 	{
 		// Nur Elemente sammeln
 		if ( node->GetType() != wxXML_ELEMENT_NODE )
@@ -552,7 +578,7 @@ void CBerylliumProviderMerck::LoadSubstanceData()
 		if ( (node->GetName().compare("table") == 0) && (node->GetAttribute("summary").length() > 0) )
 		{
 			// Dann laden wir diesen Block mal...
-			LoadSubstanceDataBlock( node );			
+			LoadSubstanceDataBlock( node );
 		}
 
 		// Nächster Ast
@@ -669,11 +695,11 @@ void CBerylliumProviderMerck::LoadSubstanceDataTupel( wxString key, wxString val
 		value.Replace( "\t", "", true );
 		value.Replace( "\n", "", true );
 
-		// String besteht jetzt aus Gefahrentexten... werden hier ersetzt (18.04.2010)		
+		// String besteht jetzt aus Gefahrentexten... werden hier ersetzt (18.04.2010)
 		value.Replace( "Dangerous for the environment", "N ");
-		value.Replace( "Highly flammable", "F+ ");	value.Replace( "Flammable", "F ");	
+		value.Replace( "Highly flammable", "F+ ");	value.Replace( "Flammable", "F ");
 		value.Replace( "Harmful",			"Xn ");	value.Replace( "Irritant",  "Xi ");
-		value.Replace( "Corrosive",		"C "); 
+		value.Replace( "Corrosive",		"C ");
 		value.Replace( "Explosive",		"E ");		value.Replace( "Oxidizing", "O ");
 		value.Replace( "Very toxic",		"T+ ");	value.Replace( "Toxic",	 "T ");
 
