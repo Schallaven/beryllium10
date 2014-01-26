@@ -3,5 +3,5 @@
   <savetolocaldatabase>true</savetolocaldatabase>
   <provider>merck,wiki</provider>
   <localdatabase>database\database.xml</localdatabase>
-  <language>89</language>
+  <language>58</language>
 </beryllium>
