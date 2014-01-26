@@ -58,6 +58,10 @@ bool CBerylliumProviderLocal::SearchForCompound( const wxString searchtext, bool
 	if ( libraryfile.length() == 0 )
 		return false;
 
+	// Ersetzen potentielle "\" durch "/", damit unter Linux (wo ein "\" durchaus ein legitimies Zeichen ist)
+	// nicht die falsche Datei geladen wird. Windows akzeptiert sowohl "\" als auch "/".
+	libraryfile.Replace( "\\", "/", true );
+
     // Existiert die Datei gar nicht? Dann auch raus hier!
     wxFileName libfile( libraryfile );
 
