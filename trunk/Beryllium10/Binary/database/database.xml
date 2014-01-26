@@ -1,21 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <library>
-  <substance>
-    <source.url>http://www.merckmillipore.com/united-kingdom/chemicals/acetylcholine-iodide/MDA_CHEM-841870/p_Ugyb.s1LBSgAAAEWlOEfVhTl;sid=E1ynZHHPHGesZCMqKoHKM9kPlN-1lBtoK3K5MsJiMSgZB_9BP7zEznfxBAcq2Vq2ky-3eHIW7mSOY_gGsdgSj96FMqi-IL0fIMYfRcnW_mpNfBJlFWK3eHIW?WFSimpleSearch_NameOrID=acetyl&amp;BackButtonText=search+results</source.url>
-    <source.fetched>26. January 2014 17:38</source.fetched>
-    <source.provider>Merck</source.provider>
-    <WGK>2</WGK>
-    <GHS-signalword>Warning</GHS-signalword>
-    <precautionary-statements>302+352-304+340-305+351+338</precautionary-statements>
-    <harzard-statements>315-319-335</harzard-statements>
-    <risk>36/37/38</risk>
-    <GHS-symbol>07</GHS-symbol>
-    <harzard>Xi</harzard>
-    <melting-point>162 - 165 °C</melting-point>
-    <chemical-formula>C7H16INO2</chemical-formula>
-    <density>1.00000</density>
-    <molecular-weight>273.11000</molecular-weight>
-    <CAS>2260-50-6</CAS>
-    <name>Acetylcholine iodide for synthesis </name>
-  </substance>
+  
 </library>
