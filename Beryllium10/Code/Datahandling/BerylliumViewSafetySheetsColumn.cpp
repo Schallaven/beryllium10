@@ -69,7 +69,7 @@ void IBerylliumViewSafetySheetsColumn::DrawPhrases( wxDC &dc, const wxString &ph
 	wxString szTemp = phrases;
 
 	// Zwei Zeilen "einfügen"
-	int breakat = szTemp.find("-", szTemp.length()/2);
+	size_t breakat = szTemp.find("-", szTemp.length()/2);
 
 	if ( breakat != szTemp.npos )
 		szTemp.insert( breakat + 1, "\n" );
@@ -203,7 +203,7 @@ int CBerylliumViewSafetySheetsColumnBoilingmelting::DrawContent( wxDC &dc, wxPoi
 int CBerylliumViewSafetySheetsColumnFlashpoint::DrawContent( wxDC &dc, wxPoint &pt, const CBerylliumSubstanceData &sdData )
 {
 	// Größe der Schrift holen
-	wxSize size = dc.GetTextExtent( sdData.szMeltingPoint );
+	// wxSize size = dc.GetTextExtent( sdData.szMeltingPoint );
 
 	// Flammpunkt zeichnen
 	if ( sdData.szFlashPoint.length() == 0 )

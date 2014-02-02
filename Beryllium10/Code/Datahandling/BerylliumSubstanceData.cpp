@@ -255,9 +255,6 @@ void CBerylliumSubstanceData::SetFormula( const wxString formula )
 	// Modus ( Zahlen oder Text? )
 	bool bNumeric = false;
 
-	// Modus ( Steuerzeichen? Bedeutet für Zahlen, dass sie "normal" geschrieben werden )
-	bool bControlChar = true;
-
 	// Temporäre Formeleinheit
 	SubstanceFormula temp;
 
@@ -268,7 +265,7 @@ void CBerylliumSubstanceData::SetFormula( const wxString formula )
 	for ( int i = 0; i < iLen; ++i )
 	{
 		// Zeichen holen
-		wxChar c = formula[i];
+		wxChar c = formula[i].GetValue();
 
 		// Ist das Zeichen eine Zahl?
 		if ( isdigit(c) )
@@ -348,7 +345,7 @@ void CBerylliumSubstanceData::SetFormula( const wxString formula )
 
 			// * wird durch · ersetzt
 			case '*':
-				c = '·';
+				c = wxT('·');
 
 			// Normales, darstellbares Zeichen
 			default:
@@ -735,7 +732,7 @@ double CBerylliumSubstanceData::GetBatchConcentration()
 
 	// Konzentration zurückgeben
 	return dbConcentration;
-};
+}
 
 // Speichert alle Namen unter den angegebenen Knoten
 void CBerylliumSubstanceData::SaveNamesToXmlNode( wxXmlNode *parent )
@@ -750,7 +747,7 @@ void CBerylliumSubstanceData::SaveNamesToXmlNode( wxXmlNode *parent )
 		wxXmlNode *xmlName = new wxXmlNode( NULL, wxXML_ELEMENT_NODE, "name" );
 
 		// Text hinzufügen
-		wxXmlNode *xmlNameText = new wxXmlNode( xmlName, wxXML_TEXT_NODE, "name", szNames[i] );
+		new wxXmlNode( xmlName, wxXML_TEXT_NODE, "name", szNames[i] );
 
 		// Einfügen
 		parent->InsertChildAfter( xmlName, lastnode );
@@ -934,6 +931,8 @@ void CBerylliumSubstanceData::SaveBatchToXmlNode( wxXmlNode *parent )
 			};
 			break;
 
+		case batchLAST:
+			break;
 
 	}
 }
@@ -1167,7 +1166,7 @@ inline wxXmlNode* CBerylliumSubstanceData::AppendToXmlNode( wxXmlNode *parent, w
 	wxXmlNode *xmlnode = new wxXmlNode( parent, wxXML_ELEMENT_NODE, node );
 
 	// Text hinzufügen
-	wxXmlNode *xmlnodetext = new wxXmlNode( xmlnode, wxXML_TEXT_NODE, node, content );
+	new wxXmlNode( xmlnode, wxXML_TEXT_NODE, node, content );
 
 	// Node zurückgeben
 	return xmlnode;
@@ -1179,8 +1178,8 @@ inline wxXmlNode* CBerylliumSubstanceData::AppendToXmlNode( wxXmlNode *parent, w
 void CBerylliumSubstanceData::CheckAndUpdateTemperature( wxString &data )
 {
 	// Suche nach Einheitensymbol
-	int iCelsius = data.find( "C" );
-	int iKelvin  = data.find( "K" );
+	size_t iCelsius = data.find( "C" );
+	size_t iKelvin  = data.find( "K" );
 
 	// Eins von beiden gefunden?
 	if ( (iCelsius != data.npos) || (iKelvin != data.npos) )
@@ -1215,7 +1214,7 @@ void CBerylliumSubstanceData::CalculateDangerPoints()
 	m_iDanger += 1 * CalculateDangerPointsStatements();
 	m_iDanger += 1 * CalculateDangerPointsGHSSymbols();
 	m_iDanger += 1 * CalculateDangerPointsToxicology();
-};
+}
 
 // Hilfsfunktion: "Beryllium-Punkte" für H/P-Sätze
 unsigned int CBerylliumSubstanceData::CalculateDangerPointsStatements()

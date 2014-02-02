@@ -65,9 +65,6 @@ public:
 	void ResetViewMenu();
 
 private:
-	// Easter-Eggs :)
-	bool	bEasterEggsEnabled;
-
 	// Menuzeile
 	wxMenuBar *m_MenuBar;
 
@@ -76,6 +73,9 @@ private:
 
 	// Enthält das Model
 	CBerylliumDocument m_Document;
+
+	// Easter-Eggs :)
+	bool	bEasterEggsEnabled;
 
 public:
 	// Ereignis: Fenstergröße wurde geändert...

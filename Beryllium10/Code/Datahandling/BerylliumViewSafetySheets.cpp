@@ -1278,9 +1278,9 @@ void CBerylliumViewSafetySheets::OnMouseClick(wxMouseEvent &event)
 void CBerylliumViewSafetySheets::OnMouseMove(wxMouseEvent &event)
 {
 	// Die alten Werte für die Auswahl speichern
-	int iOldSelection = m_iSelected;
-	int iOldSubSelection = m_iSubselected;
-	int iOldColumnSelection = m_iColumnSelected;
+	unsigned int iOldSelection = m_iSelected;
+	unsigned int iOldSubSelection = m_iSubselected;
+	unsigned int iOldColumnSelection = m_iColumnSelected;
 
 	// Auswahl zurücksetzen
 	m_iSelected = 0;
@@ -1947,7 +1947,7 @@ void CBerylliumViewSafetySheets::ShowSubstancePopupMenu( int imousex, int imouse
 void CBerylliumViewSafetySheets::DoPopupMenu( wxCommandEvent &event )
 {
 	// Anzahl der Substanzen
-	unsigned int iNumberOfSubstances = m_Document.GetData().sdCompounds.size();
+	// unsigned int iNumberOfSubstances = m_Document.GetData().sdCompounds.size();
 
 	// Index der Substanz (auf alle zwei Seiten passen 9 Substanzen )
 	unsigned int iIndex = m_iSubselected + (m_iPage / 2) * 9;
@@ -2013,7 +2013,7 @@ void CBerylliumViewSafetySheets::SubstanceAdd()
 		m_Document.AddSubstance(  m_dialogsearch.GetData() );		
 
 		// Auf welcher Seite befinden wir uns?
-		int iPage = m_Document.GetData().sdCompounds.size() / 9;
+		unsigned int iPage = m_Document.GetData().sdCompounds.size() / 9;
 
 		// "Neue" Seite? Dann entsprechend bei den Sätzen einfügen
 		for ( unsigned int i = 0; i < 8; i++ )
@@ -2257,7 +2257,7 @@ void CBerylliumViewSafetySheets::SubstanceImport()
 			m_Document.AddSubstance( lib.GetItem(iIndex) );
 
 			// Auf welcher Seite befinden wir uns?
-			int iPage = m_Document.GetData().sdCompounds.size() / 9;
+			unsigned int iPage = m_Document.GetData().sdCompounds.size() / 9;
 
 			// "Neue" Seite? Dann entsprechend bei den Sätzen einfügen
 			for ( unsigned int i = 0; i < 8; i++ )

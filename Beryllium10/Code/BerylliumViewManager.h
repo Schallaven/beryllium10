@@ -92,11 +92,11 @@ public:
 	wxPrintout *GetPrintOut();
 
 private:
-	// Referenz auf das Model
-	CBerylliumDocument &m_Document;
-
 	// Referenz auf das Hauptfenster
 	wxFrame &m_ParentWindow;
+
+	// Referenz auf das Model
+	CBerylliumDocument &m_Document;
 
 	// Die Ansichten speichern
 	std::vector< IView* > m_views;  

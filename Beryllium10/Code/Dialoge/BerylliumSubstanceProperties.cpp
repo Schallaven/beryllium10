@@ -732,6 +732,9 @@ wxPanel *CBerylliumSubstanceProperties::CreatePageBatch(wxWindow* parent)
 			m_textSolutionVolume->SetValue( wxString::Format( "%.3f", amount) );
 		};
 		break;
+
+	case CBerylliumSubstanceData::batchLAST:
+		break;
 	};
 
 	// Update der Seite

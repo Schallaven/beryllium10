@@ -383,7 +383,7 @@ void CBerylliumApplication::LoadTemplates()
 	};
 
 	// Kategorien
-	wxString categories[] = { "danger", "behaviour", "firstaid", "waste" };
+	// wxString categories[] = { "danger", "behaviour", "firstaid", "waste" };
 
 	// Datei laden
 	wxXmlDocument file;
@@ -462,7 +462,7 @@ void CBerylliumApplication::SaveConfig()
 		wxString value = it->second;
 
 		wxXmlNode *xmlconfigdata		= new wxXmlNode( xmlRoot, wxXML_ELEMENT_NODE, key );
-		wxXmlNode *xmlconfigdatatext	= new wxXmlNode( xmlconfigdata, wxXML_TEXT_NODE, key, value );				
+		new wxXmlNode( xmlconfigdata, wxXML_TEXT_NODE, key, value );				
 	}
 	
 	// Datei speichern (Einrückung von 2 Zeichen pro Zeile)

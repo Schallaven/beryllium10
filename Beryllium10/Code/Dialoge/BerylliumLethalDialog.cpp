@@ -178,4 +178,4 @@ void CBerylliumLethalDialog::SetLethalDose( CBerylliumSubstanceData::LethalDose5
 
 	// Einheit setzen
 	m_choiceUnit->SetSelection( (m_dose.sUnit.compare(L"mg/kg") == 0) ? 0 : 1 );
-};
+}

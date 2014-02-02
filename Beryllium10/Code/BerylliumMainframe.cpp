@@ -157,7 +157,7 @@ void CBerylliumMainframe::BeCreateMenuBar(void)
 	wxMenu *menuFile = NULL, *menuView = NULL, *menuTools = NULL, *menuHelp = NULL;
 
 	// Untermenüs
-	wxMenu *subMenuLanguages = NULL, *subMenuSorting = NULL;
+	wxMenu *subMenuSorting = NULL;
 
 	// Menuitem
 	wxMenuItem *item = NULL;
@@ -730,8 +730,15 @@ void CBerylliumMainframe::OnEventBugReport( wxCommandEvent &event )
 		http.SetHeader( "Content-type", "application/x-www-form-urlencoded; charset=utf-8" );
 		http.SetTimeout(20); // 20 Sekunden TimeOut
 
-		// Post-Daten vorbereiten
+		// Post-Daten vorbereiten 
+#if wxCHECK_VERSION(2, 9, 4)
+		// neuer Stil für wxWidgets 2.9.4 oder höher
+		http.SetPostText( "application/x-www-form-urlencoded; charset=utf-8",
+				wxString::Format("version=%s&feedback=%s", STRFILEVER, report.GetValue() ) );
+#else
+		// Altes Format
 		http.SetPostBuffer( wxString::Format("version=%s&feedback=%s", STRFILEVER, report.GetValue() ) );
+#endif
 
 		// Anfrage an keksecks vorbereiten
 		http.Connect( "www.keksecks.de" );
@@ -844,7 +851,7 @@ void CBerylliumMainframe::OnEventChangeView( wxCommandEvent &event )
 	// Alle Häkchen entfernen
 	for ( unsigned int i = beID_VIEW_FIRST; i < beID_VIEW_LAST; ++i )
 	{
-		if ( (GetMenuBar()->FindItem(i) != NULL) && (i != event.GetId()) )
+		if ( (GetMenuBar()->FindItem(i) != NULL) && (i != (unsigned) event.GetId()) )
 			GetMenuBar()->Check( i, false );
 	}
 
