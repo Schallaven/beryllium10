@@ -446,7 +446,7 @@ void CBerylliumApplication::SaveConfig()
 	
 	// Sprache
 	wxXmlNode *xmllanguage = new wxXmlNode( xmlRoot, wxXML_ELEMENT_NODE, "language" );
-	wxXmlNode *xmllanguagetext = new wxXmlNode( xmllanguage, wxXML_TEXT_NODE, "language", wxString::Format("%d",m_iLanguage) );
+	wxXmlNode *xmllanguagetext = new wxXmlNode( xmllanguage, wxXML_TEXT_NODE, "language", wxString::Format("%ld",m_iLanguage) );
 	
 	// Andere Einstellungen (Hash-Map)
 	configHashMapTyp::iterator it;
