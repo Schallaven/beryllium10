@@ -167,7 +167,7 @@ void CBerylliumInfoDialog::CreateInfoPage()
 	wxString text;
 
 	// 1. Beryllium, Version, wxWidgets, Version
-	text += wxString::Format( _(L"<a href=\"http://beryllium.keksecks.de/\">Beryllium¹º</a> %d.%d (Build %d) ist freie Software und steht unter <a href=\"http://www.gnu.org/licenses/gpl.html\">GNU&nbsp;GPL&nbsp;v3</a>.  Es wurde mit <a href=\"http://www.wxwidgets.org/\">wxWidget %d.%d.%d</a> kompiliert.<br><br>"), version.major, version.minor, version.build,  wxMAJOR_VERSION, wxMINOR_VERSION, wxRELEASE_NUMBER  );
+	text += wxString::Format( _(L"<a href=\"http://beryllium.keksecks.de/\">Beryllium¹º</a> %ld.%ld (Build %ld) ist freie Software und steht unter <a href=\"http://www.gnu.org/licenses/gpl.html\">GNU&nbsp;GPL&nbsp;v3</a>.  Es wurde mit <a href=\"http://www.wxwidgets.org/\">wxWidget %d.%d.%d</a> kompiliert.<br><br>"), version.major, version.minor, version.build,  wxMAJOR_VERSION, wxMINOR_VERSION, wxRELEASE_NUMBER  );
 
 	// 2. Autor(en)
 	text += _(L"Autor: Dr. Sven Kochmann<br><br>");
