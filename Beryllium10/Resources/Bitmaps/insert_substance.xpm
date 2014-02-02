@@ -1,5 +1,5 @@
 /* XPM */
-static char *insert_substance_xpm[] = {
+const static char *insert_substance_xpm[] = {
 /* width height num_colors chars_per_pixel */
 "    91    64      256            2",
 /* colors */

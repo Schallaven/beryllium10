@@ -1,5 +1,5 @@
 /* XPM */
-static char *icon_help_menu_xpm[] = {
+const static char *icon_help_menu_xpm[] = {
 /* width height num_colors chars_per_pixel */
 "    20    20      256            2",
 /* colors */

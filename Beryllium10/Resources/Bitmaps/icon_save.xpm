@@ -1,5 +1,5 @@
 /* XPM */
-static char *icon_save_xpm[] = {
+const static char *icon_save_xpm[] = {
 /* width height num_colors chars_per_pixel */
 "    16    16      256            2",
 /* colors */
