@@ -242,8 +242,12 @@ void CBerylliumApplication::InitLocale()
 			break;
 	};
 
-	// Setze die Sprache (falls verfügbar)
-	m_Locale.Init( m_iLanguage );
+	// Setzt die "Locale" (falls verfügbar)
+	// Die Sprache selbst wird dadurch gesetzt, dass weiter unten die entsprechende Katalogdatei gewählt wird
+	if( m_Locale.IsAvailable( m_iLanguage ) )
+		m_Locale.Init( m_iLanguage );
+	else
+		m_Locale.Init();
 
 	// Pfad hinzufügen
 	m_Locale.AddCatalogLookupPathPrefix(wxPathOnly(argv[0]) + "/config" );
