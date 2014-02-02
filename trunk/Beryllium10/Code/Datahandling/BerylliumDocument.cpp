@@ -244,35 +244,35 @@ int CBerylliumDocument::SaveToFile()
 	{
 		// Titel
 		wxXmlNode *xmlGeneralTitle = new wxXmlNode( xmlGeneral, wxXML_ELEMENT_NODE, "title" );
-		wxXmlNode *xmlGeneralTitleText = new wxXmlNode( xmlGeneralTitle, wxXML_TEXT_NODE, "title", m_data.szTitle );
+		new wxXmlNode( xmlGeneralTitle, wxXML_TEXT_NODE, "title", m_data.szTitle );
 
 		// GHS-Titel
 		wxXmlNode *xmlGeneralTitleGHS = new wxXmlNode( xmlGeneral, wxXML_ELEMENT_NODE, "title_ghs" );
-		wxXmlNode *xmlGeneralTitleGHSText = new wxXmlNode( xmlGeneralTitleGHS, wxXML_TEXT_NODE, "title_ghs", m_data.szGHSTitle );
+		new wxXmlNode( xmlGeneralTitleGHS, wxXML_TEXT_NODE, "title_ghs", m_data.szGHSTitle );
 
 		// Ort
 		wxXmlNode *xmlGeneralLocation = new wxXmlNode( xmlGeneral, wxXML_ELEMENT_NODE, "location" );
-		wxXmlNode *xmlGeneralLocationText = new wxXmlNode( xmlGeneralLocation, wxXML_TEXT_NODE, "location", m_data.szLocation );
+		new wxXmlNode( xmlGeneralLocation, wxXML_TEXT_NODE, "location", m_data.szLocation );
 
 		// Veranstaltung (ehemalig "Institut" oder szChemistry)
 		wxXmlNode *xmlGeneralInstitute = new wxXmlNode( xmlGeneral, wxXML_ELEMENT_NODE, "institute" );
-		wxXmlNode *xmlGeneralInstituteText = new wxXmlNode( xmlGeneralInstitute, wxXML_TEXT_NODE, "institute", m_data.szEvent );		
+		new wxXmlNode( xmlGeneralInstitute, wxXML_TEXT_NODE, "institute", m_data.szEvent );		
 
 		// Signaturdaten: Student-Statement
 		wxXmlNode *xmlStatementStudent		= new wxXmlNode( xmlGeneral, wxXML_ELEMENT_NODE, "statementleft" );
-		wxXmlNode *xmlStatementStudentText	= new wxXmlNode( xmlStatementStudent, wxXML_TEXT_NODE, "statementleft", m_data.szStatementStudent );
+		new wxXmlNode( xmlStatementStudent, wxXML_TEXT_NODE, "statementleft", m_data.szStatementStudent );
 
 		// Signaturdaten: Student-Signatur
 		wxXmlNode *xmlSignaturStudent		= new wxXmlNode( xmlGeneral, wxXML_ELEMENT_NODE, "signaturleft" );
-		wxXmlNode *xmlSignaturStudentText	= new wxXmlNode( xmlSignaturStudent, wxXML_TEXT_NODE, "signaturleft", m_data.szSignaturStudent );
+		new wxXmlNode( xmlSignaturStudent, wxXML_TEXT_NODE, "signaturleft", m_data.szSignaturStudent );
 
 		// Signaturdaten: Assistent-Statement
-		wxXmlNode *xmlStatementSupervisor		= new wxXmlNode( xmlGeneral, wxXML_ELEMENT_NODE, "statementright" );
-		wxXmlNode *xmlStatementSupervisorText	= new wxXmlNode( xmlStatementSupervisor, wxXML_TEXT_NODE, "statementright", m_data.szStatementSupervisor );
+		wxXmlNode *xmlStatementSupervisor	= new wxXmlNode( xmlGeneral, wxXML_ELEMENT_NODE, "statementright" );
+		new wxXmlNode( xmlStatementSupervisor, wxXML_TEXT_NODE, "statementright", m_data.szStatementSupervisor );
 
 		// Signaturdaten: Assistent-Signatur
-		wxXmlNode *xmlSignaturSupervisor		= new wxXmlNode( xmlGeneral, wxXML_ELEMENT_NODE, "signaturright" );
-		wxXmlNode *xmlSignaturSupervisorText	= new wxXmlNode( xmlSignaturSupervisor, wxXML_TEXT_NODE, "signaturright", m_data.szSignaturSupervisor );
+		wxXmlNode *xmlSignaturSupervisor	= new wxXmlNode( xmlGeneral, wxXML_ELEMENT_NODE, "signaturright" );
+		new wxXmlNode( xmlSignaturSupervisor, wxXML_TEXT_NODE, "signaturright", m_data.szSignaturSupervisor );
 	};	
 
 	// Elemente für die persönlichen Dinge erstellen ("personal")
@@ -283,15 +283,15 @@ int CBerylliumDocument::SaveToFile()
 	{
 		// Name des Praktikanten
 		wxXmlNode *xmlPersonalName = new wxXmlNode( xmlPersonal, wxXML_ELEMENT_NODE, "name" );
-		wxXmlNode *xmlPersonalNameText = new wxXmlNode( xmlPersonalName, wxXML_TEXT_NODE, "name", m_data.GetName() );
+		new wxXmlNode( xmlPersonalName, wxXML_TEXT_NODE, "name", m_data.GetName() );
 
 		// Platznummer ("spot") des Praktikanten
 		wxXmlNode *xmlPersonalSpot = new wxXmlNode( xmlPersonal, wxXML_ELEMENT_NODE, "spot" );
-		wxXmlNode *xmlPersonalSpotText = new wxXmlNode( xmlPersonalSpot, wxXML_TEXT_NODE, "spot", m_data.szPosition );
+		new wxXmlNode( xmlPersonalSpot, wxXML_TEXT_NODE, "spot", m_data.szPosition );
 
 		// Name des Assistenten
 		wxXmlNode *xmlPersonalSupervisor = new wxXmlNode( xmlPersonal, wxXML_ELEMENT_NODE, "assistant" );
-		wxXmlNode *xmlPersonalSupervisorText = new wxXmlNode( xmlPersonalSupervisor, wxXML_TEXT_NODE, "assistant", m_data.szSupervisor );
+		new wxXmlNode( xmlPersonalSupervisor, wxXML_TEXT_NODE, "assistant", m_data.szSupervisor );
 	};
 
 	// Elemente für das Präparat/Produkt/Tätigkeit erstellen ("product")
@@ -305,7 +305,7 @@ int CBerylliumDocument::SaveToFile()
 
 		// Formel hinzufügen
 		wxXmlNode *xmlProductFormula = new wxXmlNode( xmlProduct, wxXML_ELEMENT_NODE, "chemical-formula" );
-		wxXmlNode *xmlProductFormulaText = new wxXmlNode( xmlProductFormula, wxXML_TEXT_NODE, "chemical-formula", m_data.sdPreparation.GetFormula() );
+		new wxXmlNode( xmlProductFormula, wxXML_TEXT_NODE, "chemical-formula", m_data.sdPreparation.GetFormula() );
 	};
 
 	// Elemente für die allgemeinen Dinge erstellen ("general")
@@ -316,20 +316,20 @@ int CBerylliumDocument::SaveToFile()
 	{
 		// GHS-Modus
 		wxXmlNode *xmlGHS = new wxXmlNode( xmlOptions, wxXML_ELEMENT_NODE, "ghs-mode" );
-		wxXmlNode *xmlGHSText = new wxXmlNode( xmlGHS, wxXML_TEXT_NODE, "ghs-mode", ( bGHS ? "1" : "0" ) );
+		new wxXmlNode( xmlGHS, wxXML_TEXT_NODE, "ghs-mode", ( bGHS ? "1" : "0" ) );
 
 		// Spalten
 		for ( unsigned int i = 0; i < m_showcolumns.size(); ++i )
 		{
 			wxXmlNode *xmlColumn = new wxXmlNode( xmlOptions, wxXML_ELEMENT_NODE, "showcolumn" );
-			wxXmlNode *xmlColumnText = new wxXmlNode( xmlColumn, wxXML_TEXT_NODE, "showcolumn", m_showcolumns[i] );
+			new wxXmlNode( xmlColumn, wxXML_TEXT_NODE, "showcolumn", m_showcolumns[i] );
 		}
 
 		// Sätze verstecken
 		for ( unsigned int i = 0; i < m_hidephrases.size(); ++i )
 		{
 			wxXmlNode *xmlPhrase = new wxXmlNode( xmlOptions, wxXML_ELEMENT_NODE, "hidephrase" );
-			wxXmlNode *xmlPhraseText = new wxXmlNode( xmlPhrase, wxXML_TEXT_NODE, "hidephrase", m_hidephrases[i] );
+			new wxXmlNode( xmlPhrase, wxXML_TEXT_NODE, "hidephrase", m_hidephrases[i] );
 		}
 	}
 
@@ -373,7 +373,7 @@ int CBerylliumDocument::SaveToFile()
 			xmlTemplatesChild->AddAttribute( "category", categories[cat] );			
 
 			// Inhalt hinzufügen
-			wxXmlNode *xmlTemplatesChildText = new wxXmlNode( xmlTemplatesChild, wxXML_TEXT_NODE, "template", m_data.sCustomStatements[cat][i] );
+			new wxXmlNode( xmlTemplatesChild, wxXML_TEXT_NODE, "template", m_data.sCustomStatements[cat][i] );
 		}
 	}
 

@@ -145,7 +145,7 @@ void IProvider::GetAllTextFromNode( wxXmlNode *node, wxString &text )
 // Hilfsfunktion: Ersetzt alle Vorkommen von "findstr" mit "replacewith"
 void IProvider::ReplaceAll( wxString &text, wxString findstr, wxString replacewith )
 {
-	int pos = text.find(findstr);
+	size_t pos = text.find(findstr);
 
 	while( pos != wxString::npos)
 	{

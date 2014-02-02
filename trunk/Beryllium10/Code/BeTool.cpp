@@ -43,7 +43,7 @@ wxString BeTool::UnitPrefix( double &dbValue )
 		return "";
 
 	// mögliche Präfixe und die zugehörigen Exponenten
-	char	*prefixes[]	= { "p", "n", "µ", "m", "", "k", "M", "G", "T" };
+	const char	*prefixes[]	= { "p", "n", "µ", "m", "", "k", "M", "G", "T" };
 	double	exponents[] = { 1.0e-12,  1.0e-9, 1.0e-6, 1.0e-3, 1, 1.0e3, 1.0e6, 1.0e9, 1.0e12 };
 
 	// Alle Möglichkeiten durchgehen
@@ -63,7 +63,7 @@ wxString BeTool::UnitPrefix( double &dbValue )
 
 	// Kein Präfix verfügbar (sollte eigentlich nur bei sehr großen und bei sehr kleinen Zahlen passieren)
 	return "";
-};
+}
 
 // Wandelt einen String in eine Fließkommazahl um
 // -> ersetzt , durch .
@@ -84,7 +84,7 @@ double BeTool::StringToDouble( wxString s )
 
 	// Zurückgeben
 	return d;
-};
+}
 
 // Erzeugt aus einem String eine Liste und schiebt sie in einen Vektor
 void BeTool::StringToList( wxString sLine, wxString sSeparator, std::vector<wxString> &sList, bool bClear )

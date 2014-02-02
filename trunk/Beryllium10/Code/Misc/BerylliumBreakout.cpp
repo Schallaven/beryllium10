@@ -354,11 +354,13 @@ void CBerylliumBreakout::OnKeyDown( wxKeyEvent& event )
 // Zeichnet das aktuelle Feld
 void CBerylliumBreakout::DrawField( wxDC &dc )
 {
+	/*
 	wxString files[5] = {	"buttonblue.png",
 							"buttonred.png",
 							"buttonyellow.png",
 							"buttonviolett.png",
 							"buttongreen.png" };
+	*/							
 	// Farbe
 	int color = 0;
 

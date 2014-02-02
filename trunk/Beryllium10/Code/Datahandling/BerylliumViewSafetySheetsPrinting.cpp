@@ -33,7 +33,7 @@
 #include "stdafx.h"
 #include "BerylliumViewSafetySheetsPrinting.h"
 
-CBerylliumViewSafetySheetsPrinting::CBerylliumViewSafetySheetsPrinting( CBerylliumViewSafetySheets &view, CBerylliumDocument &document ) : m_view(view), m_document(document), wxPrintout( document.GetFilename() )
+CBerylliumViewSafetySheetsPrinting::CBerylliumViewSafetySheetsPrinting( CBerylliumViewSafetySheets &view, CBerylliumDocument &document ) : wxPrintout ( document.GetFilename() ), m_view(view), m_document(document)
 {
 }
 

@@ -223,4 +223,4 @@ void CBerylliumSafetySheetsGeneral::SetPage( int iPage )
 { 
 	if ( (iPage >= 0) && (iPage < 3) ) 
 		GetBookCtrl()->ChangeSelection( iPage ); 
-};
+}

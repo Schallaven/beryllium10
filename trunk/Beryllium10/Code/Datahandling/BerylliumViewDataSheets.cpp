@@ -227,7 +227,7 @@ void CBerylliumViewDataSheets::OnMouseClick(wxMouseEvent &event)
 void CBerylliumViewDataSheets::OnMouseMove(wxMouseEvent &event)
 {
 	// Alte Selektion
-	int iOldSelection = m_iSelected;
+	unsigned int iOldSelection = m_iSelected;
 
 	// Auswahl zurücksetzen
 	m_iSelected = 0;

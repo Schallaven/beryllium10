@@ -280,7 +280,7 @@ bool CBerylliumProviderWiki::ParseData()
 		wxString::size_type iSeparator = szBlock.find("|");
 
 		// Separator gefunden? -> Multiblock
-		if ( iSeparator != -1 )
+		if ( iSeparator != wxString::npos )
 		{
 			// Templatenamen holen
 			wxString szTemplate = szBlock.substr(0,iSeparator);
@@ -463,7 +463,7 @@ void CBerylliumProviderWiki::ParseInfoBoxSubstance( wxString szBlock )
 		if ( szParameter.compare("Schmelzpunkt") == 0 )
 		{
 			// Zersetzung?
-			if ( szValue.Find( "Zersetzung" ) != wxString::npos )
+			if ( szValue.Find( "Zersetzung" ) != wxNOT_FOUND )
 			{
 				// Zersetzung
 				tempdata.bDecomposition = true;
