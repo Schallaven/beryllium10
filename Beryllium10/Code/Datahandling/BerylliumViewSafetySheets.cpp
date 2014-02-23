@@ -1930,9 +1930,11 @@ void CBerylliumViewSafetySheets::ShowSubstancePopupMenu( int imousex, int imouse
 	menu->AppendSeparator();
 	menu->Append( new wxMenuItem( 0, beID_SUBSTANCE_EXPORT, _(L"Zu Bibliothek hinzufügen...") ) );
 
-	menu->AppendSeparator();
-	menu->Append( new wxMenuItem( 0, beID_SUBSTANCE_WIKI, _(L"Wikipedia-Artikel zu ") + substdata.GetShortestName() ) );
-	if ( substdata.szCAS.length() > 0 ) menu->Append( new wxMenuItem( 0, beID_SUBSTANCE_CAS, _(L"Sicherheitsdatenblätter zu CAS ") + substdata.szCAS ) );
+	// 23.02.2014: Entfernt, da beides nicht mehr aktuell und euSDB leider nur noch mit Anmeldung funktioniert...
+	//menu->AppendSeparator();
+	//menu->Append( new wxMenuItem( 0, beID_SUBSTANCE_WIKI, _(L"Wikipedia-Artikel zu ") + substdata.GetShortestName() ) );
+	//if ( substdata.szCAS.length() > 0 ) menu->Append( new wxMenuItem( 0, beID_SUBSTANCE_CAS, _(L"Sicherheitsdatenblätter zu CAS ") + substdata.szCAS ) );
+
 	menu->AppendSeparator();
 	menu->Append( new wxMenuItem( 0, beID_SUBSTANCE_PROPS, _(L"Eigenschaften") ) );
 
