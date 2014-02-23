@@ -46,6 +46,7 @@
 #define beID_ChoiceBox			6002
 #define beID_SearchCtrl			6003
 #define beID_Preferences		6004
+#define beID_SearchButton		6005
 
 // Menu-Items
 #define beID_Source_GESTIS		1001
@@ -100,6 +101,7 @@ private:
 
 	// Buttonleiste
 	wxButton* m_buttonpreferences;	// Button: Einstellungen (Filter, Hersteller, etc.)
+	wxButton* m_buttonsearch;		// Button: Suchen
 	wxButton* m_buttonContinue;		// Button: Weiter/Ok
 	wxButton* m_buttonCancel;		// Button: Abbrechen
 
