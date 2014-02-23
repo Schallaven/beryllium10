@@ -61,6 +61,10 @@ CBerylliumProviderWiki::~CBerylliumProviderWiki(void)
 // 1. Suchanfrage stellen
 bool CBerylliumProviderWiki::SearchForCompound( const wxString searchtext, bool bExactMatch = false )
 {
+	// Suchstring leer? Raus hier!
+	if ( searchtext.length() == 0 )
+		return false;
+
 	// Suchstring speichern
 	searchname = searchtext;
 
