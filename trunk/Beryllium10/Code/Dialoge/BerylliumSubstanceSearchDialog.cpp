@@ -59,6 +59,7 @@ BEGIN_EVENT_TABLE(CBerylliumSubstanceSearchDialog, wxDialog)
 	EVT_TEXT_ENTER( beID_SearchCtrl, CBerylliumSubstanceSearchDialog::OnSearch )
 	EVT_HTML_LINK_CLICKED( beID_ChoiceBox, CBerylliumSubstanceSearchDialog::OnLinkClick )
 	EVT_BUTTON( beID_Preferences, CBerylliumSubstanceSearchDialog::OnPreferences )
+	EVT_BUTTON( beID_SearchButton, CBerylliumSubstanceSearchDialog::OnSearch )
 
 	EVT_MENU_RANGE( beID_Source_GESTIS, beID_Source_LAST, CBerylliumSubstanceSearchDialog::OnSelectSource )
 	EVT_MENU_RANGE( beID_Prefs_EXACT, beID_Prefs_LAST, CBerylliumSubstanceSearchDialog::OnSearchPreferences )
@@ -303,9 +304,20 @@ void CBerylliumSubstanceSearchDialog::CreateLayout()
 	//wxBoxSizer* SizerContent = new wxBoxSizer( wxVERTICAL );
 	//SizerContent->SetMinSize( wxSize( 675, 280 ) );
 
+	// 2014.02.23: Suchknopf hinzugefügt, weil es verwirrend für neue Benutzer ist, wenn sie etwas in das Suchfeld eingeben
+	// und auf "Ok" klicken
+	wxBoxSizer* sizerSearch;
+	sizerSearch = new wxBoxSizer( wxHORIZONTAL );
+
 	// Suchfeld
 	wxSearchField = new wxSearchCtrl( this, beID_SearchCtrl, "", wxDefaultPosition, wxDefaultSize, wxTE_PROCESS_ENTER);
-	SizerMain->Add( wxSearchField, 0, wxEXPAND | wxALL, 10 );
+	sizerSearch->Add( wxSearchField, 1, wxEXPAND | wxALL, 10 );
+
+	// Suchknopf
+	m_buttonsearch = new wxButton( this, beID_SearchButton, _(L"&Suchen"), wxDefaultPosition, wxDefaultSize, 0 );
+	sizerSearch->Add( m_buttonsearch, 0, wxTOP|wxRIGHT|wxBOTTOM | wxALIGN_LEFT, 10 );
+
+	SizerMain->Add( sizerSearch, 0, wxEXPAND | wxALL, 0 );
 
 	// SimpleHTML-Liste
 	wxBeChoiceList = new wxSimpleHtmlListBox( this, beID_ChoiceBox, wxDefaultPosition, wxSize( 590, 260 ) );
@@ -359,8 +371,8 @@ void CBerylliumSubstanceSearchDialog::OnSearch( wxCommandEvent &event )
 	// Liste leeren
 	EmptyList();
 
-	// Suchstring steht in event.GetString()
-	wxString searchfor = event.GetString();
+	// Suchstring vom Suchfeld holen
+	wxString searchfor = wxSearchField->GetValue();
 
 	// ProgressDialog erstellen
 	wxProgressDialog *dlg = new wxProgressDialog( _(L"Substanzdaten suchen"), _(L"Suche nach Substanzdaten..."), 100, this, wxPD_APP_MODAL | wxPD_SMOOTH | wxPD_AUTO_HIDE );
