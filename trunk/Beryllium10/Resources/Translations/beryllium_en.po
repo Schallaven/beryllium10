@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Beryllium10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-25 12:15+0100\n"
-"PO-Revision-Date: 2014-02-02 17:20+0100\n"
+"POT-Creation-Date: 2014-02-23 20:52+0100\n"
+"PO-Revision-Date: 2014-02-23 20:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: Sven Kochmann\n"
 "Language: en\n"
@@ -5943,9 +5943,9 @@ msgstr ""
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/BerylliumMainframe.cpp:676
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/BerylliumMainframe.cpp:682
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/BerylliumMainframe.cpp:694
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/BerylliumMainframe.cpp:763
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/BerylliumMainframe.cpp:770
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumInfoDialog.cpp:64
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:349
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:365
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Misc/BerylliumBreakout.cpp:233
 msgid "Beryllium¹º"
 msgstr ""
@@ -6216,7 +6216,7 @@ msgstr ""
 "All files|*.*"
 
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/BerylliumMainframe.cpp:466
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/BerylliumMainframe.cpp:808
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/BerylliumMainframe.cpp:815
 msgid "Fehler beim Laden der Datei"
 msgstr "Error while loading the file"
 
@@ -6249,11 +6249,11 @@ msgstr "Comments? Improvements? Error reports? Just send them!"
 msgid "Feedback senden"
 msgstr "Send feedback"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/BerylliumMainframe.cpp:763
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/BerylliumMainframe.cpp:770
 msgid "Ihr Feedback wurde erfolgreich versendet! Vielen Dank!"
 msgstr "Your feedback was sent! Thank you!"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/BerylliumMainframe.cpp:920
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/BerylliumMainframe.cpp:927
 msgid ""
 "Be¹º-Punkte werden anhand der verfügbaren Gefahrstoffdaten einer Substanz "
 "berechnet. Sie sollen eine relative - keine absolute - Einschätzung der "
@@ -6271,7 +6271,7 @@ msgstr ""
 "are over- or underestimated. The (qualified) chemical user always bears the "
 "responsibility!"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/BerylliumMainframe.cpp:921
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/BerylliumMainframe.cpp:928
 msgid "Hinweis zu Be¹º-Punkten"
 msgstr "Info about Be¹º points"
 
@@ -6322,7 +6322,7 @@ msgstr "Unnamed"
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumSubstanceData.cpp:131
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumSubstanceData.cpp:158
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumSubstanceData.cpp:199
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:399
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:403
 msgid "Leere Substanzdaten"
 msgstr "Empty data"
 
@@ -6573,25 +6573,25 @@ msgid ""
 msgstr "Behavior in case of danger and first aid:"
 
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:1552
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:759
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:1072
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:762
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:1075
 msgid "Gefahren für Mensch und Umwelt"
 msgstr "Danger for humans and environment"
 
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:1553
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:1073
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:1076
 msgid "Schutzmaßnahmen und Verhaltensregeln"
 msgstr "Protective measures and safety rules"
 
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:1554
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:789
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:1074
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:792
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:1077
 msgid "Verhalten im Gefahrenfall"
 msgstr "Behavior in case of danger:"
 
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:1555
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:804
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:1075
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:807
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:1078
 msgid "Entsorgung"
 msgstr "Waste disposal"
 
@@ -6657,60 +6657,52 @@ msgstr "Delete"
 msgid "Zu Bibliothek hinzufügen..."
 msgstr "Add to library..."
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:1934
-msgid "Wikipedia-Artikel zu "
-msgstr "Open Wikipedia article for"
-
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:1935
-msgid "Sicherheitsdatenblätter zu CAS "
-msgstr "Find safety data sheets for CAS"
-
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:1937
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:1939
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:107
 msgid "Eigenschaften"
 msgstr "Properties"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2039
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2041
 #, c-format
 msgid "Möchten Sie %s wirklich entfernen?"
 msgstr "Do you want to remove %s?"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2039
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2041
 msgid "Sicherheitsabfrage"
 msgstr "Confirmation prompt"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2096
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2098
 #, c-format
 msgid "http://de.wikipedia.org/wiki/%s"
 msgstr ""
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2110
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2112
 #, c-format
 msgid "http://www.eusdb.de/script/c/sdbsuche.php?cas=%s#eusdbsearch"
 msgstr ""
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2205
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2207
 msgid "Importieren von..."
 msgstr "Import from..."
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2205
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2207
 msgid "*.xml"
 msgstr ""
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2205
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2287
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2207
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2289
 msgid "Bibliothek (*.xml)|*.xml|Alle Dateien|*.*"
 msgstr "Library (*.xml)|*.xml|All files|*.*"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2238
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2240
 msgid "Bitte eine Substanz zum importieren wählen und auf 'Ok' klicken."
 msgstr "Please select a compound to import and click on 'Ok'."
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2238
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2240
 msgid "Substanz importieren"
 msgstr "Import compound"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2287
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumViewSafetySheets.cpp:2289
 msgid "Exportieren nach..."
 msgstr "Export to..."
 
@@ -6730,13 +6722,13 @@ msgstr "Close"
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumInfoDialog.cpp:170
 #, c-format
 msgid ""
-"<a href=\"http://beryllium.keksecks.de/\">Beryllium¹º</a> %d.%d (Build %d) "
-"ist freie Software und steht unter <a href=\"http://www.gnu.org/licenses/gpl."
-"html\">GNU&nbsp;GPL&nbsp;v3</a>.  Es wurde mit <a href=\"http://www."
-"wxwidgets.org/\">wxWidget %d.%d.%d</a> kompiliert.<br><br>"
+"<a href=\"http://beryllium.keksecks.de/\">Beryllium¹º</a> %ld.%ld (Build "
+"%ld) ist freie Software und steht unter <a href=\"http://www.gnu.org/"
+"licenses/gpl.html\">GNU&nbsp;GPL&nbsp;v3</a>.  Es wurde mit <a href=\"http://"
+"www.wxwidgets.org/\">wxWidget %d.%d.%d</a> kompiliert.<br><br>"
 msgstr ""
-"<a href=\"http://beryllium.keksecks.de/\">Beryllium¹º</a> \" %d.%d (Build "
-"%d) is free software and distributed under <a href=\"http://www.gnu.org/"
+"<a href=\"http://beryllium.keksecks.de/\">Beryllium¹º</a> \" %ld.%ld (Build "
+"%ld) is free software and distributed under <a href=\"http://www.gnu.org/"
 "licenses/gpl.html\">GNU&nbsp;GPL&nbsp;v3</a>. It was compiled with <a href="
 "\"http://www.wxwidgets.org/\">wxWidget %d.%d.%d</a>.<br><br>"
 
@@ -6788,13 +6780,13 @@ msgstr ""
 
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumLethalDialog.cpp:136
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumMultiplierDialog.cpp:139
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:326
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:342
 msgid "&Ok"
 msgstr "&Ok"
 
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumLethalDialog.cpp:139
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumMultiplierDialog.cpp:142
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:330
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:346
 msgid "&Abbrechen"
 msgstr "&Cancel"
 
@@ -6983,7 +6975,7 @@ msgid "Hinweise"
 msgstr "Hints"
 
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:116
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:467
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:483
 msgid "Quelle"
 msgstr "Source"
 
@@ -7036,7 +7028,7 @@ msgid "WGK 3: Schwere Wassergefährdung"
 msgstr "WGK 3: Substantially hazardous to water"
 
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:469
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:986
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:989
 msgid "MAK in mg/m³:"
 msgstr "TLV (mg/m³):"
 
@@ -7085,39 +7077,39 @@ msgid "Volumen der Lösung:"
 msgstr "Volume:"
 
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:600
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:1114
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:1117
 #, c-format
 msgid "Die Eingabe entspricht einer Stoffmenge von %smol."
 msgstr "The amount of this batch is %smol."
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:762
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:765
 msgid "z.B. Radioaktivität"
 msgstr "e.g. radioactivity"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:766
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:781
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:796
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:811
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:769
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:784
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:799
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:814
 msgid "Bearbeiten"
 msgstr "Edit"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:774
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:777
 msgid "Schutzmaßnahmen"
 msgstr "Protective measures:"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:777
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:780
 msgid "z.B. Verhalten beim Pipettieren"
 msgstr "e.g. behavior while pipetting"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:792
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:795
 msgid "z.B. Versiegelung der Räume"
 msgstr "e.g. sealing of rooms"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:807
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:810
 msgid "z.B. Reduzierungen"
 msgstr "e.g. reductions"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:836
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:839
 msgid ""
 "Die Daten dieser Substanz wurden aus folgender Quelle geladen und zum "
 "angegeben Zeitpunkt durch den Benutzer verändert:"
@@ -7125,52 +7117,56 @@ msgstr ""
 "The safety data of this compound was loaded from the following source and "
 "edited by the user:"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:850
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:853
 msgid "Quelle:"
 msgstr "Source:"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:859
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:862
 msgid "Aufgerufen:"
 msgstr "Loaded:"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:872
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:875
 msgid "Geändert:"
 msgstr "Edited:"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:980
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:983
 msgid "MAK in mL/m³:"
 msgstr "TLV (mL/m³):"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:1240
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:1243
 msgid "< Neuen Eintrag hinzufügen >"
 msgstr "< Add new entry >"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:72
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:73
 msgid "Substanz hinzufügen"
 msgstr "Add compound"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:177
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:182
 msgid "Substanzdaten holen"
 msgstr "Loading safety data"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:177
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:182
 #, c-format
 msgid "Hole Daten für '%s' von %s..."
 msgstr "Loading data for '%s' from '%s'..."
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:273
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:278
 msgid "Welche Substanz möchten Sie hinzufügen?"
 msgstr "Which compound do you want to add?"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:279
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:284
 msgid "Bitte geben Sie den Namen, die CAS-Nummer oder die Summenformel an."
 msgstr "Please provide the name, CAS or the sum formula of the compound."
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:321
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:317
+msgid "&Suchen"
+msgstr "&Search"
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:337
 msgid "&Optionen"
 msgstr "&Options"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:349
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:365
 msgid ""
 "Es wurden keine Quellen zur Substanzsuche ausgewählt. Bitte klicken Sie auf "
 "\"Optionen\" und wählen mindestens eine Quelle aus um fortzufahren."
@@ -7178,61 +7174,61 @@ msgstr ""
 "No source was chosen to load data from. Please click on \"Options\" and "
 "choose at least one source to continue."
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:362
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:378
 msgid "Substanzdaten suchen"
 msgstr "Looking for safety data"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:362
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:378
 msgid "Suche nach Substanzdaten..."
 msgstr "Looking for safety data..."
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:397
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:413
 #, c-format
 msgid "Hole Daten von %s..."
 msgstr "Loading data from '%s'..."
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:444
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:460
 msgid "Leere Substanzdaten einfügen"
 msgstr "Insert empty data set"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:517
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:533
 msgid "GESTIS Stoffdatenbank"
 msgstr "GESTIS compound database"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:518
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:534
 msgid "Merck KGaA"
 msgstr "Merck KGaA"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:523
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:539
 msgid "Wikipedia (de)"
 msgstr "Wikipedia (de)"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:524
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:540
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderLocal.h:54
 msgid "Lokale Datenbank"
 msgstr "Local database"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:530
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:546
 msgid "&Quellen"
 msgstr "&Sources"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:535
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:551
 msgid "Exakte Suche"
 msgstr "Exact match"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:536
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:552
 msgid "Substanzen in lokale Datenbank übernehmen"
 msgstr "Add compounds to local database"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:538
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:554
 msgid "Lokale Datenbank wählen..."
 msgstr "Select local library..."
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:546
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:562
 msgid "&Suchoptionen"
 msgstr "&Search options"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:569
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:585
 msgid ""
 "Der Datenbestand der GESTIS-Stoffdatenbank darf zum Zwecke des "
 "Arbeitsschutzes bzw. zur Informationsgewinnung über die von chemischen "
@@ -7254,15 +7250,15 @@ msgstr ""
 "With using the GESTIS compound database in your search, you accept this user "
 "agreement."
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:569
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:585
 msgid "Hinweis zur Nutzung der GESTIS-Stoffdatenbank"
 msgstr "Using the GESTIS compound library"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:656
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:672
 msgid "Datenbank wählen..."
 msgstr "Select database..."
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:656
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:672
 msgid "Datenbank (*.xml)|*.xml|Alle Dateien|*.*"
 msgstr "Database (*.xml)|*.xml|All files|*.*"
 
@@ -7301,6 +7297,12 @@ msgstr "Statement and signature (left side):"
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumViewSafetySheetsProperties.cpp:139
 msgid "Stellungnahme und Signatur (rechts):"
 msgstr "Statement and signature (right side):"
+
+#~ msgid "Wikipedia-Artikel zu "
+#~ msgstr "Open Wikipedia article for"
+
+#~ msgid "Sicherheitsdatenblätter zu CAS "
+#~ msgstr "Find safety data sheets for CAS"
 
 #~ msgid "S&ubstanzdatenblätter"
 #~ msgstr "&Single data sheet"
