@@ -63,6 +63,10 @@ bool CBerylliumProviderMerck::SearchForCompound( const wxString searchtext, bool
 	// Daten erfolgreich gefunden (und geladen)
 	bool bGotData = false;
 
+	// Leerzeichen im String ersetzen
+	wxString newsearchtext = searchtext;
+	newsearchtext.Replace( " ", "%20", true);
+
 	// HTTP-Anfrage vorbereiten
 	m_http.SetHeader( "Content-type", "text/html; charset=utf-8" );
 	m_http.SetTimeout(60); // 60 Sekunden TimeOut
@@ -102,7 +106,7 @@ bool CBerylliumProviderMerck::SearchForCompound( const wxString searchtext, bool
 	}
 
 	// InputStream erzeugen
-	wxInputStream *httpStream = m_http.GetInputStream( wxString::Format( merckaddress, searchtext ));
+	wxInputStream *httpStream = m_http.GetInputStream( wxString::Format( merckaddress, newsearchtext ));
 
 	// Stream ok?
 	if (m_http.GetError() == wxPROTO_NOERR)
