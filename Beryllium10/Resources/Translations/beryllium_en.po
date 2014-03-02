@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Beryllium10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-23 20:52+0100\n"
-"PO-Revision-Date: 2014-02-23 20:55+0100\n"
+"POT-Creation-Date: 2014-03-02 18:46+0100\n"
+"PO-Revision-Date: 2014-03-02 19:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: Sven Kochmann\n"
 "Language: en\n"
@@ -5945,7 +5945,7 @@ msgstr ""
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/BerylliumMainframe.cpp:694
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/BerylliumMainframe.cpp:770
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumInfoDialog.cpp:64
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:365
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:389
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Misc/BerylliumBreakout.cpp:233
 msgid "Beryllium¹º"
 msgstr ""
@@ -6253,7 +6253,7 @@ msgstr "Send feedback"
 msgid "Ihr Feedback wurde erfolgreich versendet! Vielen Dank!"
 msgstr "Your feedback was sent! Thank you!"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/BerylliumMainframe.cpp:927
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/BerylliumMainframe.cpp:940
 msgid ""
 "Be¹º-Punkte werden anhand der verfügbaren Gefahrstoffdaten einer Substanz "
 "berechnet. Sie sollen eine relative - keine absolute - Einschätzung der "
@@ -6271,7 +6271,7 @@ msgstr ""
 "are over- or underestimated. The (qualified) chemical user always bears the "
 "responsibility!"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/BerylliumMainframe.cpp:928
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/BerylliumMainframe.cpp:941
 msgid "Hinweis zu Be¹º-Punkten"
 msgstr "Info about Be¹º points"
 
@@ -6322,7 +6322,9 @@ msgstr "Unnamed"
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumSubstanceData.cpp:131
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumSubstanceData.cpp:158
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Datahandling/BerylliumSubstanceData.cpp:199
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:403
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:502
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1667
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1697
 msgid "Leere Substanzdaten"
 msgstr "Empty data"
 
@@ -6780,13 +6782,13 @@ msgstr ""
 
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumLethalDialog.cpp:136
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumMultiplierDialog.cpp:139
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:342
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:366
 msgid "&Ok"
 msgstr "&Ok"
 
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumLethalDialog.cpp:139
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumMultiplierDialog.cpp:142
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:346
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:370
 msgid "&Abbrechen"
 msgstr "&Cancel"
 
@@ -6814,25 +6816,47 @@ msgstr "Options"
 msgid "Sprache"
 msgstr "Language"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumOptionsDialog.cpp:82
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumOptionsDialog.cpp:64
+msgid "Proxy"
+msgstr ""
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumOptionsDialog.cpp:83
 msgid "Benutzersprache von Beryllium:"
 msgstr "User language:"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumOptionsDialog.cpp:90
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumOptionsDialog.cpp:91
 msgid "Deutsch"
 msgstr "German"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumOptionsDialog.cpp:91
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumOptionsDialog.cpp:92
 msgid "Englisch"
 msgstr "English"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumOptionsDialog.cpp:96
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumOptionsDialog.cpp:97
 msgid ""
 "Die Sprache wird erst nach einem Neustart von Beryllium geändert.\n"
 "You have to restart Beryllium to switch to the selected language."
 msgstr ""
 "Die Sprache wird erst nach einem Neustart von Beryllium geändert.\n"
 "You have to restart Beryllium to switch to the selected language."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumOptionsDialog.cpp:118
+msgid ""
+"Sie können hier einen Proxy-Server eintragen, über den die HTTP-Anfragen für "
+"die Substanzsuche geleitet werden. Lassen Sie die Eingabefelder frei, um "
+"keinen Proxy-Server zu benutzen."
+msgstr ""
+"Here, you can enter the address or IP of a proxy server, which is used for "
+"searching and downloading data. Leave the fields blank if you do not want to "
+"use a proxy server."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumOptionsDialog.cpp:123
+msgid "Server:"
+msgstr ""
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumOptionsDialog.cpp:137
+msgid "Port:"
+msgstr ""
 
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumPhraseSelector.cpp:55
 msgid "Sätze verstecken"
@@ -6975,7 +6999,7 @@ msgid "Hinweise"
 msgstr "Hints"
 
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceProperties.cpp:116
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:483
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:519
 msgid "Quelle"
 msgstr "Source"
 
@@ -7141,32 +7165,41 @@ msgstr "< Add new entry >"
 msgid "Substanz hinzufügen"
 msgstr "Add compound"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:182
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:198
 msgid "Substanzdaten holen"
 msgstr "Loading safety data"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:182
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:198
 #, c-format
 msgid "Hole Daten für '%s' von %s..."
 msgstr "Loading data for '%s' from '%s'..."
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:278
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:239
+#, c-format
+msgid ""
+"Mit einem Klick auf 'Details' sehen Sie das Protokoll für den Download der "
+"Daten für '%s' von '%s'."
+msgstr ""
+"Click on 'Details' to view the log for downloading the data for '%s' from "
+"'%s'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:302
 msgid "Welche Substanz möchten Sie hinzufügen?"
 msgstr "Which compound do you want to add?"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:284
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:308
 msgid "Bitte geben Sie den Namen, die CAS-Nummer oder die Summenformel an."
 msgstr "Please provide the name, CAS or the sum formula of the compound."
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:317
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:341
 msgid "&Suchen"
 msgstr "&Search"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:337
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:361
 msgid "&Optionen"
 msgstr "&Options"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:365
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:389
 msgid ""
 "Es wurden keine Quellen zur Substanzsuche ausgewählt. Bitte klicken Sie auf "
 "\"Optionen\" und wählen mindestens eine Quelle aus um fortzufahren."
@@ -7174,61 +7207,77 @@ msgstr ""
 "No source was chosen to load data from. Please click on \"Options\" and "
 "choose at least one source to continue."
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:378
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:402
 msgid "Substanzdaten suchen"
 msgstr "Looking for safety data"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:378
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:402
 msgid "Suche nach Substanzdaten..."
 msgstr "Looking for safety data..."
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:413
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:437
 #, c-format
 msgid "Hole Daten von %s..."
 msgstr "Loading data from '%s'..."
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:460
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:455
+#, c-format
+msgid "%s lieferte keine Suchergebnisse für '%s'."
+msgstr "%s did not return any data for '%s'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:478
+#, c-format
+msgid ""
+"Mit einem Klick auf 'Details' sehen Sie das Protokoll für Ihre Suchanfrage "
+"zu '%s'."
+msgstr "Click on 'Details' to view the log for your search request on '%s'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:496
 msgid "Leere Substanzdaten einfügen"
 msgstr "Insert empty data set"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:533
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:569
 msgid "GESTIS Stoffdatenbank"
 msgstr "GESTIS compound database"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:534
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:570
 msgid "Merck KGaA"
 msgstr "Merck KGaA"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:539
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:575
 msgid "Wikipedia (de)"
 msgstr "Wikipedia (de)"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:540
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:576
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderLocal.h:54
 msgid "Lokale Datenbank"
 msgstr "Local database"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:546
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:582
 msgid "&Quellen"
 msgstr "&Sources"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:551
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:587
 msgid "Exakte Suche"
 msgstr "Exact match"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:552
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:588
 msgid "Substanzen in lokale Datenbank übernehmen"
 msgstr "Add compounds to local database"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:554
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:589
+msgid "Protokoll anzeigen"
+msgstr "Show log"
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:591
 msgid "Lokale Datenbank wählen..."
 msgstr "Select local library..."
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:562
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:603
 msgid "&Suchoptionen"
 msgstr "&Search options"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:585
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:626
 msgid ""
 "Der Datenbestand der GESTIS-Stoffdatenbank darf zum Zwecke des "
 "Arbeitsschutzes bzw. zur Informationsgewinnung über die von chemischen "
@@ -7250,15 +7299,15 @@ msgstr ""
 "With using the GESTIS compound database in your search, you accept this user "
 "agreement."
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:585
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:626
 msgid "Hinweis zur Nutzung der GESTIS-Stoffdatenbank"
 msgstr "Using the GESTIS compound library"
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:672
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:719
 msgid "Datenbank wählen..."
 msgstr "Select database..."
 
-#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:672
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumSubstanceSearchDialog.cpp:719
 msgid "Datenbank (*.xml)|*.xml|Alle Dateien|*.*"
 msgstr "Database (*.xml)|*.xml|All files|*.*"
 
@@ -7297,6 +7346,788 @@ msgstr "Statement and signature (left side):"
 #: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Dialoge/BerylliumViewSafetySheetsProperties.cpp:139
 msgid "Stellungnahme und Signatur (rechts):"
 msgstr "Statement and signature (right side):"
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:63
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:331
+#, c-format
+msgid "ProviderGESTIS, %d: HTTP-Anfrage wird vorbereitet."
+msgstr "ProviderGESTIS, %d: Preparing HTTP-request."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:120
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:356
+#, c-format
+msgid "ProviderGESTIS, %d: Verbinden über Proxy %s:%d."
+msgstr "ProviderGESTIS, %d: Connecting with proxy %s:%d."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:130
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:370
+#, c-format
+msgid "ProviderGESTIS, %d: Verbinden ohne Proxy."
+msgstr "ProviderGESTIS, %d: Connecting without proxy."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:145
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:385
+#, c-format
+msgid "ProviderGESTIS, %d: Temporäre Datei 'temp/gestis.temp' anlegen."
+msgstr "ProviderGESTIS, %d: Creating temporary file 'temp/gestis.temp'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:148
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:388
+#, c-format
+msgid "ProviderGESTIS, %d: Temporäre Datei 'beryllium10.temp' anlegen."
+msgstr "ProviderGESTIS, %d: Creating temporary file 'beryllium10.temp'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:158
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:398
+#, c-format
+msgid "ProviderGESTIS, %d: Suchergebnisse laden."
+msgstr "ProviderGESTIS, %d: Loading data."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:166
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:406
+#, c-format
+msgid "ProviderGESTIS, %d: Fehler %d beim Verbinden."
+msgstr "ProviderGESTIS, %d: Error on connecting. Error code: %d"
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:196
+#, c-format
+msgid "ProviderGESTIS, %d: Daten für '%s' werden geladen."
+msgstr "ProviderGESTIS, %d: Loading data for '%s'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:230
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:236
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:429
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:435
+#, c-format
+msgid ""
+"ProviderGESTIS, %d: Temporäre Datei konnte nicht als XML-Datei geöffnet "
+"werden."
+msgstr "ProviderGESTIS, %d: Couldn't parse temporary file as XML."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:244
+#, c-format
+msgid ""
+"ProviderGESTIS, %d: XML-Wurzel 'list-section' konnte nicht gefunden werden."
+msgstr "ProviderGESTIS, %d: Couldn't find XML-root 'list-section'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:249
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:448
+#, c-format
+msgid "ProviderGESTIS, %d: Daten werden eingelesen."
+msgstr "ProviderGESTIS, %d: Loading data."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:261
+#, c-format
+msgid "ProviderGESTIS, %d: Suchergebniss gefunden."
+msgstr "ProviderGESTIS, %d: Found data."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:318
+#, c-format
+msgid "ProviderGESTIS, %d: Substanz '%s' hinzugefügt."
+msgstr "ProviderGESTIS, %d: Added '%s'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:443
+#, c-format
+msgid ""
+"ProviderGESTIS, %d: XML-Wurzel 'stoffreport' konnte nicht gefunden werden."
+msgstr "ProviderGESTIS, %d: Couldn't find XML-root 'stoffreport'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:463
+#, c-format
+msgid "ProviderGESTIS, %d: Lade Kopfdaten..."
+msgstr "ProviderGESTIS, %d: Loading head data..."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:470
+#, c-format
+msgid "ProviderGESTIS, %d: Lade Substanzdaten..."
+msgstr "ProviderGESTIS, %d: Loading main data..."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:504
+#, c-format
+msgid "ProviderGESTIS, %d: Name: %s"
+msgstr ""
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:542
+#, c-format
+msgid "ProviderGESTIS, %d: Alias: %s"
+msgstr ""
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:572
+#, c-format
+msgid "ProviderGESTIS, %d: Neue Überschrift '%s' gefunden."
+msgstr "ProviderGESTIS, %d: Found new section '%s'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:581
+#, c-format
+msgid "ProviderGESTIS, %d: CAS-Nummer %s gefunden."
+msgstr "ProviderGESTIS, %d: Found CAS-No. %s."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:590
+#, c-format
+msgid "ProviderGESTIS, %d: Summenformel %s gefunden."
+msgstr "ProviderGESTIS, %d: Found sum formula %s."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:610
+#, c-format
+msgid "ProviderGESTIS, %d: GHS-Piktogramm %s gefunden."
+msgstr "ProviderGESTIS, %d: Found GHS-symbol %s."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:645
+#, c-format
+msgid "ProviderGESTIS, %d: 'R-Sätze' gefunden."
+msgstr "ProviderGESTIS, %d: Found R-phrases."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:653
+#, c-format
+msgid "ProviderGESTIS, %d: -> Gefahrensymbole (alt) gefunden."
+msgstr "ProviderGESTIS, %d: Found hazard symbols (old system)."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:702
+#, c-format
+msgid "ProviderGESTIS, %d: MAK-Wert %s gefunden."
+msgstr "ProviderGESTIS, %d: Found TLV %s."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:732
+#, c-format
+msgid "ProviderGESTIS, %d: WGK %d gefunden."
+msgstr "ProviderGESTIS, %d: Found WGK %d."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:840
+#, c-format
+msgid "ProviderGESTIS, %d: Tripel (%s,%s,%s) gefunden."
+msgstr "ProviderGESTIS, %d: Found triple (%s,%s,%s)."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:848
+#, c-format
+msgid "ProviderGESTIS, %d: -> als 'Molare Masse' interpretiert."
+msgstr "ProviderGESTIS, %d: -> interpreted as molar mass."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:860
+#, c-format
+msgid "ProviderGESTIS, %d: -> als 'Schmelzpunkt' interpretiert."
+msgstr "ProviderGESTIS, %d: -> interpreted as melting point."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:872
+#, c-format
+msgid "ProviderGESTIS, %d: -> als 'Siedepunkt' interpretiert."
+msgstr "ProviderGESTIS, %d: -> interpreted as boiling point."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:883
+#, c-format
+msgid "ProviderGESTIS, %d: -> als 'Dichte' interpretiert."
+msgstr "ProviderGESTIS, %d: -> interpreted as density."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:896
+#, c-format
+msgid "ProviderGESTIS, %d: -> als 'Flammpunkt' interpretiert."
+msgstr "ProviderGESTIS, %d: -> interpreted as flash point."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:908
+#, c-format
+msgid "ProviderGESTIS, %d: -> als 'Signalwort (GHS)' interpretiert."
+msgstr "ProviderGESTIS, %d: -> interpreted as signalword (GHS)."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:941
+#, c-format
+msgid "ProviderGESTIS, %d: -> als 'H-Sätze' interpretiert."
+msgstr "ProviderGESTIS, %d: -> interpreted as H-phrases."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:974
+#, c-format
+msgid "ProviderGESTIS, %d: -> als 'EUH-Sätze' interpretiert."
+msgstr "ProviderGESTIS, %d: -> interpreted as EUH-phrases."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderGESTIS.cpp:1007
+#, c-format
+msgid "ProviderGESTIS, %d: -> als 'P-Sätze' interpretiert."
+msgstr "ProviderGESTIS, %d: -> interpreted as P-phrases."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderLocal.cpp:52
+#, c-format
+msgid "ProviderLocal, %d: Lade Bibliothek."
+msgstr "ProviderLocal, %d: Loading library..."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderLocal.cpp:63
+#, c-format
+msgid "ProviderLocal, %d: Keine Bibliotheksdatei gewählt."
+msgstr "ProviderLocal, %d: No library file was selected."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderLocal.cpp:76
+#, c-format
+msgid "ProviderLocal, %d: Datei '%s' nicht gefunden."
+msgstr "ProviderLocal, %d: File '%s' not found."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderLocal.cpp:81
+#, c-format
+msgid "ProviderLocal, %d: Lade '%s'."
+msgstr "ProviderLocal, %d: Loading '%s'..."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderLocal.cpp:97
+#, c-format
+msgid "ProviderLocal, %d: Suche nach CAS %s..."
+msgstr "ProviderLocal, %d: Looking for substances with CAS %s..."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderLocal.cpp:99
+#, c-format
+msgid "ProviderLocal, %d: Suche nach Übereinstimmung mit '%s'..."
+msgstr "ProviderLocal, %d: Looking for '%s'..."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderLocal.cpp:121
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderLocal.cpp:131
+#, c-format
+msgid "ProviderLocal, %d: Substanz '%s' gefunden."
+msgstr "ProviderLocal, %d: Found '%s'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderLocal.cpp:144
+#, c-format
+msgid "ProviderLocal, %d: Keine Substanzen in Bibliothek gefunden."
+msgstr "ProviderLocal, %d: No substances were found."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderLocal.cpp:154
+#, c-format
+msgid "ProviderLocal, %d: Hole Daten aus Bibliothek '%s'..."
+msgstr "ProviderLocal, %d: Loading data from library '%s'..."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderLocal.cpp:166
+#, c-format
+msgid "ProviderLocal, %d: Daten nicht gefunden."
+msgstr "ProviderLocal, %d: Data not found."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderLocal.cpp:182
+#, c-format
+msgid "ProviderLocal, %d: Daten für '%s' aus Bibliothek kopiert."
+msgstr "ProviderLocal, %d: Copying data for '%s' from library."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:69
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:546
+#, c-format
+msgid "ProviderMerck, %d: HTTP-Anfrage wird vorbereitet."
+msgstr "ProviderMerck, %d: Preparing HTTP-request..."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:91
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:558
+#, c-format
+msgid "ProviderMerck, %d: Verbinden über Proxy %s:%d."
+msgstr "ProviderMerck, %d: Connecting with proxy %s:%d."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:101
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:571
+#, c-format
+msgid "ProviderMerck, %d: Verbinden ohne Proxy."
+msgstr "ProviderMerck, %d: Connecting without proxy."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:116
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:586
+#, c-format
+msgid "ProviderMerck, %d: Temporäre Datei 'temp/mercksearch.temp' anlegen."
+msgstr "ProviderMerck, %d: Creating temporary file 'temp/mercksearch.temp'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:119
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:589
+#, c-format
+msgid "ProviderMerck, %d: Temporäre Datei 'beryllium10.temp' anlegen."
+msgstr "ProviderMerck, %d: Creating temporary file 'beryllium10.temp'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:129
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:599
+#, c-format
+msgid "ProviderMerck, %d: Daten vorbereiten."
+msgstr "ProviderMerck, %d: Preparing data..."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:133
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:603
+#, c-format
+msgid "ProviderMerck, %d: Suchergebnisse laden."
+msgstr "ProviderMerck, %d: Loading data..."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:141
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:611
+#, c-format
+msgid "ProviderMerck, %d: Fehler %d beim Verbinden."
+msgstr "ProviderMerck, %d: Error on connecting. Error code: %d."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:170
+#, c-format
+msgid "ProviderMerck, %d: Daten für '%s' werden geladen."
+msgstr "ProviderMerck, %d: Loading data for '%s'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:204
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:210
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:637
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:643
+#, c-format
+msgid ""
+"ProviderMerck, %d: Temporäre Datei konnte nicht als XML-Datei geöffnet "
+"werden."
+msgstr "ProviderMerck, %d: Couldn't parse temporary file as XML."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:218
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:651
+#, c-format
+msgid "ProviderMerck, %d: XML-Wurzel 'merck' konnte nicht gefunden werden."
+msgstr "ProviderMerck, %d: Couldn't find XML-root 'merck'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:223
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:656
+#, c-format
+msgid "ProviderMerck, %d: Daten werden eingelesen."
+msgstr "ProviderMerck, %d: Loading data..."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:244
+#, c-format
+msgid "ProviderMerck, %d: Tabelle mit Suchergebnissen gefunden."
+msgstr "ProviderMerck, %d: Found table with search results."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:323
+#, c-format
+msgid "ProviderMerck, %d: Suchergebniss '%s' hinzugefügt."
+msgstr "ProviderMerck, %d: Added '%s'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:345
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:471
+#, c-format
+msgid "ProviderMerck, %d: Temporäre Datei konnte nicht geöffnet werden."
+msgstr "ProviderMerck, %d: Couldn't open temporary file."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:478
+#, c-format
+msgid "ProviderMerck, %d: Temporäre Datei konnte nicht beschrieben werden."
+msgstr "ProviderMerck, %d: Couldn't write into temporary file."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:680
+#, c-format
+msgid "ProviderMerck, %d: Tabelle mit Informationen gefunden."
+msgstr "ProviderMerck, %d: Found table with substance data."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:694
+#, c-format
+msgid ""
+"ProviderMerck, %d: Keine Substanznamen gefunden. Benutze '%s' für Datensatz."
+msgstr ""
+"ProviderMerck, %d: Couldn't find any substance name. Using '%s' for this "
+"data set."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:767
+#, c-format
+msgid "ProviderMerck, %d: Datentupel (%s, %s) gefunden."
+msgstr "ProviderMerck, %d: Found data tupel (%s, %s)."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:779
+#, c-format
+msgid "ProviderMerck, %d: -> als 'Synonyme' interpretiert."
+msgstr "ProviderMerck, %d: -> interpreted as synonyms."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:792
+#, c-format
+msgid "ProviderMerck, %d: -> als 'Summenformel nach Hill' interpretiert."
+msgstr "ProviderMerck, %d: -> interpreted as sum formula (Hill)."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:805
+#, c-format
+msgid "ProviderMerck, %d: -> als 'chemische Formel' interpretiert."
+msgstr "ProviderMerck, %d: -> interpreted as chemical formula."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:827
+#, c-format
+msgid "ProviderMerck, %d: -> als 'Gefahrensymbole (alt)' interpretiert."
+msgstr "ProviderMerck, %d: -> interpreted as hazard symbols (old system)."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:841
+#, c-format
+msgid "ProviderMerck, %d: -> als 'Gefahrensymbole (GHS)' interpretiert."
+msgstr "ProviderMerck, %d: -> interpreted as pictograms (GHS)."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:851
+#, c-format
+msgid "ProviderMerck, %d: -> als 'Molare Masse' interpretiert."
+msgstr "ProviderMerck, %d: -> interpreted as molar mass."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:861
+#, c-format
+msgid "ProviderMerck, %d: -> als 'CAS-Nummer' interpretiert."
+msgstr "ProviderMerck, %d: -> interpreted as CAS-No."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:874
+#, c-format
+msgid "ProviderMerck, %d: -> als 'Schmelzpunkt' interpretiert."
+msgstr "ProviderMerck, %d: -> interpreted as melting point."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:887
+#, c-format
+msgid "ProviderMerck, %d: -> als 'Siedepunkt' interpretiert."
+msgstr "ProviderMerck, %d: -> interpreted as boiling point."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:900
+#, c-format
+msgid "ProviderMerck, %d: -> als 'Flammpunkt' interpretiert."
+msgstr "ProviderMerck, %d: -> interpreted as flash point."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:910
+#, c-format
+msgid "ProviderMerck, %d: -> als 'Dichte' interpretiert."
+msgstr "ProviderMerck, %d: -> interpreted as density."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:932
+#, c-format
+msgid "ProviderMerck, %d: -> als 'R-Sätze' interpretiert."
+msgstr "ProviderMerck, %d: -> interpreted as R-phrases."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:954
+#, c-format
+msgid "ProviderMerck, %d: -> als 'S-Sätze' interpretiert."
+msgstr "ProviderMerck, %d: -> interpreted as S-phrases."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:988
+#, c-format
+msgid "ProviderMerck, %d: -> als 'H-Sätze' interpretiert."
+msgstr "ProviderMerck, %d: -> interpreted as H-phrases."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:1022
+#, c-format
+msgid "ProviderMerck, %d: -> als 'P-Sätze' interpretiert."
+msgstr "ProviderMerck, %d: -> interpreted as P-phrases."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:1032
+#, c-format
+msgid "ProviderMerck, %d: -> als 'Signalwort (GHS)' interpretiert."
+msgstr "ProviderMerck, %d: -> interpreted as signalword (GHS)."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:1045
+#, c-format
+msgid "ProviderMerck, %d: -> als 'WGK' interpretiert."
+msgstr "ProviderMerck, %d: -> interpreted as WGK."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderMerck.cpp:1052
+#, c-format
+msgid "ProviderMerck, %d: -> wurde nicht interpretiert. Schlüssel unbekannt."
+msgstr "ProviderMerck, %d: -> was not interpreted due to unknown key."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:87
+#, c-format
+msgid "ProviderWiki, %d: HTTP-Anfrage wird vorbereitet."
+msgstr "ProviderWiki, %d: Preparing HTTP-request..."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:102
+#, c-format
+msgid "ProviderWiki, %d: HTTP-Anfrage an 'http://%s%s'."
+msgstr "ProviderWiki, %d: HTTP-request for 'http://%s%s'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:117
+#, c-format
+msgid "ProviderWiki, %d: Verbinden über Proxy %s:%d."
+msgstr "ProviderWiki, %d: Connecting with proxy %s:%d."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:127
+#, c-format
+msgid "ProviderWiki, %d: Verbinden ohne Proxy."
+msgstr "ProviderWiki, %d: Connecting without proxy."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:147
+#, c-format
+msgid "ProviderWiki, %d: Lade Exportseite."
+msgstr "ProviderWiki, %d: Loading export page of Wikipedia."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:153
+#, c-format
+msgid "ProviderWiki, %d: Lade Daten."
+msgstr "ProviderWiki, %d: Loading data..."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:162
+#, c-format
+msgid "ProviderWiki, %d: Fehler %d beim Verbinden."
+msgstr "ProviderWiki, %d: Error on connection. Error code: %d."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:191
+#, c-format
+msgid "ProviderWiki, %d: Daten für '%s' werden geladen."
+msgstr "ProviderWiki, %d: Loading data for '%s'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:219
+#, c-format
+msgid "ProviderWiki, %d: XML-Stream konnte nicht geladen werden."
+msgstr "ProviderWiki, %d: Couldn't load XML-stream."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:226
+#, c-format
+msgid "ProviderWiki, %d: XML-Wurzel 'mediawiki' konnte nicht gefunden werden."
+msgstr "ProviderWiki, %d: Couldn't find XML-root 'mediawiki'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:231
+#, c-format
+msgid "ProviderWiki, %d: Wiki-Daten werden eingelesen."
+msgstr "ProviderWiki, %d: Loading Wiki-data...."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:259
+#, c-format
+msgid "ProviderWiki, %d: Inhalt der Seite gefunden."
+msgstr "ProviderWiki, %d: Found content of page."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:280
+#, c-format
+msgid "ProviderWiki, %d: Revision der Seite gefunden."
+msgstr "ProviderWiki, %d: Found revision of page."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:301
+#, c-format
+msgid "ProviderWiki, %d: Text der Revision geladen."
+msgstr "ProviderWiki, %d: Found text of page."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:333
+#, c-format
+msgid "ProviderWiki, %d: Interpretiere Daten."
+msgstr "ProviderWiki, %d: Interpreting data..."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:364
+#, c-format
+msgid "ProviderWiki, %d: Multiblock 'Infobox Chemikalie' gefunden."
+msgstr "ProviderWiki, %d: Found multiblock 'Infobox Chemikalie'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:376
+#, c-format
+msgid "ProviderWiki, %d: Multiblock 'Infobox Chemisches Element' gefunden."
+msgstr "ProviderWiki, %d: Found multiblock 'Infobox Chemisches Element'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:388
+#, c-format
+msgid "ProviderWiki, %d: Multiblock 'chembox' gefunden."
+msgstr "ProviderWiki, %d: Found multiblock 'chembox'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:400
+#, c-format
+msgid "ProviderWiki, %d: Multiblock 'drugbox' gefunden."
+msgstr "ProviderWiki, %d: Found multiblock 'drugbox'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:425
+#, c-format
+msgid ""
+"ProviderWiki, %d: Keine Daten geladen. Vermutlich kein standardkonformer "
+"Wiki-Artikel."
+msgstr ""
+"ProviderWiki, %d: Couldn't load data. Maybe this is not a standard wiki "
+"article on chemicals/drugs?"
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:448
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:786
+#, c-format
+msgid "ProviderWiki, %d: Datentupel (%s,%s) gefunden."
+msgstr "ProviderWiki, %d: Found data tupel (%s,%s)."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:467
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1632
+#, c-format
+msgid "ProviderWiki, %d: -> als 'Namen' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as names."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:488
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1653
+#, c-format
+msgid "ProviderWiki, %d: -> als 'IUPAC-Namen' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as IUPAC names."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:516
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1681
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1711
+#, c-format
+msgid "ProviderWiki, %d: -> als 'Synonyme' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as synonyms."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:526
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1721
+#, c-format
+msgid "ProviderWiki, %d: -> Untersektion '%s'."
+msgstr "ProviderWiki, %d: -> subsection '%s'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:547
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1270
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1737
+#, c-format
+msgid "ProviderWiki, %d: -> als 'Summenformel' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as sum formula."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:556
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:812
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1279
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1746
+#, c-format
+msgid "ProviderWiki, %d: -> als 'CAS-Nummer' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as CAS-No."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:565
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1288
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1756
+#, c-format
+msgid "ProviderWiki, %d: -> als 'Molare Masse' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as molar mass."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:578
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:833
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1301
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1769
+#, c-format
+msgid "ProviderWiki, %d: -> als 'Dichte' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as density."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:587
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:851
+#, c-format
+msgid "ProviderWiki, %d: -> als 'Siedepunkt' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as boiling point."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:608
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:842
+#, c-format
+msgid "ProviderWiki, %d: -> als 'Schmelzpunkt' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as melting point."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:632
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:873
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1420
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1888
+#, c-format
+msgid "ProviderWiki, %d: -> als 'Gefahrensymbole (alt)' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as hazard symbols (old system)."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:651
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:892
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1449
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1917
+#, c-format
+msgid "ProviderWiki, %d: -> als 'R-Sätze' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as R-phrases."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:670
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:911
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1478
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1946
+#, c-format
+msgid "ProviderWiki, %d: -> als 'S-Sätze' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as S-phrases."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:679
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:920
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1491
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1959
+#, c-format
+msgid "ProviderWiki, %d: -> als 'Signalwort (GHS)' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as signalword (GHS)."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:689
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:929
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1525
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1993
+#, c-format
+msgid "ProviderWiki, %d: -> als 'GHS-Piktogramme' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as pictograms (GHS)."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:709
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:948
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1545
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:2013
+#, c-format
+msgid "ProviderWiki, %d: -> als 'H-Sätze' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as H-phrases."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:728
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:967
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1564
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:2032
+#, c-format
+msgid "ProviderWiki, %d: -> als 'P-Sätze' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as P-phrases."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:748
+#, c-format
+msgid "ProviderWiki, %d: -> als 'MAK' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as TLV."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:757
+#, c-format
+msgid "ProviderWiki, %d: -> als 'WGK' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as WGK."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:764
+#, c-format
+msgid "ProviderWiki, %d: -> wurde nicht interpretiert. Schlüssel unbekannt."
+msgstr "ProviderWiki, %d: -> was not interpreted due to unknown key."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:794
+#, c-format
+msgid "ProviderWiki, %d: -> als 'Name' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as name."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:803
+#, c-format
+msgid "ProviderWiki, %d: -> als 'Symbol/Formel' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as symbol/formula."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:821
+#, c-format
+msgid "ProviderWiki, %d: -> als 'Atommasse' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as atomic mass."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1258
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1613
+#, c-format
+msgid "ProviderWiki, %d: Datentupel (%s,%s) in Sektion gefunden."
+msgstr "ProviderWiki, %d: Found data tupel (%s, %s) in section."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1317
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1785
+#, c-format
+msgid "ProviderWiki, %d: -> als 'Siedepunkt (Kelvin)' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as boiling point (Kelvin)."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1327
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1795
+#, c-format
+msgid "ProviderWiki, %d: -> als 'Siedepunkt (Celsius)' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as boiling point (Celsius)."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1343
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1811
+#, c-format
+msgid "ProviderWiki, %d: -> als 'Schmelzpunkt (Kelvin)' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as melting point (Kelvin)."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1353
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1821
+#, c-format
+msgid "ProviderWiki, %d: -> als 'Schmelzpunkt (Celsius)' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as melting point (Celsius)."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1369
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1837
+#, c-format
+msgid "ProviderWiki, %d: -> als 'Flammenpunkt (Kelvin)' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as flash point (Kelvin)."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1379
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1847
+#, c-format
+msgid "ProviderWiki, %d: -> als 'Flammenpunkt (Celsius)' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as flash point (Celsius)."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1389
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1857
+#, c-format
+msgid "ProviderWiki, %d: -> als 'Zersetzung' interpretiert."
+msgstr "ProviderWiki, %d: -> interpreted as 'Decomposition'."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1584
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:2052
+#, c-format
+msgid ""
+"ProviderWiki, %d: -> als 'Element' interpretiert und zur temporären "
+"Summenformel hinzugefügt."
+msgstr ""
+"ProviderWiki, %d: -> interpreted as single element. Added to temporary sum "
+"formula."
+
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:1590
+#: D:\Projekte\Anwendungen\Beryllium10SF\Beryllium10\Code/Provider/BerylliumProviderWiki.cpp:2058
+#, c-format
+msgid "ProviderWiki, %d: -> nicht interpretiert. Schlüssel unbekannt."
+msgstr "ProviderWiki, %d: -> was not interpreted due to unknown key."
 
 #~ msgid "Wikipedia-Artikel zu "
 #~ msgstr "Open Wikipedia article for"
