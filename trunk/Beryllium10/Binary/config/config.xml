@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beryllium>
   <savetolocaldatabase>true</savetolocaldatabase>
-  <provider>gestis,merck,wiki</provider>
+  <proxyport>8080</proxyport>
+  <provider>wiki,merck,gestis</provider>
+  <enablelogging>true</enablelogging>
   <localdatabase>database\new database.xml</localdatabase>
+  <proxyhost>213.122.178.99</proxyhost>
   <language>58</language>
 </beryllium>
