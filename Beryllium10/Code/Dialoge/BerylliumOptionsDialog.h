@@ -51,15 +51,31 @@ public:
 	// Get: Sprache
 	long GetLanguage() { return m_iLanguage; };
 
+	// Set: Proxy
+	void SetProxy( wxString host, wxString port );
+
+	// Get: Proxy
+	wxString GetProxyHost() { return proxyhost; };
+	wxString GetProxyPort() { return proxyport; };
+
 private:
 	// Sprache
 	long m_iLanguage;
 
+	// Proxy
+	wxString proxyhost;
+	wxString proxyport;
+
 	// Elemente
-	wxChoice *m_choiceLanguage;
+	wxChoice	*m_choiceLanguage;
+	wxTextCtrl	*m_textProxyServer;
+	wxTextCtrl	*m_textProxyPort;
 	
 	// Initialisiert die Seite "Sprache"
 	wxPanel *CreatePageLanguage(wxWindow* parent);	
+
+	// Initialisiert die Seite "Proxy"
+	wxPanel *CreatePageProxy(wxWindow* parent);	
 
 	// Wird aufgerufen, wenn der Dialog angezeigt werden soll
 	void OnInitDialog( wxInitDialogEvent &event );

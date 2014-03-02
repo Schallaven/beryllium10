@@ -66,6 +66,10 @@ protected:
 	// ID für diesen Provider
 	int iID;
 
+	// Proxy-Server
+	wxString proxyhost;
+	unsigned short proxyport;
+
 	// Prüft ob ein String eine CAS-Nummer ist
 	bool IsCAS( wxString text );
 
@@ -111,4 +115,12 @@ public:
 	// Get: ID holen
 	int GetId() { return iID; };
 
+	// Set: Proxy
+	void SetProxy( const wxString newproxyhost, unsigned short newproxyport ) { proxyhost = newproxyhost; proxyport = newproxyport; };
+
+	// Proxy löschen
+	void ClearProxy() { proxyhost = ""; proxyport = 0; };
+
+	// Get: Proxy
+	wxString GetProxy() { return wxString::Format("%s:%d",proxyhost,proxyport); };
 };

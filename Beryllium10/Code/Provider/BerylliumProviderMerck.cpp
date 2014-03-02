@@ -63,12 +63,10 @@ bool CBerylliumProviderMerck::SearchForCompound( const wxString searchtext, bool
 	// Daten erfolgreich gefunden (und geladen)
 	bool bGotData = false;
 
-	// HTTP-Anfarge vorbereiten
+	// HTTP-Anfrage vorbereiten
 	m_http.SetHeader( "Content-type", "text/html; charset=utf-8" );
 	m_http.SetTimeout(60); // 60 Sekunden TimeOut
-
-	// Anfrage an Merck vorbereiten
-	m_http.Connect( "www.merckmillipore.com" );
+	wxLogMessage( _(L"ProviderMerck, %d: HTTP-Anfrage wird vorbereitet."), __LINE__ );
 
 	// Adresse setzen (Deutschland)
 	wxString merckaddress = "/is-bin/INTERSHOP.enfinity/WFS/Merck-DE-Site/de_DE/-/EUR/ViewSearch-ParametricSearchIndexQuery?WFSimpleSearch_NameOrID=%s";
@@ -76,6 +74,32 @@ bool CBerylliumProviderMerck::SearchForCompound( const wxString searchtext, bool
 	// UK?
 	if ( iCountry == 1 )
 		merckaddress = "/is-bin/INTERSHOP.enfinity/WFS/Merck-GB-Site/en_US/-/GBP/ViewSearch-ParametricSearchIndexQuery?WFSimpleSearch_NameOrID=%s";
+	
+	// Anfrage mit Proxy?
+	if ( proxyhost.length() > 0 )
+	{
+		// Verbinden
+		m_http.Connect( proxyhost, proxyport );
+
+		// Puffer setzen
+		m_http.SetPostBuffer( "Host: www.merckmillipore.com");
+
+		// Adresse erweitern
+		merckaddress = "http://www.merckmillipore.com" + merckaddress;
+
+		// Loggen
+		wxLogMessage( _(L"ProviderMerck, %d: Verbinden über Proxy %s:%d."), __LINE__, proxyhost, proxyport );
+	}
+
+	// kein Proxy
+	else
+	{
+		// Verbinden
+		m_http.Connect( "www.merckmillipore.com" );
+
+		// Loggen
+		wxLogMessage( _(L"ProviderMerck, %d: Verbinden ohne Proxy."), __LINE__ );
+	}
 
 	// InputStream erzeugen
 	wxInputStream *httpStream = m_http.GetInputStream( wxString::Format( merckaddress, searchtext ));
@@ -89,10 +113,12 @@ bool CBerylliumProviderMerck::SearchForCompound( const wxString searchtext, bool
 		// OutputStream erzeugen
 #ifdef _DEBUG
 		wxTempFileOutputStream dataStream("temp/mercksearch.temp");
+		wxLogMessage( _(L"ProviderMerck, %d: Temporäre Datei 'temp/mercksearch.temp' anlegen."), __LINE__ );
 #else
 		wxTempFileOutputStream dataStream("beryllium10.temp");
+		wxLogMessage( _(L"ProviderMerck, %d: Temporäre Datei 'beryllium10.temp' anlegen."), __LINE__ );
 #endif
-
+		
 		// Daten lesen
 		httpStream->Read(dataStream);
 
@@ -100,10 +126,19 @@ bool CBerylliumProviderMerck::SearchForCompound( const wxString searchtext, bool
 		dataStream.Close();
 
 		// Daten vorparsen
+		wxLogMessage( _(L"ProviderMerck, %d: Daten vorbereiten."), __LINE__ );
 		PreParseData();
 
 		// Ergebnisse laden.
+		wxLogMessage( _(L"ProviderMerck, %d: Suchergebnisse laden."), __LINE__ );
 		bGotData = LoadSearchData();
+	}
+
+	// Fehler beim Verbinden?
+	else
+	{
+		// Fehler ins Log schreiben
+		wxLogError( _(L"ProviderMerck, %d: Fehler %d beim Verbinden."), __LINE__, m_http.GetError() );
 	}
 
 	// Stream löschen
@@ -112,13 +147,13 @@ bool CBerylliumProviderMerck::SearchForCompound( const wxString searchtext, bool
 	// HTTP-Anfrage schließen
 	m_http.Close();
 
-	// Keine Daten gefunden?
+	// Daten gefunden?
 	return bGotData;
 }
 
 // 2. Daten mit entsprechender ID holen
 void CBerylliumProviderMerck::GetDataOfCompound( const int iSerial, CBerylliumSubstanceData &m_data )
-{
+{	
 	// Datenblock löschen
 	CBerylliumSubstanceData newdata; tempdata = newdata;
 
@@ -130,6 +165,9 @@ void CBerylliumProviderMerck::GetDataOfCompound( const int iSerial, CBerylliumSu
 		{
 			// Namen setzen
 			substancename = m_results[i].name;
+
+			// Protokoll
+			wxLogMessage( _(L"ProviderMerck, %d: Daten für '%s' werden geladen."), __LINE__, substancename );
 
 			// Daten holen
 			LoadDataFromUrl( m_results[i].data );
@@ -162,15 +200,27 @@ bool CBerylliumProviderMerck::LoadSearchData()
 	// Daten konnten nicht geladen werden? Raus hier!
 #ifdef _DEBUG
 	if ( !doc.Load( "temp/mercksearch.temp" ) )
+	{
+		wxLogError( _(L"ProviderMerck, %d: Temporäre Datei konnte nicht als XML-Datei geöffnet werden."), __LINE__ );
 		return false;
+	}
 #else
 	if ( !doc.Load( "beryllium10.temp" ) )
+	{
+		wxLogError( _(L"ProviderMerck, %d: Temporäre Datei konnte nicht als XML-Datei geöffnet werden."), __LINE__ );
 		return false;
+	}
 #endif
 
 	// Wurzel finden
     if (doc.GetRoot()->GetName() != "merck")
+	{
+		wxLogError( _(L"ProviderMerck, %d: XML-Wurzel 'merck' konnte nicht gefunden werden."), __LINE__ );
         return false;
+	}
+
+	// Daten parsen
+	wxLogMessage( _(L"ProviderMerck, %d: Daten werden eingelesen."), __LINE__ );
 
 	// Wurzel Ast für Ast durchgehen
     wxXmlNode *node = doc.GetRoot()->GetChildren();
@@ -191,6 +241,8 @@ bool CBerylliumProviderMerck::LoadSearchData()
 		if ( (node->GetName().compare("table") == 0) &&
 			((node->GetAttribute("summary").compare("Suchergebnisse") == 0) || (node->GetAttribute("summary").compare("Search results") == 0)) )
 		{
+			wxLogMessage( _(L"ProviderMerck, %d: Tabelle mit Suchergebnissen gefunden."), __LINE__ );
+
 			// Dann suchen wir nach allen Subelementen
 			wxXmlNode *subnode = node->GetChildren();
 
@@ -266,6 +318,9 @@ void CBerylliumProviderMerck::LoadSearchDataCell( wxXmlNode *cell )
 
 			// In die Liste eintragen
 			m_results.push_back( temp );
+
+			// Protokollieren
+			wxLogMessage( _(L"ProviderMerck, %d: Suchergebniss '%s' hinzugefügt."), __LINE__, content );
 		}
 	}
 }
@@ -287,6 +342,7 @@ void CBerylliumProviderMerck::PreParseData()
 #ifdef _DEBUG
 		wxMessageBox( wxString::Format("Fehler (%d) beim Öffnen: %s", ::wxSysErrorCode(), ::wxSysErrorMsg()), "Lesevorgang, Merck");
 #endif
+		wxLogError( _(L"ProviderMerck, %d: Temporäre Datei konnte nicht geöffnet werden."), __LINE__ );
 
         return;
     }
@@ -412,13 +468,15 @@ void CBerylliumProviderMerck::PreParseData()
 #ifdef _DEBUG
 		wxMessageBox( wxString::Format("Fehler (%d) beim Öffnen: %s", ::wxSysErrorCode(), ::wxSysErrorMsg()), "Schreibvorgang, Merck");
 #endif
+		wxLogError( _(L"ProviderMerck, %d: Temporäre Datei konnte nicht geöffnet werden."), __LINE__ );
 
         return;
     }
 
 	// Inhalt reinschreiben
-	fiW.Write( data );
-
+	if ( !fiW.Write( data ) )
+		wxLogError( _(L"ProviderMerck, %d: Temporäre Datei konnte nicht beschrieben werden."), __LINE__ );
+	
 	// Datei schließen (ENDE: Schreibmodus)
 	fiW.Close();
 }
@@ -482,15 +540,36 @@ void CBerylliumProviderMerck::RemoveEmptyBrackets( wxString &data )
 // Lädt die Daten für die Substanz unter URL
 void CBerylliumProviderMerck::LoadDataFromUrl( wxString URL )
 {
-	// URL modifizieren
-	URL.Replace( "http://www.merckmillipore.com", "", true );
-
 	// HTTP-Anfarge vorbereiten
 	m_http.SetHeader( "Content-type", "text/html; charset=utf-8" );
 	m_http.SetTimeout(60); // 60 Sekunden TimeOut
+	wxLogMessage( _(L"ProviderMerck, %d: HTTP-Anfrage wird vorbereitet."), __LINE__ );
 
-	// Anfrage an Merck vorbereiten
-	m_http.Connect( "www.merckmillipore.com" );
+	// Anfrage mit Proxy?
+	if ( proxyhost.length() > 0 )
+	{
+		// Verbinden
+		m_http.Connect( proxyhost, proxyport );
+
+		// Puffer setzen
+		m_http.SetPostBuffer( "Host: www.merckmillipore.com");
+
+		// Loggen
+		wxLogMessage( _(L"ProviderMerck, %d: Verbinden über Proxy %s:%d."), __LINE__, proxyhost, proxyport );
+	}
+
+	// kein Proxy
+	else
+	{
+		// URL modifizieren
+		URL.Replace( "http://www.merckmillipore.com", "", true );
+
+		// Verbinden
+		m_http.Connect( "www.merckmillipore.com" );
+
+		// Loggen
+		wxLogMessage( _(L"ProviderMerck, %d: Verbinden ohne Proxy."), __LINE__ );
+	}	
 
 	// InputStream erzeugen
 	wxInputStream *httpStream = m_http.GetInputStream( URL );
@@ -504,10 +583,11 @@ void CBerylliumProviderMerck::LoadDataFromUrl( wxString URL )
 		// OutputStream erzeugen
 #ifdef _DEBUG
 		wxTempFileOutputStream dataStream("temp/mercksearch.temp");
+		wxLogMessage( _(L"ProviderMerck, %d: Temporäre Datei 'temp/mercksearch.temp' anlegen."), __LINE__ );
 #else
 		wxTempFileOutputStream dataStream("beryllium10.temp");
+		wxLogMessage( _(L"ProviderMerck, %d: Temporäre Datei 'beryllium10.temp' anlegen."), __LINE__ );
 #endif
-
 
 		// Daten lesen
 		httpStream->Read(dataStream);
@@ -516,10 +596,19 @@ void CBerylliumProviderMerck::LoadDataFromUrl( wxString URL )
 		dataStream.Close();
 
 		// Daten vorparsen
+		wxLogMessage( _(L"ProviderMerck, %d: Daten vorbereiten."), __LINE__ );
 		PreParseData();
 
 		// Ergebnisse laden.
+		wxLogMessage( _(L"ProviderMerck, %d: Suchergebnisse laden."), __LINE__ );
 		LoadSubstanceData();
+	}
+
+	// Fehler beim Verbinden?
+	else
+	{
+		// Fehler ins Log schreiben
+		wxLogError( _(L"ProviderMerck, %d: Fehler %d beim Verbinden."), __LINE__, m_http.GetError() );
 	}
 
 	// Stream löschen
@@ -544,15 +633,27 @@ void CBerylliumProviderMerck::LoadSubstanceData()
 	// Daten konnten nicht geladen werden? Raus hier!
 #ifdef _DEBUG
 	if ( !doc.Load( "temp/mercksearch.temp" ) )
+	{
+		wxLogError( _(L"ProviderMerck, %d: Temporäre Datei konnte nicht als XML-Datei geöffnet werden."), __LINE__ );
 		return;
+	}
 #else
 	if ( !doc.Load( "beryllium10.temp" ) )
+	{
+		wxLogError( _(L"ProviderMerck, %d: Temporäre Datei konnte nicht als XML-Datei geöffnet werden."), __LINE__ );
 		return;
+	}
 #endif
 
 	// Wurzel finden
     if (doc.GetRoot()->GetName() != "merck")
+	{
+		wxLogError( _(L"ProviderMerck, %d: XML-Wurzel 'merck' konnte nicht gefunden werden."), __LINE__ );
         return;
+	}
+
+	// Daten parsen
+	wxLogMessage( _(L"ProviderMerck, %d: Daten werden eingelesen."), __LINE__ );
 
 	// Wurzel Ast für Ast durchgehen
     wxXmlNode *node = doc.GetRoot()->GetChildren();
@@ -575,6 +676,9 @@ void CBerylliumProviderMerck::LoadSubstanceData()
 		// Wir suchen nach "table" mit dem Attribute summary=...
 		if ( (node->GetName().compare("table") == 0) && (node->GetAttribute("summary").length() > 0) )
 		{
+			// Protokollieren
+			wxLogMessage( _(L"ProviderMerck, %d: Tabelle mit Informationen gefunden."), __LINE__ );
+
 			// Dann laden wir diesen Block mal...
 			LoadSubstanceDataBlock( node );
 		}
@@ -585,7 +689,10 @@ void CBerylliumProviderMerck::LoadSubstanceData()
 
 	// Keine Namen? Dann wenigstens den einen setzen!
 	if ( tempdata.szNames.size() == 0 )
-		tempdata.ReplaceNamesBy( substancename.ToStdString() );
+	{
+		tempdata.ReplaceNamesBy( substancename );
+		wxLogWarning( _(L"ProviderMerck, %d: Keine Substanznamen gefunden. Benutze '%s' für Datensatz."), __LINE__, substancename );
+	}
 
 	// Keine Formel, dann evtl. chemische Formel setzen!
 	if ( (tempdata.GetFormula().size() == 0) && (chemicalformula.size() > 0) )
@@ -656,6 +763,9 @@ void CBerylliumProviderMerck::LoadSubstanceDataTupel( wxString key, wxString val
 	key.Trim( false ); key.Trim( true );
 	value.Trim( false ); value.Trim( true );
 
+	// Protokollieren
+	wxLogMessage( _(L"ProviderMerck, %d: Datentupel (%s, %s) gefunden."), __LINE__, key, value );
+
 	// Alternative Namen
 	if ( (key.compare("Synonyme") == 0) || (key.compare("Synonyms") == 0) )
 	{
@@ -664,6 +774,9 @@ void CBerylliumProviderMerck::LoadSubstanceDataTupel( wxString key, wxString val
 
 		// Namen setzen
 		tempdata.SetNames( value.ToStdString(), "," );
+
+		// Protokollieren
+		wxLogMessage( _(L"ProviderMerck, %d: -> als 'Synonyme' interpretiert."), __LINE__ );
 	}
 
 	// Summenformel Hill
@@ -674,6 +787,9 @@ void CBerylliumProviderMerck::LoadSubstanceDataTupel( wxString key, wxString val
 
 		// Summenformel speichern
 		tempdata.SetFormula( value.ToStdString() );
+
+		// Protokollieren
+		wxLogMessage( _(L"ProviderMerck, %d: -> als 'Summenformel nach Hill' interpretiert."), __LINE__ );
 	}
 
 	// "Chemical formula"
@@ -684,6 +800,9 @@ void CBerylliumProviderMerck::LoadSubstanceDataTupel( wxString key, wxString val
 
 		// Abspeichern
 		chemicalformula = value.ToStdString();
+
+		// Protokollieren
+		wxLogMessage( _(L"ProviderMerck, %d: -> als 'chemische Formel' interpretiert."), __LINE__ );
 	}
 
 	// Gefahrensymbole
@@ -703,6 +822,9 @@ void CBerylliumProviderMerck::LoadSubstanceDataTupel( wxString key, wxString val
 
 		// Gefahrensymbole in die Liste schreiben (wenn nicht schon welche vorhanden sind!)
 		tempdata.SetHarzards( value.ToStdString(), " " );
+
+		// Protokollieren
+		wxLogMessage( _(L"ProviderMerck, %d: -> als 'Gefahrensymbole (alt)' interpretiert."), __LINE__ );
 	}
 
 	// 20.11.2011: Gefahren-Piktogramm (GHS)
@@ -715,6 +837,8 @@ void CBerylliumProviderMerck::LoadSubstanceDataTupel( wxString key, wxString val
 		// GHS-Symbole setzen
 		tempdata.SetGHSSymbols( value.ToStdString(), " " );
 
+		// Protokollieren
+		wxLogMessage( _(L"ProviderMerck, %d: -> als 'Gefahrensymbole (GHS)' interpretiert."), __LINE__ );
 	}
 
 	// Molare Masse
@@ -722,6 +846,9 @@ void CBerylliumProviderMerck::LoadSubstanceDataTupel( wxString key, wxString val
 	{
 		// Molare Masse speichern
 		tempdata.SetMolWeight( value.ToStdString() );
+
+		// Protokollieren
+		wxLogMessage( _(L"ProviderMerck, %d: -> als 'Molare Masse' interpretiert."), __LINE__ );
 	}
 
 	// CAS-Nummer
@@ -729,6 +856,9 @@ void CBerylliumProviderMerck::LoadSubstanceDataTupel( wxString key, wxString val
 	{
 		// CAS-Nummer speichern
 		tempdata.szCAS = value;
+
+		// Protokollieren
+		wxLogMessage( _(L"ProviderMerck, %d: -> als 'CAS-Nummer' interpretiert."), __LINE__ );
 	}
 
 	// Schmelzpunkt
@@ -739,6 +869,9 @@ void CBerylliumProviderMerck::LoadSubstanceDataTupel( wxString key, wxString val
 
 		// Schmelzpunkt speichern
 		tempdata.szMeltingPoint = value;
+
+		// Protokollieren
+		wxLogMessage( _(L"ProviderMerck, %d: -> als 'Schmelzpunkt' interpretiert."), __LINE__ );
 	}
 
 	// Siedepunkt
@@ -749,6 +882,9 @@ void CBerylliumProviderMerck::LoadSubstanceDataTupel( wxString key, wxString val
 
 		// Siedepunkt speichern
 		tempdata.szBoilingPoint = value;
+
+		// Protokollieren
+		wxLogMessage( _(L"ProviderMerck, %d: -> als 'Siedepunkt' interpretiert."), __LINE__ );
 	}
 
 	// 20.11.2011: Flammpunkt
@@ -759,6 +895,9 @@ void CBerylliumProviderMerck::LoadSubstanceDataTupel( wxString key, wxString val
 
 		// Flammpunkt zuweisen
 		tempdata.szFlashPoint = value;
+
+		// Protokollieren
+		wxLogMessage( _(L"ProviderMerck, %d: -> als 'Flammpunkt' interpretiert."), __LINE__ );
 	}
 
 	// Dichte
@@ -766,6 +905,9 @@ void CBerylliumProviderMerck::LoadSubstanceDataTupel( wxString key, wxString val
 	{
 		// Dichte speichern
 		tempdata.SetDensity( value.ToStdString() );
+
+		// Protokollieren
+		wxLogMessage( _(L"ProviderMerck, %d: -> als 'Dichte' interpretiert."), __LINE__ );
 	}
 
 	// R-Satz
@@ -785,6 +927,9 @@ void CBerylliumProviderMerck::LoadSubstanceDataTupel( wxString key, wxString val
 			value = value.substr(0, iBreak );
 
 		tempdata.szRisks = value;
+
+		// Protokollieren
+		wxLogMessage( _(L"ProviderMerck, %d: -> als 'R-Sätze' interpretiert."), __LINE__ );
 	}
 
 	// S-Satz
@@ -804,6 +949,9 @@ void CBerylliumProviderMerck::LoadSubstanceDataTupel( wxString key, wxString val
 			value = value.substr(0, iBreak );
 
 		tempdata.szSafeties = value;
+
+		// Protokollieren
+		wxLogMessage( _(L"ProviderMerck, %d: -> als 'S-Sätze' interpretiert."), __LINE__ );
 	}
 
 	// 20.11.2011: H-Sätze
@@ -835,6 +983,9 @@ void CBerylliumProviderMerck::LoadSubstanceDataTupel( wxString key, wxString val
 
 		// Zuweisen
 		tempdata.szHarzardSatements = value;
+
+		// Protokollieren
+		wxLogMessage( _(L"ProviderMerck, %d: -> als 'H-Sätze' interpretiert."), __LINE__ );
 	}
 
 	// 20.11.2011: P-Sätze
@@ -866,6 +1017,9 @@ void CBerylliumProviderMerck::LoadSubstanceDataTupel( wxString key, wxString val
 
 		// Zuweisen
 		tempdata.szPrecautionaryStatements = value;
+
+		// Protokollieren
+		wxLogMessage( _(L"ProviderMerck, %d: -> als 'P-Sätze' interpretiert."), __LINE__ );
 	}
 
 	// 20.11.2011: Signalwort
@@ -873,6 +1027,9 @@ void CBerylliumProviderMerck::LoadSubstanceDataTupel( wxString key, wxString val
 	{
 		// Signalwort zuweisen
 		tempdata.szSignalWord = value;
+
+		// Protokollieren
+		wxLogMessage( _(L"ProviderMerck, %d: -> als 'Signalwort (GHS)' interpretiert."), __LINE__ );
 	}
 
 	// WGK
@@ -883,5 +1040,15 @@ void CBerylliumProviderMerck::LoadSubstanceDataTupel( wxString key, wxString val
 
 		// Wassergefährdung speichern
 		tempdata.iWGK = atoi( value.c_str() );
+
+		// Protokollieren
+		wxLogMessage( _(L"ProviderMerck, %d: -> als 'WGK' interpretiert."), __LINE__ );
+	}
+
+	// wurde nicht interpretiert
+	else
+	{
+		// Protokollieren
+		wxLogMessage( _(L"ProviderMerck, %d: -> wurde nicht interpretiert. Schlüssel unbekannt."), __LINE__ );
 	}
 }

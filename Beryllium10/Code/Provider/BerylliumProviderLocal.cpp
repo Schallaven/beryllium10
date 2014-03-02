@@ -48,6 +48,9 @@ CBerylliumProviderLocal::~CBerylliumProviderLocal(void)
 // 1. Suchanfrage stellen
 bool CBerylliumProviderLocal::SearchForCompound( const wxString searchtext, bool bExactMatch = false )
 {
+	// Loggen
+	wxLogMessage( _(L"ProviderLocal, %d: Lade Bibliothek."), __LINE__ );
+
 	// Ergebnisse löschen
 	m_results.clear();
 
@@ -56,7 +59,10 @@ bool CBerylliumProviderLocal::SearchForCompound( const wxString searchtext, bool
 
 	// Keine Datei definiert? Dann gibt es hier nichts zu tun.
 	if ( libraryfile.length() == 0 )
+	{
+		wxLogError( _(L"ProviderLocal, %d: Keine Bibliotheksdatei gewählt."), __LINE__ );
 		return false;
+	}
 
 	// Ersetzen potentielle "\" durch "/", damit unter Linux (wo ein "\" durchaus ein legitimies Zeichen ist)
 	// nicht die falsche Datei geladen wird. Windows akzeptiert sowohl "\" als auch "/".
@@ -66,7 +72,13 @@ bool CBerylliumProviderLocal::SearchForCompound( const wxString searchtext, bool
     wxFileName libfile( libraryfile );
 
     if ( !libfile.FileExists() )
+	{
+		wxLogError( _(L"ProviderLocal, %d: Datei '%s' nicht gefunden."), __LINE__, libraryfile );
         return false;
+	}
+
+	// Loggen
+	wxLogMessage( _(L"ProviderLocal, %d: Lade '%s'."), __LINE__, libraryfile );
 
 	// Datei laden
 	library.LoadFromFile( libraryfile.ToStdString() );
@@ -77,8 +89,14 @@ bool CBerylliumProviderLocal::SearchForCompound( const wxString searchtext, bool
 	// Anzahl der Daten
 	int iCount = library.NumberOfSubstances();
 
-	// Anzahl
+	// Anzahl der gefundenen Ergebnisse!
 	int n = 0;
+
+	// Loggen
+	if ( IsCAS( searchname ) )
+		wxLogMessage( _(L"ProviderLocal, %d: Suche nach CAS %s..."), __LINE__, searchname );
+	else
+		wxLogMessage( _(L"ProviderLocal, %d: Suche nach Übereinstimmung mit '%s'..."), __LINE__, searchname );
 
 	// Durchgehen und in die Ergebnisse aufnehmen (maximal 15)
 	for ( int i = 0; i < iCount; ++i )
@@ -99,6 +117,9 @@ bool CBerylliumProviderLocal::SearchForCompound( const wxString searchtext, bool
 		// CAS-Nummer gefunden
 		if ( IsCAS( searchname ) && (library[i].szCAS.compare(searchname)==0) )
 		{
+			// Loggen
+			wxLogMessage( _(L"ProviderLocal, %d: Substanz '%s' gefunden."), __LINE__, temp.name );
+
 			m_results.push_back(temp);
 			n++;
 		}
@@ -106,6 +127,9 @@ bool CBerylliumProviderLocal::SearchForCompound( const wxString searchtext, bool
 		// Ansonsten Namen suchen
 		else if ( library[i].HasName(searchname.ToStdString(), bExactMatch) )
 		{
+			// Loggen
+			wxLogMessage( _(L"ProviderLocal, %d: Substanz '%s' gefunden."), __LINE__, temp.name );
+
 			m_results.push_back(temp);
 			n++;
 		}
@@ -115,6 +139,10 @@ bool CBerylliumProviderLocal::SearchForCompound( const wxString searchtext, bool
 			break;
 	}
 
+	// Nichts gefunden?
+	if ( m_results.size() == 0 )
+		wxLogMessage( _(L"ProviderLocal, %d: Keine Substanzen in Bibliothek gefunden."), __LINE__ );
+
 	// Daten gefunden?
 	return (m_results.size() > 0);
 }
@@ -122,14 +150,22 @@ bool CBerylliumProviderLocal::SearchForCompound( const wxString searchtext, bool
 // 2. Daten mit entsprechender ID holen
 void CBerylliumProviderLocal::GetDataOfCompound( const int iSerial, CBerylliumSubstanceData &m_data )
 {
+	// Loggen
+	wxLogMessage( _(L"ProviderLocal, %d: Hole Daten aus Bibliothek '%s'..."), __LINE__, libraryfile );
+
 	// Daten
 	CBerylliumSubstanceData tempdata;
 
 	// ID wird einfach aus der Bibliothek geladen
 	if ( (iSerial > -1) && (iSerial < library.NumberOfSubstances()) )
+	{
 		tempdata = library[iSerial];
+	}
 	else
+	{
+		wxLogError( _(L"ProviderLocal, %d: Daten nicht gefunden."), __LINE__ );
 		return;
+	}
 
 	// Quelle anfügen (falls noch nicht vorhanden!)
 	if ( tempdata.source.provider.length() == 0 )
@@ -141,6 +177,9 @@ void CBerylliumProviderLocal::GetDataOfCompound( const int iSerial, CBerylliumSu
 
 	// Daten kopieren
 	m_data = tempdata;
+
+	// Loggen
+	wxLogMessage( _(L"ProviderLocal, %d: Daten für '%s' aus Bibliothek kopiert."), __LINE__, tempdata.GetName() );
 }
 
 // Get: Liste mit Substanzen holen

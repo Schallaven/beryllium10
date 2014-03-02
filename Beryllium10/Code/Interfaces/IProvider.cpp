@@ -40,6 +40,10 @@ IProvider::IProvider()
 
 	// ID setzen
 	iID = 0;
+
+	// Proxy setzen
+	proxyhost = "";
+	proxyport = 0;
 }
 
 IProvider::~IProvider(void)

@@ -90,9 +90,22 @@ CBerylliumSubstanceSearchDialog::CBerylliumSubstanceSearchDialog( wxWindow *pare
 	m_providerlist.push_back( merck );
 	m_providerlist.push_back( wiki );
 
-	// Liste durchgehen und Sprache setzen
+	// Proxy-Daten holen
+	wxString proxyhost = ::wxGetApp().GetConfigData( "proxyhost" );
+	wxString proxyport = ::wxGetApp().GetConfigData( "proxyport" );
+
+	// Liste durchgehen, Sprache und Proxy setzen
 	for ( unsigned int i = 0; i < m_providerlist.size(); ++i )
+	{
+		// Sprachen setzen
 		m_providerlist[i]->SetLanguage(wxGetApp().GetLanguage());
+
+		// Proxy setzen
+		if ( (proxyhost.length() > 0) && (proxyport.length() > 0) && proxyport.IsNumber() )
+			m_providerlist[i]->SetProxy( proxyhost, atoi(proxyport) );
+		//m_providerlist[i]->SetProxy( "77.75.204.98", 80 );
+		//m_providerlist[i]->SetProxy( "213.133.141.197", 8080 );
+	}
 
 	// Hersteller sind selektiert
 	wxString providerselected = ::wxGetApp().GetConfigData( "provider" );
@@ -121,6 +134,9 @@ CBerylliumSubstanceSearchDialog::CBerylliumSubstanceSearchDialog( wxWindow *pare
 
 	// Substanzen in lokale Datenbank einspeichern?
 	bSaveLocal = ( ::wxGetApp().GetConfigData( "savetolocaldatabase" ).Upper().compare("TRUE") == 0 );
+
+	// Protokoll am Ende der Suchanfrage bzw. beim Download der Daten anzeigen?
+	bEnableLogging = ( ::wxGetApp().GetConfigData( "enablelogging" ).Upper().compare("TRUE") == 0 );
 
 	// Lokale Datenbank suchen und öffnen
 	m_localdatabasename = ::wxGetApp().GetConfigData( "localdatabase" );
@@ -184,10 +200,11 @@ void CBerylliumSubstanceSearchDialog::OnOK( wxCommandEvent &event )
 	// Fokus setzen
 	dlg->SetFocus();
 
-	// Log ausschalten, falls im Release
-#ifndef _DEBUG
-	wxLogNull Silence;
-#endif
+	// Log anschalten
+	wxLogBuffer logBuffer;
+
+	// Protokollieren?
+	logBuffer.EnableLogging( bEnableLogging );
 
 	// Hersteller nach Substanz fragen
 	temp.provider->GetDataOfCompound( temp.serial, data );
@@ -215,6 +232,13 @@ void CBerylliumSubstanceSearchDialog::OnOK( wxCommandEvent &event )
     // Existiert? Dann löschen!
     if ( tempfile.FileExists() )
         ::wxRemoveFile("beryllium10.temp");
+
+	// Log anzeigen, falls aktiviert
+	if ( bEnableLogging )
+	{
+		wxLogMessage( _(L"Mit einem Klick auf 'Details' sehen Sie das Protokoll für den Download der Daten für '%s' von '%s'."), temp.name, temp.provider->GetName());
+		logBuffer.Flush();
+	}
 
 	// Dialog beenden: OK
 	EndDialog( wxID_OK );
@@ -380,11 +404,11 @@ void CBerylliumSubstanceSearchDialog::OnSearch( wxCommandEvent &event )
 	// Fokus geben
 	dlg->SetFocus();
 
-	// Log "nullen" (unterdrückt Fehlerhinweise auf "schlechtes" XML)
-	// (falls im Release)
-#ifndef _DEBUG
-	wxLogNull Silence;
-#endif
+	// Log erstellen
+	wxLogBuffer logBuffer;
+
+	// Protokollieren?
+	logBuffer.EnableLogging(bEnableLogging);
 
 	// Anzahl Hersteller
 	unsigned int count = m_providerlist.size();
@@ -420,11 +444,16 @@ void CBerylliumSubstanceSearchDialog::OnSearch( wxCommandEvent &event )
 
 			// Liste füllen
 			m_providerlist[i]->GetResults( m_results );
-
-			// in Liste einfügen
+			
+			// Ergebnisse in Liste einfügen
 			for ( unsigned int j = 0; j < m_results.size(); ++j )
-				AddToList( m_results[j].name, m_providerlist[i], m_results[j].serial, m_results[j].data, m_results[j].info );
+				AddToList( m_results[j].name, m_providerlist[i], m_results[j].serial, m_results[j].data, m_results[j].info );			
 		}
+
+		// Keine Ergebnisse oder Fehler?
+		else
+			AddToList( _( wxString::Format( _(L"%s lieferte keine Suchergebnisse für '%s'."), m_providerlist[i]->GetName(), searchfor) ), NULL, 0, "", "" );
+
 	}
 
 	// Auf 100% setzen
@@ -441,7 +470,14 @@ void CBerylliumSubstanceSearchDialog::OnSearch( wxCommandEvent &event )
 
     // Existiert? Dann löschen!
     if ( tempfile.FileExists() )
-        ::wxRemoveFile("beryllium10.temp");
+        ::wxRemoveFile("beryllium10.temp");	
+
+	// Log anzeigen, falls aktiviert.
+	if ( bEnableLogging )
+	{
+		wxLogMessage( _(L"Mit einem Klick auf 'Details' sehen Sie das Protokoll für Ihre Suchanfrage zu '%s'."), searchfor);
+		logBuffer.Flush();
+	}
 }
 
 // Löscht die Liste und fügt einen Standardeintrag hinzu
@@ -550,14 +586,19 @@ void CBerylliumSubstanceSearchDialog::OnPreferences( wxCommandEvent &event )
 
 	prefsMenu->Append( new wxMenuItem( 0, beID_Prefs_EXACT, _(L"Exakte Suche"), "", wxITEM_CHECK ) );
 	prefsMenu->Append( new wxMenuItem( 0, beID_Prefs_SAVELOCAL, _(L"Substanzen in lokale Datenbank übernehmen"), "", wxITEM_CHECK ) );
+	prefsMenu->Append( new wxMenuItem( 0, beID_Prefs_ENABLELOG, _(L"Protokoll anzeigen"), "", wxITEM_CHECK ) );
 	prefsMenu->AppendSeparator();
 	prefsMenu->Append( new wxMenuItem( 0, beID_Prefs_SELLOCALDB, _(L"Lokale Datenbank wählen...") ) );
+
 
 	// Substanzen speichern
 	prefsMenu->Check( beID_Prefs_SAVELOCAL, bSaveLocal );
 
 	// Exakte Suche?
 	prefsMenu->Check( beID_Prefs_EXACT, bExactMatch);
+
+	// Protokoll anzeigen?
+	prefsMenu->Check( beID_Prefs_ENABLELOG, bEnableLogging );
 
 	menu->AppendSubMenu( prefsMenu, _(L"&Suchoptionen") );
 
@@ -658,6 +699,12 @@ void CBerylliumSubstanceSearchDialog::OnSearchPreferences( wxCommandEvent &event
 		case beID_Prefs_SAVELOCAL:
 			bSaveLocal = event.IsChecked();
 			::wxGetApp().SetConfigData( "savetolocaldatabase", (bSaveLocal ? "true" : "false") );
+			break;
+
+		// Protokoll anzeigen?
+		case beID_Prefs_ENABLELOG:
+			bEnableLogging = event.IsChecked();
+			::wxGetApp().SetConfigData( "enablelogging", (bEnableLogging ? "true" : "false") );
 			break;
 	}
 }

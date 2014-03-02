@@ -58,8 +58,10 @@
 
 #define beID_Prefs_EXACT		2001
 #define beID_Prefs_SAVELOCAL	2002
+#define beID_Prefs_ENABLELOG	2003
 #define beID_Prefs_LAST			2003
 #define beID_Prefs_SELLOCALDB	2101
+
 
 
 class CBerylliumSubstanceSearchDialog : public wxDialog
@@ -113,6 +115,9 @@ private:
 
 	// Daten in lokale Datenbank übernehmen?
 	bool	bSaveLocal;
+
+	// Protokoll anzeigen?
+	bool    bEnableLogging;
 
 	// Substanzdaten
 	CBerylliumSubstanceData data;
