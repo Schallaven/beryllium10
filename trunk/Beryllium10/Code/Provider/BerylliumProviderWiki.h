@@ -88,6 +88,9 @@ private:
 	// Hilfsfunktion: Parst einen der Section-Blocks der englischen Wiki
 	void ParseSectionBox( wxString szBlock );
 
+	// Hilfsfunktion: Parst 'drugbox' der englischen Wiki
+	void ParseDrugBox( wxString szBlock );
+
 	// Hilfsfunktion: Gibt alles zurück was zwischen {{ und }} zu finden ist
 	// und entfernt es aus dem Text
 	wxString ExtractFromBrackets( wxString &szText );	

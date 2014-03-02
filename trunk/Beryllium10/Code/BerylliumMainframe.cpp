@@ -893,11 +893,24 @@ void CBerylliumMainframe::OnEventOptions( wxCommandEvent &event )
 	// Sprache setzen
 	dlg.SetLanguage( wxGetApp().GetLanguage() );
 
+	// Proxy setzen
+	dlg.SetProxy( ::wxGetApp().GetConfigData( "proxyhost" ), ::wxGetApp().GetConfigData( "proxyport" ));
+
 	// Aufrufen
 	if ( dlg.ShowModal() == wxID_OK )
 	{
 		// Sprache setzen
 		wxGetApp().SetLanguage( dlg.GetLanguage() );
+
+		// Proxy setzen
+		wxString host = dlg.GetProxyHost(); wxString port = dlg.GetProxyPort();
+
+		// Nur setzen, wenn beides angegeben wurde
+		if ( (host.length() > 0) && (port.length() > 0) && port.IsNumber() )
+		{
+			::wxGetApp().SetConfigData( "proxyhost", host );
+			::wxGetApp().SetConfigData( "proxyport", port );
+		}
 	}
 }
 

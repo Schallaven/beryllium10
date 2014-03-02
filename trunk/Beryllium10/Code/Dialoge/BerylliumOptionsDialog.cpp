@@ -61,6 +61,7 @@ CBerylliumOptionsDialog::CBerylliumOptionsDialog(wxWindow* parent)
 
 	// Seiten hinzufügen
 	notebook->AddPage( CreatePageLanguage(notebook), _(L"Sprache"));
+	notebook->AddPage( CreatePageProxy(notebook), _(L"Proxy"));
 
 	// Seite auswählen
 	notebook->SetSelection( 0 );
@@ -104,6 +105,55 @@ wxPanel *CBerylliumOptionsDialog::CreatePageLanguage(wxWindow* parent)
 	return panel;
 }
 
+// Initialisiert die Seite "Proxy"
+wxPanel *CBerylliumOptionsDialog::CreatePageProxy(wxWindow* parent)
+{
+	// Ein Panel vorbereiten
+	wxPanel* panel = new wxPanel(parent, wxID_ANY);
+
+	// Hier werden die Elemente erstellt...
+	wxBoxSizer* bSizer1;	bSizer1 = new wxBoxSizer( wxVERTICAL );
+
+	wxStaticText* m_staticText1;
+	m_staticText1 = new wxStaticText( panel, wxID_ANY, _(L"Sie können hier einen Proxy-Server eintragen, über den die HTTP-Anfragen für die Substanzsuche geleitet werden. Lassen Sie die Eingabefelder frei, um keinen Proxy-Server zu benutzen."), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText1->Wrap( 410 );
+	bSizer1->Add( m_staticText1, 0, wxALL, 10 );	
+
+	wxStaticText* m_staticText2;
+	m_staticText2 = new wxStaticText( panel, wxID_ANY, _(L"Server:"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText2->Wrap( 410 );
+	bSizer1->Add( m_staticText2, 0, wxALL, 10 );	
+
+	wxBoxSizer* bSizerSub1;	bSizerSub1 = new wxBoxSizer( wxHORIZONTAL );
+	bSizerSub1->SetMinSize( wxSize( 410,-1 ) );
+
+	m_textProxyServer = new wxTextCtrl( panel, wxID_ANY, "", wxDefaultPosition, wxSize( 210,-1 ), 0 );
+	bSizerSub1->Add( m_textProxyServer, 0, wxRIGHT|wxBOTTOM|wxALIGN_RIGHT, 10 );
+	
+	bSizerSub1->Add( 200, 0, 1, wxALIGN_RIGHT|wxEXPAND, 0 );
+	bSizer1->Add( bSizerSub1, 0, wxALIGN_RIGHT, 0 );
+
+	wxStaticText* m_staticText3;
+	m_staticText3 = new wxStaticText( panel, wxID_ANY, _(L"Port:"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText3->Wrap( 410 );
+	bSizer1->Add( m_staticText3, 0, wxALL, 10 );
+
+	wxBoxSizer* bSizerSub2;	bSizerSub2 = new wxBoxSizer( wxHORIZONTAL );
+	bSizerSub2->SetMinSize( wxSize( 410,-1 ) );
+
+	m_textProxyPort = new wxTextCtrl( panel, wxID_ANY, "", wxDefaultPosition, wxSize( 120,-1 ), 0 );
+	bSizerSub2->Add( m_textProxyPort, 0, wxRIGHT|wxBOTTOM|wxALIGN_RIGHT, 10 );
+
+	bSizerSub2->Add( 290, 0, 1, wxALIGN_RIGHT|wxEXPAND, 0 );
+	bSizer1->Add( bSizerSub2, 0, wxALIGN_RIGHT, 0 );
+
+	panel->SetSizer( bSizer1 );
+	panel->Layout();
+
+	// Panel zurückgeben...
+	return panel;
+}
+
 void CBerylliumOptionsDialog::OnInitDialog( wxInitDialogEvent &event )
 {
 	// Weiter im Programm
@@ -114,6 +164,10 @@ void CBerylliumOptionsDialog::OnOK( wxCommandEvent &event )
 {
 	// Sprache zurückgeben
 	m_iLanguage = (long)m_choiceLanguage->GetClientData( m_choiceLanguage->GetSelection() );
+
+	// Proxy zurückgeben
+	proxyhost = m_textProxyServer->GetValue();
+	proxyport = m_textProxyPort->GetValue();
 
 	// Ende: Weiter im Programm
 	// ------------------------
@@ -140,5 +194,13 @@ void CBerylliumOptionsDialog::SetLanguage( long newlang )
 		}
 	}
 
+}
+
+// Set: Proxy
+void CBerylliumOptionsDialog::SetProxy( wxString host, wxString port )
+{
+	// Eigenschaften setzen
+	proxyport = port; m_textProxyPort->SetValue( port );
+	proxyhost = host; m_textProxyServer->SetValue( host );
 }
 

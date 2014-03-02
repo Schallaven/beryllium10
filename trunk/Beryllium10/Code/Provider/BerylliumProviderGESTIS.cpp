@@ -59,6 +59,9 @@ bool CBerylliumProviderGESTIS::SearchForCompound( const wxString searchtext, boo
 	// Suchstring
 	wxString searchurl = "";
 
+	// Loggen
+	wxLogMessage( _(L"ProviderGESTIS, %d: HTTP-Anfrage wird vorbereitet."), __LINE__ );
+
 	// CAS-Nummer?
 	if ( IsCAS( searchtext ) )
 	{
@@ -94,11 +97,38 @@ bool CBerylliumProviderGESTIS::SearchForCompound( const wxString searchtext, boo
 
 	m_http.SetTimeout(60); // 60 Sekunden TimeOut
 
+	// Host
+	wxString gestishost = "gestis.itrust.de";
+
 	// Anfrage an Gestis vorbereiten
 	if ( iLanguage == wxLANGUAGE_ENGLISH )
-		m_http.Connect( "gestis-en.itrust.de" );
+		gestishost = "gestis-en.itrust.de";
+
+	// Anfrage mit Proxy?
+	if ( proxyhost.length() > 0 )
+	{
+		// Verbinden
+		m_http.Connect( proxyhost, proxyport );
+
+		// Puffer setzen
+		m_http.SetPostBuffer( "Host: " + gestishost);
+
+		// Adresse erweitern
+		searchurl = "http://" + gestishost + searchurl;
+
+		// Loggen
+		wxLogMessage( _(L"ProviderGESTIS, %d: Verbinden über Proxy %s:%d."), __LINE__, proxyhost, proxyport );
+	}
+
+	// kein Proxy
 	else
-		m_http.Connect( "gestis.itrust.de" );
+	{
+		// Verbinden
+		m_http.Connect( gestishost );
+
+		// Loggen
+		wxLogMessage( _(L"ProviderGESTIS, %d: Verbinden ohne Proxy."), __LINE__ );
+	}
 
 	// InputStream erzeugen
 	wxInputStream *httpStream = m_http.GetInputStream( searchurl );
@@ -112,8 +142,10 @@ bool CBerylliumProviderGESTIS::SearchForCompound( const wxString searchtext, boo
 		// OutputStream erzeugen
 #ifdef _DEBUG
 		wxTempFileOutputStream dataStream("temp/gestis.temp");
+		wxLogMessage( _(L"ProviderGESTIS, %d: Temporäre Datei 'temp/gestis.temp' anlegen."), __LINE__ );
 #else
 		wxTempFileOutputStream dataStream("beryllium10.temp");
+		wxLogMessage( _(L"ProviderGESTIS, %d: Temporäre Datei 'beryllium10.temp' anlegen."), __LINE__ );
 #endif
 
 		// Daten lesen
@@ -123,8 +155,17 @@ bool CBerylliumProviderGESTIS::SearchForCompound( const wxString searchtext, boo
 		dataStream.Close();
 
 		// Ergebnisse laden.
+		wxLogMessage( _(L"ProviderGESTIS, %d: Suchergebnisse laden."), __LINE__ );
 		bGotData = LoadSearchData();
 	}
+
+	// Fehler beim Verbinden?
+	else
+	{
+		// Fehler ins Log schreiben
+		wxLogError( _(L"ProviderGESTIS, %d: Fehler %d beim Verbinden."), __LINE__, m_http.GetError() );
+	}
+
 
 	// Stream löschen
 	wxDELETE(httpStream);
@@ -150,6 +191,9 @@ void CBerylliumProviderGESTIS::GetDataOfCompound( const int iSerial, CBerylliumS
 		{
 			// Namen setzen
 			substancename = m_results[i].name;
+
+			// Protokoll
+			wxLogMessage( _(L"ProviderGESTIS, %d: Daten für '%s' werden geladen."), __LINE__, substancename );
 
 			// Daten holen
 			LoadDataFromUrl( m_results[i].data );
@@ -182,15 +226,27 @@ bool CBerylliumProviderGESTIS::LoadSearchData()
 	// Daten konnten nicht geladen werden? Raus hier!
 #ifdef _DEBUG
 	if ( !doc.Load( "temp/gestis.temp" ) )
+	{
+		wxLogError( _(L"ProviderGESTIS, %d: Temporäre Datei konnte nicht als XML-Datei geöffnet werden."), __LINE__ );
 		return false;
+	}
 #else
 	if ( !doc.Load( "beryllium10.temp" ) )
+	{
+		wxLogError( _(L"ProviderGESTIS, %d: Temporäre Datei konnte nicht als XML-Datei geöffnet werden."), __LINE__ );
 		return false;
+	}
 #endif
 
 	// Wurzel finden
     if (doc.GetRoot()->GetName() != "list-section")
+    {
+		wxLogError( _(L"ProviderGESTIS, %d: XML-Wurzel 'list-section' konnte nicht gefunden werden."), __LINE__ );
         return false;
+	}
+
+	// Daten parsen
+	wxLogMessage( _(L"ProviderGESTIS, %d: Daten werden eingelesen."), __LINE__ );
 
 	// Wurzel Ast für Ast durchgehen
     for ( wxXmlNode *node = doc.GetRoot()->GetChildren(); node; node = node->GetNext() )
@@ -202,10 +258,12 @@ bool CBerylliumProviderGESTIS::LoadSearchData()
 		// Wir suchen Elemente mit Namen "item"
 		if ( node->GetName().compare("item") == 0 )
 		{
+			wxLogMessage( _(L"ProviderGESTIS, %d: Suchergebniss gefunden."), __LINE__ );
+
 			LoadSearchDataItem( node );
 
 			// Wir sammeln höchstens 15 Einträge
-			if ( m_results.size() > 15 )
+			if ( m_results.size() > 14 )
 				return true;
 		}
 	}
@@ -256,19 +314,21 @@ void CBerylliumProviderGESTIS::LoadSearchDataItem( wxXmlNode *cell )
 
 	// Element "vollständig" gefunden? Dann in Liste eintragen!
 	if ( (temp.name.size() > 0) && (temp.data.size() > 0) )
+	{
+		wxLogMessage( _(L"ProviderGESTIS, %d: Substanz '%s' hinzugefügt."), __LINE__, temp.name );
 		m_results.push_back( temp );
+	}
 }
 
 // Lädt die Daten für die Substanz unter URL
 void CBerylliumProviderGESTIS::LoadDataFromUrl( wxString URL )
 {
-	// URL modifizieren (wir wollen die XML-Variante!)
-	URL.Replace( "http://gestis.itrust.de", "", true );
-	URL.Replace( "http://gestis-en.itrust.de", "", true );
+	// URL modifizieren (wir wollen die XML-Variante!)	
 	URL.Replace( "gestis.xsl", "gestis.xml", true );
 
 	// Wichtig hierbei ist das Cookie, damit Gestis weiß welches Sprache wir haben wollen
 	m_http.SetHeader( "Content-type", "text/html; charset=utf-8" );
+	wxLogMessage( _(L"ProviderGESTIS, %d: HTTP-Anfrage wird vorbereitet."), __LINE__ );
 
 	if ( iLanguage == wxLANGUAGE_ENGLISH )
 		m_http.SetHeader( "Cookie", "nxt/gateway.dll/vid=gestiseng%3Asdbeng;");
@@ -278,10 +338,37 @@ void CBerylliumProviderGESTIS::LoadDataFromUrl( wxString URL )
 	m_http.SetTimeout(60); // 60 Sekunden TimeOut
 
 	// Anfrage an Gestis vorbereiten
+	wxString gestishost = "gestis.itrust.de";
+
 	if ( iLanguage == wxLANGUAGE_ENGLISH )
-		m_http.Connect( "gestis-en.itrust.de" );
+		gestishost = "gestis-en.itrust.de";
+
+	// Anfrage mit Proxy?
+	if ( proxyhost.length() > 0 )
+	{
+		// Verbinden
+		m_http.Connect( proxyhost, proxyport );
+
+		// Puffer setzen
+		m_http.SetPostBuffer( "Host: " + gestishost);
+
+		// Loggen
+		wxLogMessage( _(L"ProviderGESTIS, %d: Verbinden über Proxy %s:%d."), __LINE__, proxyhost, proxyport );
+	}
+
+	// kein Proxy
 	else
-		m_http.Connect( "gestis.itrust.de" );
+	{
+		// URL modifizieren
+		URL.Replace( "http://gestis.itrust.de", "", true );
+		URL.Replace( "http://gestis-en.itrust.de", "", true );
+
+		// Verbinden
+		m_http.Connect( gestishost );
+
+		// Loggen
+		wxLogMessage( _(L"ProviderGESTIS, %d: Verbinden ohne Proxy."), __LINE__ );
+	}	
 
 	// InputStream erzeugen
 	wxInputStream *httpStream = m_http.GetInputStream( URL );
@@ -295,8 +382,10 @@ void CBerylliumProviderGESTIS::LoadDataFromUrl( wxString URL )
 		// OutputStream erzeugen
 #ifdef _DEBUG
 		wxTempFileOutputStream dataStream("temp/gestis.temp");
+		wxLogMessage( _(L"ProviderGESTIS, %d: Temporäre Datei 'temp/gestis.temp' anlegen."), __LINE__ );
 #else
 		wxTempFileOutputStream dataStream("beryllium10.temp");
+		wxLogMessage( _(L"ProviderGESTIS, %d: Temporäre Datei 'beryllium10.temp' anlegen."), __LINE__ );
 #endif
 
 		// Daten lesen
@@ -306,7 +395,15 @@ void CBerylliumProviderGESTIS::LoadDataFromUrl( wxString URL )
 		dataStream.Close();
 
 		// Ergebnisse laden.
+		wxLogMessage( _(L"ProviderGESTIS, %d: Suchergebnisse laden."), __LINE__ );
 		LoadSubstanceData();
+	}
+
+	// Fehler beim Verbinden?
+	else
+	{
+		// Fehler ins Log schreiben
+		wxLogError( _(L"ProviderGESTIS, %d: Fehler %d beim Verbinden."), __LINE__, m_http.GetError() );
 	}
 
 	// Stream löschen
@@ -328,15 +425,27 @@ void CBerylliumProviderGESTIS::LoadSubstanceData()
 	// Daten konnten nicht geladen werden? Raus hier!
 #ifdef _DEBUG
 	if ( !doc.Load( "temp/gestis.temp" ) )
+	{
+		wxLogError( _(L"ProviderGESTIS, %d: Temporäre Datei konnte nicht als XML-Datei geöffnet werden."), __LINE__ );
 		return;
+	}
 #else
 	if ( !doc.Load( "beryllium10.temp" ) )
+	{
+		wxLogError( _(L"ProviderGESTIS, %d: Temporäre Datei konnte nicht als XML-Datei geöffnet werden."), __LINE__ );
 		return;
+	}
 #endif
 
 	// Wurzel finden
     if (doc.GetRoot()->GetName() != "stoffreport")
+    {
+		wxLogError( _(L"ProviderGESTIS, %d: XML-Wurzel 'stoffreport' konnte nicht gefunden werden."), __LINE__ );
         return;
+	}
+
+	// Daten parsen
+	wxLogMessage( _(L"ProviderGESTIS, %d: Daten werden eingelesen."), __LINE__ );
 
 	// Namen der Substanz löschen
 	tempdata.szNames.clear();
@@ -350,16 +459,22 @@ void CBerylliumProviderGESTIS::LoadSubstanceData()
 
 		// Kopfdaten
 		if ( node->GetName().compare("kopfdaten") == 0 )
+		{
+			wxLogMessage( _(L"ProviderGESTIS, %d: Lade Kopfdaten..."), __LINE__ );
 			LoadSubstanceDataKopfdaten( node );
+		}
 
 		// Hauptkapitel!
 		else if ( node->GetName().compare("hauptkapitel") == 0 )
+		{
+			wxLogMessage( _(L"ProviderGESTIS, %d: Lade Substanzdaten..."), __LINE__ );
 			LoadSubstanceDataBlock( node );
+		}
 	}
 
 	// Keine Namen? Dann wenigstens den einen setzen!
 	if ( tempdata.szNames.size() == 0 )
-		tempdata.ReplaceNamesBy( substancename.ToStdString() );
+		tempdata.ReplaceNamesBy( substancename );
 
 	// Zurück
 	return;
@@ -384,7 +499,9 @@ void CBerylliumProviderGESTIS::LoadSubstanceDataKopfdaten( wxXmlNode *parent )
 			// Content
 			wxString content; GetAllTextFromNode( node, content );
 
-			tempdata.szNames.push_back( content.ToStdString() );
+			tempdata.szNames.push_back( content );
+
+			wxLogMessage( _(L"ProviderGESTIS, %d: Name: %s"), __LINE__, content );
 		}
 
 		// Aliasnamen
@@ -419,7 +536,11 @@ void CBerylliumProviderGESTIS::LoadSubstanceDataAliasname( wxXmlNode *parent )
 
 		// Nur Elemente mit Namen "stoffname" sammeln
 		if ( node->GetName().compare("stoffname") == 0 )
-			tempdata.szNames.push_back( content.ToStdString() );
+		{
+			tempdata.szNames.push_back( content );
+
+			wxLogMessage( _(L"ProviderGESTIS, %d: Alias: %s"), __LINE__, content );
+		}
 	}
 }
 
@@ -447,20 +568,26 @@ void CBerylliumProviderGESTIS::LoadSubstanceDataBlock( wxXmlNode *parent, wxStri
 		{
 			GetAllTextFromNode( node, content );
 			ueberschrift = content;
+
+			wxLogMessage( _(L"ProviderGESTIS, %d: Neue Überschrift '%s' gefunden."), __LINE__, content );
 		}
 
 		// CAS-Nr
 		else if ( name.compare("casnr") == 0 )
 		{
 			GetAllTextFromNode( node, content );
-			tempdata.szCAS = content.ToStdString();
+			tempdata.szCAS = content;
+
+			wxLogMessage( _(L"ProviderGESTIS, %d: CAS-Nummer %s gefunden."), __LINE__, content );
 		}
 
 		// Summenformel
 		else if ( name.compare("summenformel") == 0 )
 		{
 			GetAllTextFromNode( node, content );
-			tempdata.SetFormula( content.ToStdString() );
+			tempdata.SetFormula( content );
+
+			wxLogMessage( _(L"ProviderGESTIS, %d: Summenformel %s gefunden."), __LINE__, content );
 		}
 
 		// Bilder (z.B. GHS)
@@ -476,8 +603,12 @@ void CBerylliumProviderGESTIS::LoadSubstanceDataBlock( wxXmlNode *parent, wxStri
 				imgsrc.Replace( "ghs", "", true ); imgsrc.Replace( ".gif", "", true );
 
 				// Einfügen, falls nicht schon vorhanden
-				if ( !tempdata.HasGHSSymbol(imgsrc.ToStdString()) )
-                    tempdata.szGHSSymbols.push_back( imgsrc.ToStdString() );
+				if ( !tempdata.HasGHSSymbol(imgsrc) )
+				{
+                    tempdata.szGHSSymbols.push_back( imgsrc );
+
+					wxLogMessage( _(L"ProviderGESTIS, %d: GHS-Piktogramm %s gefunden."), __LINE__, imgsrc );
+				}
 			}
 		}
 
@@ -509,13 +640,17 @@ void CBerylliumProviderGESTIS::LoadSubstanceDataBlock( wxXmlNode *parent, wxStri
 					verstecktercode.Replace(" ", "/", true);
 
 					// Hinzufügen
-					tempdata.szRisks += verstecktercode.ToStdString();
+					tempdata.szRisks += verstecktercode;
+
+					wxLogMessage( _(L"ProviderGESTIS, %d: 'R-Sätze' gefunden."), __LINE__ );
 				}
 
 				// Gefahrensymbole
 				else
 				{
-					tempdata.szHarzards.push_back( verstecktercode.ToStdString() );
+					tempdata.szHarzards.push_back( verstecktercode );
+
+					wxLogMessage( _(L"ProviderGESTIS, %d: -> Gefahrensymbole (alt) gefunden."), __LINE__ );
 				}
 			}
 		}
@@ -560,9 +695,11 @@ void CBerylliumProviderGESTIS::LoadSubstanceDataBlock( wxXmlNode *parent, wxStri
 						tempdata.bMAKppm = ( content.find("ml/m") != content.npos );
 
 						// MAK speichern
-						tempdata.SetMAK( content.ToStdString() );
+						tempdata.SetMAK( content );
 
 						bMAKset = true;
+
+						wxLogMessage( _(L"ProviderGESTIS, %d: MAK-Wert %s gefunden."), __LINE__, content );
 					}
 
 					if ( bMAKset )
@@ -591,6 +728,8 @@ void CBerylliumProviderGESTIS::LoadSubstanceDataBlock( wxXmlNode *parent, wxStri
 
 				// WGK speichern
 				tempdata.iWGK = atoi( content.c_str() );
+
+				wxLogMessage( _(L"ProviderGESTIS, %d: WGK %d gefunden."), __LINE__, tempdata.iWGK );
 			}
 		}
 
@@ -698,11 +837,15 @@ void CBerylliumProviderGESTIS::LoadSubstanceDataTupel( wxString key, wxString va
 	value.Trim( false ); value.Trim( true );
 	topic.Trim( false ); topic.Trim( true );
 
+	wxLogMessage( _(L"ProviderGESTIS, %d: Tripel (%s,%s,%s) gefunden."), __LINE__, topic, key, value );
+
 	// Molare Masse
 	if ( (key.compare("Molmasse:") == 0) || (key.compare("Molar mass:") == 0) )
 	{
 		// Molare Masse speichern
 		tempdata.SetMolWeight( value.ToStdString() );
+
+		wxLogMessage( _(L"ProviderGESTIS, %d: -> als 'Molare Masse' interpretiert."), __LINE__ );
 	}
 
 	// Schmelzpunkt
@@ -713,6 +856,8 @@ void CBerylliumProviderGESTIS::LoadSubstanceDataTupel( wxString key, wxString va
 
 		// Schmelzpunkt speichern
 		tempdata.szMeltingPoint = value;
+
+		wxLogMessage( _(L"ProviderGESTIS, %d: -> als 'Schmelzpunkt' interpretiert."), __LINE__ );
 	}
 
 	// Siedepunkt
@@ -723,6 +868,8 @@ void CBerylliumProviderGESTIS::LoadSubstanceDataTupel( wxString key, wxString va
 
 		// Siedepunkt speichern
 		tempdata.szBoilingPoint = value;
+
+		wxLogMessage( _(L"ProviderGESTIS, %d: -> als 'Siedepunkt' interpretiert."), __LINE__ );
 	}
 
 	// Dichte
@@ -730,7 +877,11 @@ void CBerylliumProviderGESTIS::LoadSubstanceDataTupel( wxString key, wxString va
 	{
 		// Dichte speichern (falls nicht schon ein Wert vorhanden ist)
 		if ( tempdata.dbDensity == 1.0f )
-			tempdata.SetDensity( value.ToStdString() );
+		{
+			tempdata.SetDensity( value );
+
+			wxLogMessage( _(L"ProviderGESTIS, %d: -> als 'Dichte' interpretiert."), __LINE__ );
+		}
 	}
 
 	// Flammpunkt
@@ -741,6 +892,8 @@ void CBerylliumProviderGESTIS::LoadSubstanceDataTupel( wxString key, wxString va
 
 		// Flammpunkt zuweisen
 		tempdata.szFlashPoint = value;
+
+		wxLogMessage( _(L"ProviderGESTIS, %d: -> als 'Flammpunkt' interpretiert."), __LINE__ );
 	}
 
 	// GHS: Signalwort
@@ -751,6 +904,8 @@ void CBerylliumProviderGESTIS::LoadSubstanceDataTupel( wxString key, wxString va
 
 		// Signalwort speichern
 		tempdata.szSignalWord = value.ToStdString();
+
+		wxLogMessage( _(L"ProviderGESTIS, %d: -> als 'Signalwort (GHS)' interpretiert."), __LINE__ );
 	}
 
 	// Gefahrenhinweise
@@ -782,6 +937,8 @@ void CBerylliumProviderGESTIS::LoadSubstanceDataTupel( wxString key, wxString va
 
 		// Zuweisen
 		tempdata.szHarzardSatements = value;
+
+		wxLogMessage( _(L"ProviderGESTIS, %d: -> als 'H-Sätze' interpretiert."), __LINE__ );
 	}
 
 	// EUH-Sätze
@@ -813,6 +970,8 @@ void CBerylliumProviderGESTIS::LoadSubstanceDataTupel( wxString key, wxString va
 
 		// Zuweisen
 		tempdata.szEuropeanHarzardSatements = value;
+
+		wxLogMessage( _(L"ProviderGESTIS, %d: -> als 'EUH-Sätze' interpretiert."), __LINE__ );
 	}
 
 	// Sicherheitshinweise
@@ -844,6 +1003,8 @@ void CBerylliumProviderGESTIS::LoadSubstanceDataTupel( wxString key, wxString va
 
 		// Zuweisen
 		tempdata.szPrecautionaryStatements = value;
+
+		wxLogMessage( _(L"ProviderGESTIS, %d: -> als 'P-Sätze' interpretiert."), __LINE__ );
 	}
 
 
