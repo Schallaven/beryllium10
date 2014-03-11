@@ -905,12 +905,13 @@ void CBerylliumMainframe::OnEventOptions( wxCommandEvent &event )
 		// Proxy setzen
 		wxString host = dlg.GetProxyHost(); wxString port = dlg.GetProxyPort();
 
-		// Nur setzen, wenn beides angegeben wurde
-		if ( (host.length() > 0) && (port.length() > 0) && port.IsNumber() )
-		{
-			::wxGetApp().SetConfigData( "proxyhost", host );
-			::wxGetApp().SetConfigData( "proxyport", port );
-		}
+		// Wenn eins von beiden nicht angegeben wurde dann leeren
+		if ( (host.length() == 0) || (port.length() == 0) )
+			host = port = "";
+
+		// Speichern
+		::wxGetApp().SetConfigData( "proxyhost", host );
+		::wxGetApp().SetConfigData( "proxyport", port );		
 	}
 }
 
