@@ -36,6 +36,7 @@
 #include "../betool.h"
 
 #include <wx/sstream.h>
+#include <wx/uri.h>
 
 // Initialisieren der Elementsymbole
 const char *CBerylliumProviderWiki::cElements[112] =
@@ -98,8 +99,12 @@ bool CBerylliumProviderWiki::SearchForCompound( const wxString searchtext, bool 
 		request  = "/wiki/Special:Export/%s";
 	}
 
+	// URL escapen
+	wxURI uritext(searchtext);
+	wxString newsearchtext = uritext.BuildURI();
+
 	// Loggen
-	wxLogMessage( _(L"ProviderWiki, %d: HTTP-Anfrage an 'http://%s%s'."), __LINE__, wikihost, wxString::Format( request, searchtext ) );
+	wxLogMessage( _(L"ProviderWiki, %d: HTTP-Anfrage an 'http://%s%s'."), __LINE__, wikihost, wxString::Format( request, newsearchtext ) );
 
 	// Anfrage mit Proxy?
 	if ( proxyhost.length() > 0 )
