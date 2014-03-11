@@ -37,6 +37,7 @@
 
 #include <wx/sstream.h>
 #include <wx/wfstream.h>
+#include <wx/uri.h>
 
 CBerylliumProviderMerck::CBerylliumProviderMerck(void)
 {
@@ -63,9 +64,9 @@ bool CBerylliumProviderMerck::SearchForCompound( const wxString searchtext, bool
 	// Daten erfolgreich gefunden (und geladen)
 	bool bGotData = false;
 
-	// Leerzeichen im String ersetzen
-	wxString newsearchtext = searchtext;
-	newsearchtext.Replace( " ", "%20", true);
+	// URL escapen
+	wxURI uritext(searchtext);
+	wxString newsearchtext = uritext.BuildURI();
 
 	// HTTP-Anfrage vorbereiten
 	m_http.SetHeader( "Content-type", "text/html; charset=utf-8" );

@@ -37,6 +37,7 @@
 
 #include <wx/sstream.h>
 #include <wx/wfstream.h>
+#include <wx/uri.h>
 
 
 CBerylliumProviderGESTIS::CBerylliumProviderGESTIS(void)
@@ -65,7 +66,11 @@ bool CBerylliumProviderGESTIS::SearchForCompound( const wxString searchtext, boo
 	// CAS-Nummer?
 	if ( IsCAS( searchtext ) )
 	{
-		searchurl = "/nxt/gateway.dll?f=xhitlist&xhitlist_q=%5BFeld%20casnr%3A" + searchtext + "%5D&xhitlist_sel=title%3Bpath%3Bfield%3Acasnr&xhitlist_x=Advanced"; //&xhitlist_x=Advanced&xhitlist_s=&xhitlist_hc=&xhitlist_d=&xhitlist_mh=2000&xhitlist_vps=500&xhitlist_xsl=xhitlist.xsl&xhitlist_vpc=first&xhitlist_sel=title%3Bpath%3Bcontent-type%3Bhome-title%3Bitem-bookmark%3Bfield%3Acasnr%3B";
+		// URL escapen
+		wxURI uritext(searchtext); wxString text = uritext.BuildURI();
+
+		// Zusammensetzen
+		searchurl = "/nxt/gateway.dll?f=xhitlist&xhitlist_q=%5BFeld%20casnr%3A" + text + "%5D&xhitlist_sel=title%3Bpath%3Bfield%3Acasnr&xhitlist_x=Advanced"; //&xhitlist_x=Advanced&xhitlist_s=&xhitlist_hc=&xhitlist_d=&xhitlist_mh=2000&xhitlist_vps=500&xhitlist_xsl=xhitlist.xsl&xhitlist_vpc=first&xhitlist_sel=title%3Bpath%3Bcontent-type%3Bhome-title%3Bitem-bookmark%3Bfield%3Acasnr%3B";
 	}
 
 	// Normaler Text
@@ -77,6 +82,10 @@ bool CBerylliumProviderGESTIS::SearchForCompound( const wxString searchtext, boo
 		if ( !bExactMatch )
 			text = "*" + text + "*";
 
+		// URL escapen
+		wxURI uritext(text); text = uritext.BuildURI();
+
+		// Zusammensetzen
 		searchurl = "/nxt/gateway.dll?f=xhitlist&xhitlist_q=%5BFeld%20acstoff%3A" + text + "%5D&xhitlist_sel=title%3Bpath%3Bfield%3Acasnr&xhitlist_x=Advanced"; //&xhitlist_x=Advanced";//&xhitlist_s=&xhitlist_hc=&xhitlist_d=&xhitlist_mh=2000&xhitlist_vps=500&xhitlist_xsl=xhitlist.xsl&xhitlist_vpc=first"; //&xhitlist_x=Advanced&xhitlist_s=&xhitlist_hc=&xhitlist_d=&xhitlist_mh=2000&xhitlist_vps=500&xhitlist_xsl=xhitlist.xsl&xhitlist_vpc=first&xhitlist_sel=title%3Bpath%3Bcontent-type%3Bhome-title%3Bitem-bookmark%3Bfield%3Acasnr%3B";
 	}
 
