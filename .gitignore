@@ -1,0 +1,6 @@
+binary/Beryllium10d
+binary/Beryllium10
+macosx/obj/*
+.DS_Store
+binary/.DS_Store
+
