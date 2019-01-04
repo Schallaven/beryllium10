@@ -1,0 +1,286 @@
+# depslib dependency file v1.0
+1546560657 source:/Users/penguin/Projects/beryllium10/code/berylliumapplication.cpp
+	"stdafx.h"
+	"BerylliumApplication.h"
+	<wx/xml/xml.h>
+	<wx/fs_arc.h>
+	<wx/fs_mem.h>
+	<wx/cmdline.h>
+	<wx/sstream.h>
+	<wx/protocol/http.h>
+	"AutoBuild.h"
+
+1546560658 /Users/penguin/Projects/beryllium10/code/stdafx.h
+	<windows.h>
+	<wx/wx.h>
+	<wx/scrolwin.h>
+	<wx/dc.h>
+	<wx/dcbuffer.h>
+
+1546560657 source:/Users/penguin/Projects/beryllium10/code/berylliummainframe.cpp
+	"stdafx.h"
+	<wx/print.h>
+	<wx/textdlg.h>
+	<wx/protocol/http.h>
+	<wx/sstream.h>
+	"AutoBuild.h"
+	"BerylliumViewManager.h"
+	"BerylliumMainframe.h"
+	"berylliummainframe_identifiers.h"
+	"BerylliumApplication.h"
+	"Dialoge/BerylliumMultiplierDialog.h"
+	"Dialoge/BerylliumOptionsDialog.h"
+	"Dialoge/BerylliumInfoDialog.h"
+	"Misc/BerylliumBreakoutDialog.h"
+	"../Resources/Bitmaps/icon_empty_menu.xpm"
+	"../Resources/Bitmaps/icon_new.xpm"
+	"../Resources/Bitmaps/icon_new_menu.xpm"
+	"../Resources/Bitmaps/icon_open.xpm"
+	"../Resources/Bitmaps/icon_open_menu.xpm"
+	"../Resources/Bitmaps/icon_save.xpm"
+	"../Resources/Bitmaps/icon_save_menu.xpm"
+	"../Resources/Bitmaps/icon_print.xpm"
+	"../Resources/Bitmaps/icon_print_menu.xpm"
+	"../Resources/Bitmaps/icon_help.xpm"
+	"../Resources/Bitmaps/icon_help_menu.xpm"
+	"../Resources/Bitmaps/icon_left.xpm"
+	"../Resources/Bitmaps/icon_right.xpm"
+	"../Resources/Bitmaps/icon_useghs.xpm"
+	"../Resources/Bitmaps/icon_psebreaker.xpm"
+
+1546560658 /Users/penguin/Projects/beryllium10/code/berylliummainframe_identifiers.h
+
+1546560658 /Users/penguin/Projects/beryllium10/Resources/Bitmaps/icon_empty_menu.xpm
+
+1546560659 /Users/penguin/Projects/beryllium10/Resources/Bitmaps/icon_new.xpm
+
+1546560659 /Users/penguin/Projects/beryllium10/Resources/Bitmaps/icon_new_menu.xpm
+
+1546560659 /Users/penguin/Projects/beryllium10/Resources/Bitmaps/icon_open.xpm
+
+1546560659 /Users/penguin/Projects/beryllium10/Resources/Bitmaps/icon_open_menu.xpm
+
+1546560659 /Users/penguin/Projects/beryllium10/Resources/Bitmaps/icon_save.xpm
+
+1546560659 /Users/penguin/Projects/beryllium10/Resources/Bitmaps/icon_save_menu.xpm
+
+1546560659 /Users/penguin/Projects/beryllium10/Resources/Bitmaps/icon_print.xpm
+
+1546560659 /Users/penguin/Projects/beryllium10/Resources/Bitmaps/icon_print_menu.xpm
+
+1546560658 /Users/penguin/Projects/beryllium10/Resources/Bitmaps/icon_help.xpm
+
+1546560658 /Users/penguin/Projects/beryllium10/Resources/Bitmaps/icon_help_menu.xpm
+
+1546560658 /Users/penguin/Projects/beryllium10/Resources/Bitmaps/icon_left.xpm
+
+1546560659 /Users/penguin/Projects/beryllium10/Resources/Bitmaps/icon_right.xpm
+
+1546560659 /Users/penguin/Projects/beryllium10/Resources/Bitmaps/icon_useghs.xpm
+
+1546560659 /Users/penguin/Projects/beryllium10/Resources/Bitmaps/icon_psebreaker.xpm
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/berylliumviewmanager.cpp
+	"stdafx.h"
+	"BerylliumViewManager.h"
+	"Datahandling/BerylliumViewSafetySheets.h"
+	"Datahandling/BerylliumViewDataSheets.h"
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/betool.cpp
+	"stdafx.h"
+	"betool.h"
+
+1546560658 /Users/penguin/Projects/beryllium10/code/betool.h
+	<vector>
+
+1546574092 source:/Users/penguin/Projects/beryllium10/code/datahandling/berylliumdata.cpp
+	"stdafx.h"
+	"BerylliumData.h"
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/datahandling/berylliumdatalibrary.cpp
+	"stdafx.h"
+	"BerylliumDataLibrary.h"
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/datahandling/berylliumdocument.cpp
+	"stdafx.h"
+	"BerylliumDocument.h"
+
+1546574313 source:/Users/penguin/Projects/beryllium10/code/datahandling/berylliumstatement.cpp
+	"stdafx.h"
+	"BerylliumStatement.h"
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/datahandling/berylliumstatementsmanager.cpp
+	"stdafx.h"
+	"BerylliumStatementsManager.h"
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/datahandling/berylliumsubstancedata.cpp
+	"stdafx.h"
+	"BerylliumSubstanceData.h"
+	"../BerylliumApplication.h"
+	"../Datahandling/BerylliumStatementsManager.h"
+	"../betool.h"
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/datahandling/berylliumviewdatasheets.cpp
+	"stdafx.h"
+	"BerylliumViewDataSheets.h"
+	"../berylliummainframe_identifiers.h"
+	"../BerylliumApplication.h"
+	"../Dialoge/BerylliumSubstanceSearchDialog.h"
+	"../Dialoge/BerylliumSubstanceProperties.h"
+	"BerylliumViewDataSheetsPrinting.h"
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/datahandling/berylliumviewdatasheetsprinting.cpp
+	"stdafx.h"
+	"BerylliumViewDataSheetsPrinting.h"
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/datahandling/berylliumviewsafetysheets.cpp
+	"stdafx.h"
+	"BerylliumViewSafetySheets.h"
+	"../berylliummainframe_identifiers.h"
+	"../BerylliumApplication.h"
+	"BerylliumViewSafetySheetsPrinting.h"
+	"../Dialoge/BerylliumViewSafetySheetsProperties.h"
+	"../Dialoge/BerylliumSafetySheetsGeneral.h"
+	"../Dialoge/BerylliumSubstanceSearchDialog.h"
+	"../Dialoge/BerylliumSubstanceProperties.h"
+	"../Dialoge/BerylliumStatementEditor.h"
+	"../Dialoge/BerylliumPhraseSelector.h"
+	"../../Resources/Bitmaps/icon_up.xpm"
+	"../../Resources/Bitmaps/icon_down.xpm"
+	<wx/choicdlg.h>
+
+1546560659 /Users/penguin/Projects/beryllium10/Resources/Bitmaps/icon_up.xpm
+
+1546560658 /Users/penguin/Projects/beryllium10/Resources/Bitmaps/icon_down.xpm
+
+1546574377 source:/Users/penguin/Projects/beryllium10/code/datahandling/berylliumviewsafetysheetscolumn.cpp
+	"stdafx.h"
+	"BerylliumViewSafetySheetsColumn.h"
+	"../betool.h"
+	<wx/filesys.h>
+	<wx/wfstream.h>
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/datahandling/berylliumviewsafetysheetsprinting.cpp
+	"stdafx.h"
+	"BerylliumViewSafetySheetsPrinting.h"
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/dialoge/berylliuminfodialog.cpp
+	"stdafx.h"
+	"BerylliumInfoDialog.h"
+	"../BerylliumApplication.h"
+	"../AutoBuild.h"
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/dialoge/berylliumlethaldialog.cpp
+	"stdafx.h"
+	"BerylliumLethalDialog.h"
+	"../betool.h"
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/dialoge/berylliummultiplierdialog.cpp
+	"stdafx.h"
+	"BerylliumMultiplierDialog.h"
+	"../betool.h"
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/dialoge/berylliumoptionsdialog.cpp
+	"stdafx.h"
+	"BerylliumOptionsDialog.h"
+	<wx/bookctrl.h>
+	<wx/filesys.h>
+	<wx/wfstream.h>
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/dialoge/berylliumphraseselector.cpp
+	"stdafx.h"
+	"BerylliumPhraseSelector.h"
+	<wx/bookctrl.h>
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/dialoge/berylliumsafetysheetsgeneral.cpp
+	"stdafx.h"
+	"BerylliumSafetySheetsGeneral.h"
+	<wx/bookctrl.h>
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/dialoge/berylliumstatementeditor.cpp
+	"stdafx.h"
+	"BerylliumStatementEditor.h"
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/dialoge/berylliumsubstanceproperties.cpp
+	"stdafx.h"
+	"BerylliumSubstanceProperties.h"
+	<wx/bookctrl.h>
+	<wx/filesys.h>
+	<wx/wfstream.h>
+	<commctrl.h>
+	"BerylliumStatementEditor.h"
+	"BerylliumLethalDialog.h"
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/dialoge/berylliumsubstancesearchdialog.cpp
+	"stdafx.h"
+	"BerylliumSubstanceSearchDialog.h"
+	"../BerylliumApplication.h"
+	<wx/progdlg.h>
+	"../../Resources/Bitmaps/insert_substance.xpm"
+	"../Provider/BerylliumProviderWiki.h"
+	"../Provider/BerylliumProviderMerck.h"
+	"../Provider/BerylliumProviderGESTIS.h"
+	"../Provider/BerylliumProviderLocal.h"
+
+1546560659 /Users/penguin/Projects/beryllium10/Resources/Bitmaps/insert_substance.xpm
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/dialoge/berylliumviewsafetysheetsproperties.cpp
+	"stdafx.h"
+	"BerylliumViewSafetySheetsProperties.h"
+	<wx/bookctrl.h>
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/interfaces/iobserver.cpp
+	"stdafx.h"
+	"IObserver.h"
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/interfaces/iprovider.cpp
+	"stdafx.h"
+	"IProvider.h"
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/interfaces/iview.cpp
+	"stdafx.h"
+	"IView.h"
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/misc/berylliumbreakout.cpp
+	"stdafx.h"
+	"BerylliumBreakout.h"
+	<wx/timer.h>
+	<wx/fs_arc.h>
+	<wx/fs_mem.h>
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/misc/berylliumbreakoutdialog.cpp
+	"stdafx.h"
+	"BerylliumBreakoutDialog.h"
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/provider/berylliumprovidergestis.cpp
+	"stdafx.h"
+	"BerylliumProviderGESTIS.h"
+	"../betool.h"
+	<wx/sstream.h>
+	<wx/wfstream.h>
+	<wx/uri.h>
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/provider/berylliumproviderlocal.cpp
+	"stdafx.h"
+	"BerylliumProviderLocal.h"
+	"../BerylliumApplication.h"
+	<wx/filename.h>
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/provider/berylliumprovidermerck.cpp
+	"stdafx.h"
+	"BerylliumProviderMerck.h"
+	"../betool.h"
+	<wx/sstream.h>
+	<wx/wfstream.h>
+	<wx/uri.h>
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/provider/berylliumproviderwiki.cpp
+	"stdafx.h"
+	"BerylliumProviderWiki.h"
+	"../betool.h"
+	<wx/sstream.h>
+	<wx/uri.h>
+
+1546560658 source:/Users/penguin/Projects/beryllium10/code/stdafx.cpp
+	"stdafx.h"
+

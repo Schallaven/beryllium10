@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="debug" />
+	<File name="../code/datahandling/berylliumstatement.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1895" topLine="29" />
+		</Cursor>
+	</File>
+	<File name="../code/datahandling/berylliumstatement.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1862" topLine="23" />
+		</Cursor>
+	</File>
+	<File name="../code/datahandling/berylliumviewsafetysheetscolumn.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="10612" topLine="322" />
+		</Cursor>
+	</File>
+	<File name="../code/datahandling/berylliumdata.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1725" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="../code/datahandling/berylliumviewsafetysheetscolumn.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="658" topLine="37" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>

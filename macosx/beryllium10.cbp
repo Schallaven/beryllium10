@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Beryllium10" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="debug">
+				<Option output="../binary/Beryllium10d" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../binary" />
+				<Option object_output="obj/debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-std=c++0x" />
+					<Add option="-g" />
+					<Add option="`wx-config  --version=3.0 --static=yes --unicode=yes --debug=yes --cflags`" />
+					<Add option="-I/Users/penguin/wxWidgets-3.0.4/build-cocoa-debug/lib/wx/include/osx_cocoa-unicode-static-3.0 -I/Users/penguin/wxWidgets-3.0.4/include -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX__ -D__WXOSX_COCOA__" />
+					<Add directory="../code" />
+				</Compiler>
+				<Linker>
+					<Add option="`wx-config  --version=3.0 --static=yes --unicode=yes --debug=yes --libs`" />
+					<Add option="-L/Users/penguin/wxWidgets-3.0.4/build-cocoa-debug/lib -framework IOKit -framework Carbon -framework Cocoa -framework AudioToolbox -framework System -framework OpenGL /Users/penguin/wxWidgets-3.0.4/build-cocoa-debug/lib/libwx_osx_cocoau_xrc-3.0.a /Users/penguin/wxWidgets-3.0.4/build-cocoa-debug/lib/libwx_osx_cocoau_webview-3.0.a /Users/penguin/wxWidgets-3.0.4/build-cocoa-debug/lib/libwx_osx_cocoau_qa-3.0.a /Users/penguin/wxWidgets-3.0.4/build-cocoa-debug/lib/libwx_baseu_net-3.0.a /Users/penguin/wxWidgets-3.0.4/build-cocoa-debug/lib/libwx_osx_cocoau_html-3.0.a /Users/penguin/wxWidgets-3.0.4/build-cocoa-debug/lib/libwx_osx_cocoau_adv-3.0.a /Users/penguin/wxWidgets-3.0.4/build-cocoa-debug/lib/libwx_osx_cocoau_core-3.0.a /Users/penguin/wxWidgets-3.0.4/build-cocoa-debug/lib/libwx_baseu_xml-3.0.a /Users/penguin/wxWidgets-3.0.4/build-cocoa-debug/lib/libwx_baseu-3.0.a -framework WebKit -lexpat -lwxregexu-3.0 -lwxtiff-3.0 -lwxjpeg-3.0 -lwxpng-3.0 -lz -lpthread -liconv -llzma" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="Rez -d __DARWIN__ -t APPL Carbon.r -o $(TARGET_OUTPUT_FILE)" />
+				</ExtraCommands>
+			</Target>
+			<Target title="release">
+				<Option output="../binary/Beryllium10" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../binary" />
+				<Option object_output="obj/release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="`wx-config  --version=3.0 --static=yes --unicode=yes --debug=no --cflags`" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="`wx-config  --version=3.0 --static=yes --unicode=yes --debug=no --libs`" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="/Developer/Tools/Rez -d __DARWIN__ -t APPL Carbon.r -o $(TARGET_OUTPUT_FILE)" />
+					<Add after="/Developer/Tools/Rez -d __DARWIN__ -t APPL Carbon.r -o $(TARGET_OUTPUT_FILE)" />
+				</ExtraCommands>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="../code/autobuild.h" />
+		<Unit filename="../code/berylliumapplication.cpp" />
+		<Unit filename="../code/berylliumapplication.h" />
+		<Unit filename="../code/berylliummainframe.cpp" />
+		<Unit filename="../code/berylliummainframe.h" />
+		<Unit filename="../code/berylliummainframe_identifiers.h" />
+		<Unit filename="../code/berylliumviewmanager.cpp" />
+		<Unit filename="../code/berylliumviewmanager.h" />
+		<Unit filename="../code/betool.cpp" />
+		<Unit filename="../code/betool.h" />
+		<Unit filename="../code/datahandling/berylliumdata.cpp" />
+		<Unit filename="../code/datahandling/berylliumdata.h" />
+		<Unit filename="../code/datahandling/berylliumdatalibrary.cpp" />
+		<Unit filename="../code/datahandling/berylliumdatalibrary.h" />
+		<Unit filename="../code/datahandling/berylliumdocument.cpp" />
+		<Unit filename="../code/datahandling/berylliumdocument.h" />
+		<Unit filename="../code/datahandling/berylliumstatement.cpp" />
+		<Unit filename="../code/datahandling/berylliumstatement.h" />
+		<Unit filename="../code/datahandling/berylliumstatementsmanager.cpp" />
+		<Unit filename="../code/datahandling/berylliumstatementsmanager.h" />
+		<Unit filename="../code/datahandling/berylliumsubstancedata.cpp" />
+		<Unit filename="../code/datahandling/berylliumsubstancedata.h" />
+		<Unit filename="../code/datahandling/berylliumviewdatasheets.cpp" />
+		<Unit filename="../code/datahandling/berylliumviewdatasheets.h" />
+		<Unit filename="../code/datahandling/berylliumviewdatasheetsprinting.cpp" />
+		<Unit filename="../code/datahandling/berylliumviewdatasheetsprinting.h" />
+		<Unit filename="../code/datahandling/berylliumviewsafetysheets.cpp" />
+		<Unit filename="../code/datahandling/berylliumviewsafetysheets.h" />
+		<Unit filename="../code/datahandling/berylliumviewsafetysheetscolumn.cpp" />
+		<Unit filename="../code/datahandling/berylliumviewsafetysheetscolumn.h" />
+		<Unit filename="../code/datahandling/berylliumviewsafetysheetsprinting.cpp" />
+		<Unit filename="../code/datahandling/berylliumviewsafetysheetsprinting.h" />
+		<Unit filename="../code/dialoge/berylliuminfodialog.cpp" />
+		<Unit filename="../code/dialoge/berylliuminfodialog.h" />
+		<Unit filename="../code/dialoge/berylliumlethaldialog.cpp" />
+		<Unit filename="../code/dialoge/berylliumlethaldialog.h" />
+		<Unit filename="../code/dialoge/berylliummultiplierdialog.cpp" />
+		<Unit filename="../code/dialoge/berylliummultiplierdialog.h" />
+		<Unit filename="../code/dialoge/berylliumoptionsdialog.cpp" />
+		<Unit filename="../code/dialoge/berylliumoptionsdialog.h" />
+		<Unit filename="../code/dialoge/berylliumphraseselector.cpp" />
+		<Unit filename="../code/dialoge/berylliumphraseselector.h" />
+		<Unit filename="../code/dialoge/berylliumsafetysheetsgeneral.cpp" />
+		<Unit filename="../code/dialoge/berylliumsafetysheetsgeneral.h" />
+		<Unit filename="../code/dialoge/berylliumstatementeditor.cpp" />
+		<Unit filename="../code/dialoge/berylliumstatementeditor.h" />
+		<Unit filename="../code/dialoge/berylliumsubstanceproperties.cpp" />
+		<Unit filename="../code/dialoge/berylliumsubstanceproperties.h" />
+		<Unit filename="../code/dialoge/berylliumsubstancesearchdialog.cpp" />
+		<Unit filename="../code/dialoge/berylliumsubstancesearchdialog.h" />
+		<Unit filename="../code/dialoge/berylliumviewsafetysheetsproperties.cpp" />
+		<Unit filename="../code/dialoge/berylliumviewsafetysheetsproperties.h" />
+		<Unit filename="../code/interfaces/iobserver.cpp" />
+		<Unit filename="../code/interfaces/iobserver.h" />
+		<Unit filename="../code/interfaces/iprovider.cpp" />
+		<Unit filename="../code/interfaces/iprovider.h" />
+		<Unit filename="../code/interfaces/iview.cpp" />
+		<Unit filename="../code/interfaces/iview.h" />
+		<Unit filename="../code/misc/berylliumbreakout.cpp" />
+		<Unit filename="../code/misc/berylliumbreakout.h" />
+		<Unit filename="../code/misc/berylliumbreakoutdialog.cpp" />
+		<Unit filename="../code/misc/berylliumbreakoutdialog.h" />
+		<Unit filename="../code/provider/berylliumprovidergestis.cpp" />
+		<Unit filename="../code/provider/berylliumprovidergestis.h" />
+		<Unit filename="../code/provider/berylliumproviderlocal.cpp" />
+		<Unit filename="../code/provider/berylliumproviderlocal.h" />
+		<Unit filename="../code/provider/berylliumprovidermerck.cpp" />
+		<Unit filename="../code/provider/berylliumprovidermerck.h" />
+		<Unit filename="../code/provider/berylliumproviderwiki.cpp" />
+		<Unit filename="../code/provider/berylliumproviderwiki.h" />
+		<Unit filename="../code/stdafx.cpp" />
+		<Unit filename="../code/stdafx.h" />
+		<Extensions>
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
