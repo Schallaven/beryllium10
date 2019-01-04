@@ -65,7 +65,7 @@ void IBerylliumViewSafetySheetsColumn::DrawPhrases( wxDC &dc, const wxString &ph
 	// Schrift setzen
 	dc.SetFont( fontCopy );
 
-	// String kopieren	
+	// String kopieren
 	wxString szTemp = phrases;
 
 	// Zwei Zeilen "einfügen"
@@ -115,7 +115,7 @@ void IBerylliumViewSafetySheetsColumn::DrawPhrases( wxDC &dc, const wxString &ph
 
 		// n erhöhen
 		n++;
-	};	
+	};
 
 	// Phrase zeichnen
 	dc.DrawLabel( ( bMultiLine ) ? szTemp : phrases, wxRect(rect.x, rect.y, rect.GetWidth(),  rect.GetHeight()), wxALIGN_CENTER );
@@ -288,7 +288,7 @@ int CBerylliumViewSafetySheetsColumnSafetyphrases::DrawContent( wxDC &dc, wxPoin
 	DrawPhrases( dc, risks, wxRect( pt.x, pt.y, m_iWidth, m_iHeight / 2 ) );
 
 	// S-Sätze zeichnen
-	DrawPhrases( dc, safeties, wxRect( pt.x, pt.y + (m_iHeight / 2), m_iWidth, m_iHeight / 2 ) );	
+	DrawPhrases( dc, safeties, wxRect( pt.x, pt.y + (m_iHeight / 2), m_iWidth, m_iHeight / 2 ) );
 
 	// Schrift zurücksetzen
 	dc.SetFont( fontTemp );
@@ -323,7 +323,7 @@ int CBerylliumViewSafetySheetsColumnHarzardphrases::DrawContent( wxDC &dc, wxPoi
 	DrawPhrases( dc, harzards, wxRect( pt.x, pt.y, m_iWidth, m_iHeight / 2 ) );
 
 	// S-Sätze zeichnen
-	DrawPhrases( dc, precautionary, wxRect( pt.x, pt.y + (m_iHeight / 2), m_iWidth, m_iHeight / 2 ) );	
+	DrawPhrases( dc, precautionary, wxRect( pt.x, pt.y + (m_iHeight / 2), m_iWidth, m_iHeight / 2 ) );
 
 	// Schrift zurücksetzen
 	dc.SetFont( fontTemp );
@@ -333,7 +333,7 @@ int CBerylliumViewSafetySheetsColumnHarzardphrases::DrawContent( wxDC &dc, wxPoi
 }
 
 // Konstruktor: setzt die Standardgröße einer Spalte (-1 = variabel)
-CBerylliumViewSafetySheetsColumnGHSSymbols::CBerylliumViewSafetySheetsColumnGHSSymbols(wxString szTitle = "Column", int iWidth = -1 ) : IBerylliumViewSafetySheetsColumn( szTitle, iWidth )
+CBerylliumViewSafetySheetsColumnGHSSymbols::CBerylliumViewSafetySheetsColumnGHSSymbols(wxString szTitle, int iWidth ) : IBerylliumViewSafetySheetsColumn( szTitle, iWidth )
 {
 	// Interner Name
 	m_szInternalName = "ghssymbols";
@@ -586,7 +586,7 @@ int CBerylliumViewSafetySheetsColumnToxicology::DrawContent( wxDC &dc, wxPoint &
 {
 	// Zeichnen von MAK/LD50-Wert
 	dc.DrawLabel( sdData.GetSmallestToxicologicAmount(), wxRect( pt.x, pt.y + 5, m_iWidth, m_iHeight / 2), wxALIGN_CENTER );
-	
+
 	// Wassergefährdungsklasse zeichnen
 	if ( sdData.iWGK == 0 )
 		dc.DrawLabel( "-", wxRect( pt.x, pt.y - 5 + (m_iHeight/2), m_iWidth, m_iHeight / 2), wxALIGN_CENTER );
@@ -636,7 +636,7 @@ int CBerylliumViewSafetySheetsColumnDangerPoints::DrawContent( wxDC &dc, wxPoint
 
 	// Punkte zeichnen
 	dc.DrawLabel( wxString::Format("%d", sdData.GetDangerPoints()) , wxRect(pt.x, pt.y, m_iWidth, m_iHeight), wxALIGN_CENTER );
-	
+
 	// Schrift wiederherstellen
 	dc.SetFont( fontTemp );
 

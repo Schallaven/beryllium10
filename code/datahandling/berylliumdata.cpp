@@ -84,7 +84,7 @@ CBerylliumSubstanceData CBerylliumData::GetSubstanceByIndex( unsigned int index 
 		return data;
 
 	// Ansonsten entsprechenden Index zurückgeben
-	return sdCompounds[index];	
+	return sdCompounds[index];
 }
 
 void CBerylliumData::UpdateSubstanceDataAtIndex( unsigned int index, CBerylliumSubstanceData newdata )

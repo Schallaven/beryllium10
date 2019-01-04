@@ -33,7 +33,7 @@
 #include "stdafx.h"
 #include "BerylliumStatement.h"
 
-CBerylliumStatement::CBerylliumStatement(wxString token = "", wxString statement = "", wxString group = "")
+CBerylliumStatement::CBerylliumStatement(wxString token, wxString statement, wxString group)
 {
 	// Daten übernehmen
 	m_sToken		= token;

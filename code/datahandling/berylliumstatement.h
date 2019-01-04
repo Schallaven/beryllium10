@@ -38,7 +38,7 @@ class CBerylliumStatement
 {
 public:
 	// Constructor
-	CBerylliumStatement( wxString token, wxString statement, wxString group );
+	CBerylliumStatement( wxString token = "", wxString statement = "", wxString group = "" );
 
 	// Destructor
 	~CBerylliumStatement(void);
