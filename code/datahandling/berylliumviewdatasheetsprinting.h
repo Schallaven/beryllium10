@@ -34,8 +34,8 @@
 
 #include <wx/print.h>
 
-#include "../Datahandling/BerylliumDocument.h"
-#include "BerylliumViewDataSheets.h"
+#include "../datahandling/berylliumdocument.h"
+#include "berylliumviewdatasheets.h"
 
 class CBerylliumViewDataSheetsPrinting : public wxPrintout
 {

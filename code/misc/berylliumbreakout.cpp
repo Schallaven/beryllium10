@@ -26,12 +26,12 @@
 //   Gewährleistung der MARKTFÄHIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.
 //   Siehe die GNU General Public License für weitere Details.
 //
-//   Sie sollten eine Kopie der GNU General Public License zusammen mit 
+//   Sie sollten eine Kopie der GNU General Public License zusammen mit
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
-#include "BerylliumBreakout.h"
+#include "../stdafx.h"
+#include "berylliumbreakout.h"
 
 #include <wx/timer.h>
 #include <wx/fs_arc.h>
@@ -360,7 +360,7 @@ void CBerylliumBreakout::DrawField( wxDC &dc )
 							"buttonyellow.png",
 							"buttonviolett.png",
 							"buttongreen.png" };
-	*/							
+	*/
 	// Farbe
 	int color = 0;
 

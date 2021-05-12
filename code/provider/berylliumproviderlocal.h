@@ -31,8 +31,8 @@
 // **********************************************************************************
 
 #pragma once
-#include "../Interfaces/IProvider.h"
-#include "../Datahandling/BerylliumDataLibrary.h"
+#include "../interfaces/iprovider.h"
+#include "../datahandling/berylliumdatalibrary.h"
 
 class CBerylliumProviderLocal :	public IProvider
 {
@@ -58,7 +58,7 @@ public:
 
 private:
 	// Bibliothek
-	CBerylliumDataLibrary library;		
+	CBerylliumDataLibrary library;
 
 	// Dateiname der Bibliothek
 	wxString libraryfile;

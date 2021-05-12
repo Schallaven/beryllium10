@@ -30,8 +30,8 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
-#include "BerylliumStatementsManager.h"
+#include "../stdafx.h"
+#include "berylliumstatementsmanager.h"
 
 CBerylliumStatementsManager::CBerylliumStatementsManager(void)
 {
@@ -66,7 +66,7 @@ void CBerylliumStatementsManager::AddStatementToToken( const wxString token, con
 	for ( unsigned int i = 0; i < m_statements.size(); i++ )
 	{
 		// Gefunden (Gruppe und Token müssen übereinstimmen!)
-		if ( (m_statements[i].GetToken().compare( token ) == 0) && 
+		if ( (m_statements[i].GetToken().compare( token ) == 0) &&
 			(m_statements[i].GetGroup().compare( group ) == 0) )
 		{
 			// Statement erweitern
@@ -119,7 +119,7 @@ void CBerylliumStatementsManager::Sort()
 	// Anzahl der Elemente
 	unsigned int n = m_statements.size();
 
-	// Mindestens zwei Elemente sollten es sein, sonst 
+	// Mindestens zwei Elemente sollten es sein, sonst
 	// hat das Sortieren wenig Sinn.
 	if ( n < 2 )
 		return;
@@ -156,12 +156,12 @@ void CBerylliumStatementsManager::Sort()
 				// Es wurde vertauscht!
 				swapped = true;
 			}
-		}		
+		}
 
 		// Anzahl der Elemente verkleinern (die Blase kleiner machen)
 		n--;
 
-	} while ( swapped );		
+	} while ( swapped );
 }
 
 // Statement holen

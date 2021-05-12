@@ -33,7 +33,7 @@
 #pragma once
 
 #include <wx/statline.h>
-#include "../Datahandling/BerylliumSubstanceData.h"
+#include "../datahandling/berylliumsubstancedata.h"
 
 class CBerylliumLethalDialog : public wxDialog
 {
@@ -46,7 +46,7 @@ public:
 	// Set: Faktor
 	void SetLethalDose( CBerylliumSubstanceData::LethalDose50 dose );
 
-private:	
+private:
 	// Objekt zum bearbeiten
 	CBerylliumSubstanceData::LethalDose50	m_dose;
 

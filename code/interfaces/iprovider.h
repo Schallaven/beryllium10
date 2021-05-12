@@ -36,7 +36,7 @@
 #include <wx/protocol/http.h>
 
 // Substanzdaten
-#include "../Datahandling/BerylliumSubstanceData.h"
+#include "../datahandling/berylliumsubstancedata.h"
 
 // Interface: Hersteller für Chemikalien
 class IProvider

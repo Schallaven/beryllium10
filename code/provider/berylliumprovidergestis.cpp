@@ -30,8 +30,8 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
-#include "BerylliumProviderGESTIS.h"
+#include "../stdafx.h"
+#include "berylliumprovidergestis.h"
 
 #include "../betool.h"
 
@@ -92,7 +92,7 @@ bool CBerylliumProviderGESTIS::SearchForCompound( const wxString searchtext, boo
 	// HTTP-Anfrage vorbereiten
 	// Wichtig hierbei ist das Cookie, damit Gestis weiß welches Sprache wir haben wollen
 	m_http.SetHeader( "Content-type", "text/html; charset=utf-8" );
-	
+
 	if ( iLanguage == wxLANGUAGE_ENGLISH )
 	{
 		// Feld -> field
@@ -101,7 +101,7 @@ bool CBerylliumProviderGESTIS::SearchForCompound( const wxString searchtext, boo
 		// Cookie setzen
 		m_http.SetHeader( "Cookie", "nxt/gateway.dll/vid=gestiseng%3Asdbeng;");
 	}
-	else 
+	else
 		m_http.SetHeader( "Cookie", "nxt/gateway.dll/vid=gestisdeu%3Asdbdeu;");
 
 	m_http.SetTimeout(60); // 60 Sekunden TimeOut
@@ -332,7 +332,7 @@ void CBerylliumProviderGESTIS::LoadSearchDataItem( wxXmlNode *cell )
 // Lädt die Daten für die Substanz unter URL
 void CBerylliumProviderGESTIS::LoadDataFromUrl( wxString URL )
 {
-	// URL modifizieren (wir wollen die XML-Variante!)	
+	// URL modifizieren (wir wollen die XML-Variante!)
 	URL.Replace( "gestis.xsl", "gestis.xml", true );
 
 	// Wichtig hierbei ist das Cookie, damit Gestis weiß welches Sprache wir haben wollen
@@ -341,7 +341,7 @@ void CBerylliumProviderGESTIS::LoadDataFromUrl( wxString URL )
 
 	if ( iLanguage == wxLANGUAGE_ENGLISH )
 		m_http.SetHeader( "Cookie", "nxt/gateway.dll/vid=gestiseng%3Asdbeng;");
-	else 
+	else
 		m_http.SetHeader( "Cookie", "nxt/gateway.dll/vid=gestisdeu%3Asdbdeu;");
 
 	m_http.SetTimeout(60); // 60 Sekunden TimeOut
@@ -377,7 +377,7 @@ void CBerylliumProviderGESTIS::LoadDataFromUrl( wxString URL )
 
 		// Loggen
 		wxLogMessage( _(L"ProviderGESTIS, %d: Verbinden ohne Proxy."), __LINE__ );
-	}	
+	}
 
 	// InputStream erzeugen
 	wxInputStream *httpStream = m_http.GetInputStream( URL );

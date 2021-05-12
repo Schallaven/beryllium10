@@ -30,8 +30,8 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
-#include "BerylliumProviderWiki.h"
+#include "../stdafx.h"
+#include "berylliumproviderwiki.h"
 
 #include "../betool.h"
 
@@ -95,7 +95,7 @@ bool CBerylliumProviderWiki::SearchForCompound( const wxString searchtext, bool 
 	if ( iLanguage == wxLANGUAGE_ENGLISH )
 	{
 		// Verbinden und Request ändern
-		wikihost = "en.wikipedia.org"; 
+		wikihost = "en.wikipedia.org";
 		request  = "/wiki/Special:Export/%s";
 	}
 
@@ -396,7 +396,7 @@ bool CBerylliumProviderWiki::ParseData()
 
 				// Schleife verlassen
 				break;
-			}			
+			}
 
 			// Englische Infobox: Medikamente
 			else if ( szTemplate.CmpNoCase("drugbox") == 0 )
@@ -408,7 +408,7 @@ bool CBerylliumProviderWiki::ParseData()
 
 				// Schleife verlassen
 				break;
-			}		
+			}
 		}
 
 		// Nächsten Block suchen

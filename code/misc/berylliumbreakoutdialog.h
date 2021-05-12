@@ -26,13 +26,13 @@
 //   Gewährleistung der MARKTFÄHIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.
 //   Siehe die GNU General Public License für weitere Details.
 //
-//   Sie sollten eine Kopie der GNU General Public License zusammen mit 
+//   Sie sollten eine Kopie der GNU General Public License zusammen mit
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
 #pragma once
 
-#include "BerylliumBreakout.h"
+#include "berylliumbreakout.h"
 
 // Der Breakout-Dialog
 class CBerylliumBreakoutDialog : public wxDialog
@@ -43,7 +43,7 @@ public:
 	CBerylliumBreakoutDialog( wxWindow *parent );
 	~CBerylliumBreakoutDialog(void);
 
-private:	
+private:
 	// Breakout-Spielfläche
 	CBerylliumBreakout *m_breakout;
 

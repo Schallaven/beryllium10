@@ -30,8 +30,8 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
-#include "BerylliumLethalDialog.h"
+#include "../stdafx.h"
+#include "berylliumlethaldialog.h"
 
 #include "../betool.h"
 

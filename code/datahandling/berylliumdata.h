@@ -38,7 +38,7 @@
 #include <wx/datetime.h>
 
 // Substanzdaten-Objekt einbinden
-#include "BerylliumSubstanceData.h"
+#include "berylliumsubstancedata.h"
 
 
 
@@ -67,7 +67,7 @@ public:
 	wxString		szSupervisor;	// Assistent, ehemalig: szAssistent
 
 	// Daten für die Rückseite
-	std::vector< wxString > sCustomStatements[4];		
+	std::vector< wxString > sCustomStatements[4];
 
 	// Unterschriftsboxen, Rückseite
 	wxString		szSignaturStudent;		// Unterschrift Student
@@ -86,7 +86,7 @@ public:
 
 	// Set: Überschreibt die Substanzdaten bei Index index mit newdata
 	void UpdateSubstanceDataAtIndex( unsigned int index, CBerylliumSubstanceData newdata );
- 
+
 	// Get: Name des Praktikanten
 	wxString GetName() const;
 

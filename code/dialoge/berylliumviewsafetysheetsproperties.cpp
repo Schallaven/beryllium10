@@ -30,9 +30,9 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
+#include "../stdafx.h"
 
-#include "BerylliumViewSafetySheetsProperties.h"
+#include "berylliumviewsafetysheetsproperties.h"
 
 #include <wx/bookctrl.h>
 
@@ -75,16 +75,16 @@ wxPanel *CBerylliumViewSafetySheetsProperties::CreatePageColumns(wxWindow* paren
 
 	// Hier werden die Elemente erstellt...
 	wxBoxSizer* bSizer1;	bSizer1 = new wxBoxSizer( wxVERTICAL );
-	
+
 	wxStaticText* m_staticText1;
 	m_staticText1 = new wxStaticText( panel, wxID_ANY, _(L"Markieren Sie die Spalten, die in der Betriebsanweisung angezeigt werden sollen:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText1->Wrap( 450 );
-	bSizer1->Add( m_staticText1, 0, wxALL, 10 );	
-	
+	bSizer1->Add( m_staticText1, 0, wxALL, 10 );
+
 	m_Columnslist = new wxCheckListBox( panel, wxID_ANY, wxDefaultPosition, wxSize( 450, 210), 0, NULL, wxLB_NEEDED_SB|wxLB_SINGLE );
-	
-	bSizer1->Add( m_Columnslist, 0, wxALL|wxALIGN_RIGHT, 10 );	
-	
+
+	bSizer1->Add( m_Columnslist, 0, wxALL|wxALIGN_RIGHT, 10 );
+
 	panel->SetSizer( bSizer1 );
 	panel->Layout();
 
@@ -103,7 +103,7 @@ wxPanel *CBerylliumViewSafetySheetsProperties::CreatePagePhrases(wxWindow* paren
 	wxStaticText* m_staticText1;
 	m_staticText1 = new wxStaticText( panel, wxID_ANY, _(L"Diese Optionen ermöglichen Ihnen das Aussehen der Risiko- und Sicherheitssätze zu ändern."), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText1->Wrap( 450 );
-	bSizer1->Add( m_staticText1, 0, wxALL, 10 );	
+	bSizer1->Add( m_staticText1, 0, wxALL, 10 );
 
 	// Checkbox
 	m_checkshowhpstatements = new wxCheckBox( panel, wxID_ANY, _(L"H-/P-Sätze statt den R-/S-Sätzen anzeigen"), wxDefaultPosition, wxDefaultSize);
@@ -123,11 +123,11 @@ wxPanel *CBerylliumViewSafetySheetsProperties::CreatePageSignature(wxWindow* par
 
 	// Hier werden die Elemente erstellt...
 	wxBoxSizer* bSizer1;	bSizer1 = new wxBoxSizer( wxVERTICAL );
-	
+
 	wxStaticText* m_staticText1;
 	m_staticText1 = new wxStaticText( panel, wxID_ANY, _(L"Stellungnahme und Signatur (links):"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText1->Wrap( 450 );
-	bSizer1->Add( m_staticText1, 0, wxALL, 10 );	
+	bSizer1->Add( m_staticText1, 0, wxALL, 10 );
 
 	m_textStatementStudent = new wxTextCtrl( panel, wxID_ANY, data.szStatementStudent , wxDefaultPosition, wxSize( 450, 60 ), wxTE_MULTILINE );
 	bSizer1->Add( m_textStatementStudent, 0, wxRIGHT|wxBOTTOM|wxALIGN_RIGHT, 10 );
@@ -138,14 +138,14 @@ wxPanel *CBerylliumViewSafetySheetsProperties::CreatePageSignature(wxWindow* par
 	wxStaticText* m_staticText2;
 	m_staticText2 = new wxStaticText( panel, wxID_ANY, _(L"Stellungnahme und Signatur (rechts):"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText2->Wrap( 450 );
-	bSizer1->Add( m_staticText2, 0, wxALL, 10 );	
+	bSizer1->Add( m_staticText2, 0, wxALL, 10 );
 
 	m_textStatementSupervisor = new wxTextCtrl( panel, wxID_ANY, data.szStatementSupervisor , wxDefaultPosition, wxSize( 450, 60 ), wxTE_MULTILINE );
 	bSizer1->Add( m_textStatementSupervisor, 0, wxRIGHT|wxBOTTOM|wxALIGN_RIGHT, 10 );
-	
+
 	m_textSignaturSupervisor = new wxTextCtrl( panel, wxID_ANY, data.szSignaturSupervisor , wxDefaultPosition, wxSize( 450, -1 ) );
 	bSizer1->Add( m_textSignaturSupervisor, 0, wxRIGHT|wxBOTTOM|wxALIGN_RIGHT, 10 );
-	
+
 	panel->SetSizer( bSizer1 );
 	panel->Layout();
 

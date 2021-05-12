@@ -30,8 +30,8 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
-#include "IProvider.h"
+#include "../stdafx.h"
+#include "iprovider.h"
 
 IProvider::IProvider()
 {
@@ -98,7 +98,7 @@ wxString IProvider::ExtractFromString( const wxString &text, wxString left, wxSt
 	wxString::size_type iG = text.find( right, iL );
 
 	if ( (iL == wxString::npos) || (iG == wxString::npos) )
-		return "";	
+		return "";
 
 	// Extrahieren
 	return text.substr( iL, iG - iL + right.length() );
@@ -112,11 +112,11 @@ wxString IProvider::ExtractAndRemoveFromString( wxString &text, wxString left, w
 	wxString::size_type iG = text.find( right, iL );
 
 	if ( (iL == wxString::npos) || (iG == wxString::npos) )
-		return "";	
+		return "";
 
 	// Extrahieren
 	wxString subtext = text.substr( iL, iG - iL + right.length() );
-	
+
 	// Entfernen
 	text = text.substr(0, iL) + text.substr( iG + right.length() );
 
@@ -129,7 +129,7 @@ void IProvider::GetAllTextFromNode( wxXmlNode *node, wxString &text )
 {
 	// Alle Subelemente suchen
 	for( wxXmlNode* subnode = node->GetChildren(); subnode; subnode = subnode->GetNext() )
-	{		
+	{
 		// Ist das Element ein Textelement?
 		if ( subnode->GetType() == wxXML_TEXT_NODE )
 		{
@@ -142,7 +142,7 @@ void IProvider::GetAllTextFromNode( wxXmlNode *node, wxString &text )
 
 		// Hat des Element Childs?
 		else if ( subnode->GetType() == wxXML_ELEMENT_NODE )
-			GetAllTextFromNode( subnode, text );		
+			GetAllTextFromNode( subnode, text );
 	}
 }
 

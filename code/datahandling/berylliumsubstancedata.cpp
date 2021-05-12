@@ -30,12 +30,12 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
+#include "../stdafx.h"
 
-#include "BerylliumSubstanceData.h"
+#include "berylliumsubstancedata.h"
 
-#include "../BerylliumApplication.h"
-#include "../Datahandling/BerylliumStatementsManager.h"
+#include "../berylliumapplication.h"
+#include "../datahandling/berylliumstatementsmanager.h"
 #include "../betool.h"
 
 // Anmerkung: Ja, ich weiß, dass "Harzard" falsch geschrieben ist ("hazard"). Blöder Fehler!

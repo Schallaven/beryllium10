@@ -34,7 +34,7 @@
 
 #include <wx/propdlg.h>
 
-#include "../Datahandling/BerylliumData.h"
+#include "../datahandling/berylliumdata.h"
 
 class CBerylliumSafetySheetsGeneral : public wxPropertySheetDialog
 {

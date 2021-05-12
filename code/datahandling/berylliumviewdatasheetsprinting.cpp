@@ -30,8 +30,8 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
-#include "BerylliumViewDataSheetsPrinting.h"
+#include "../stdafx.h"
+#include "berylliumviewdatasheetsprinting.h"
 
 CBerylliumViewDataSheetsPrinting::CBerylliumViewDataSheetsPrinting( CBerylliumViewDataSheets &view, CBerylliumDocument &document ) : wxPrintout(document.GetFilename()), m_view(view), m_document(document)
 {
@@ -44,7 +44,7 @@ CBerylliumViewDataSheetsPrinting::~CBerylliumViewDataSheetsPrinting(void)
 // Mögliche Seiten zurückgeben
 void CBerylliumViewDataSheetsPrinting::GetPageInfo(int *minPage, int *maxPage, int *pageFrom, int *pageTo)
 {
-	// Minimale Seite 
+	// Minimale Seite
 	*minPage = 1;
 
 	// Maximale Seite (eine Seite abziehen wegen "Neuer Substanz"-Seite
@@ -121,12 +121,12 @@ bool CBerylliumViewDataSheetsPrinting::OnPrintPage(int pageNum)
 
 	// Seite anfangen
 	dc.StartPage();
-	
+
 	// Einpassen
 	FitThisSizeToPage( m_view.GetPageSize() );
-	
+
 	// Seite zeichnen
-	m_view.DrawSubstancePage( dc, (pageNum-1) );	
+	m_view.DrawSubstancePage( dc, (pageNum-1) );
 
 	// Seite aufhören
 	dc.EndPage();

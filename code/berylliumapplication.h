@@ -26,17 +26,17 @@
 //   Gewährleistung der MARKTFÄHIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.
 //   Siehe die GNU General Public License für weitere Details.
 //
-//   Sie sollten eine Kopie der GNU General Public License zusammen mit 
+//   Sie sollten eine Kopie der GNU General Public License zusammen mit
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
 #pragma once
 
 // Klasse für das Hauptfenster
-#include "BerylliumMainframe.h"
+#include "berylliummainframe.h"
 
 // Klasse für die Statements
-#include "Datahandling/BerylliumStatementsManager.h"
+#include "datahandling/berylliumstatementsmanager.h"
 
 // Hash-Map
 #include <wx/hashmap.h>

@@ -32,7 +32,7 @@
 
 #pragma once
 
-#include "BerylliumData.h"
+#include "berylliumdata.h"
 
 #include <wx/xml/xml.h>
 

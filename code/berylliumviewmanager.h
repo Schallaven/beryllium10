@@ -36,8 +36,8 @@
 
 #include <wx/print.h>
 
-#include "Interfaces/IView.h"
-#include "Datahandling/BerylliumDocument.h"
+#include "interfaces/iview.h"
+#include "datahandling/berylliumdocument.h"
 
 // Verwalten die Ansichten des aktuellen Dokuments und das aktuelle Dokument selbst
 class CBerylliumViewManager : public wxScrolledWindow, public IObserver
@@ -99,12 +99,12 @@ private:
 	CBerylliumDocument &m_Document;
 
 	// Die Ansichten speichern
-	std::vector< IView* > m_views;  
+	std::vector< IView* > m_views;
 
 	// Aktive Ansicht
-	int m_active_view;	
+	int m_active_view;
 
-protected: 
+protected:
 	DECLARE_EVENT_TABLE()
 
 private:

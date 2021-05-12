@@ -30,9 +30,9 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
+#include "../stdafx.h"
 
-#include "BerylliumDocument.h"
+#include "berylliumdocument.h"
 
 
 // Konstruktor
@@ -98,7 +98,7 @@ void CBerylliumDocument::NotifyAllObserver()
 void CBerylliumDocument::SetFilename( const wxString strNewName )
 {
 	// Dateinamen setzen
-	m_strFilename = strNewName; 
+	m_strFilename = strNewName;
 
 	// Daten wurden geändert
 	m_bChanged = true;
@@ -153,7 +153,7 @@ int CBerylliumDocument::LoadFromFile( wxString szFilename )
 	// Wurzel Ast für Ast durchgehen
     wxXmlNode *node = file.GetRoot()->GetChildren();
 
-	while (node) 
+	while (node)
 	{
 		// Nur Elemente sammeln
 		if ( node->GetType() != wxXML_ELEMENT_NODE )
@@ -235,7 +235,7 @@ int CBerylliumDocument::SaveToFile()
 
 	// Wurzel setzen
 	file.SetRoot( xmlRoot );
-	
+
 	// Elemente für die allgemeinen Dinge erstellen ("general")
 	wxXmlNode *xmlGeneral = new wxXmlNode( NULL, wxXML_ELEMENT_NODE, "general" );
 	xmlRoot->InsertChild( xmlGeneral, NULL );
@@ -256,7 +256,7 @@ int CBerylliumDocument::SaveToFile()
 
 		// Veranstaltung (ehemalig "Institut" oder szChemistry)
 		wxXmlNode *xmlGeneralInstitute = new wxXmlNode( xmlGeneral, wxXML_ELEMENT_NODE, "institute" );
-		new wxXmlNode( xmlGeneralInstitute, wxXML_TEXT_NODE, "institute", m_data.szEvent );		
+		new wxXmlNode( xmlGeneralInstitute, wxXML_TEXT_NODE, "institute", m_data.szEvent );
 
 		// Signaturdaten: Student-Statement
 		wxXmlNode *xmlStatementStudent		= new wxXmlNode( xmlGeneral, wxXML_ELEMENT_NODE, "statementleft" );
@@ -273,7 +273,7 @@ int CBerylliumDocument::SaveToFile()
 		// Signaturdaten: Assistent-Signatur
 		wxXmlNode *xmlSignaturSupervisor	= new wxXmlNode( xmlGeneral, wxXML_ELEMENT_NODE, "signaturright" );
 		new wxXmlNode( xmlSignaturSupervisor, wxXML_TEXT_NODE, "signaturright", m_data.szSignaturSupervisor );
-	};	
+	};
 
 	// Elemente für die persönlichen Dinge erstellen ("personal")
 	wxXmlNode *xmlPersonal = new wxXmlNode( NULL, wxXML_ELEMENT_NODE, "personal" );
@@ -367,10 +367,10 @@ int CBerylliumDocument::SaveToFile()
 		for ( unsigned int i = 0; i < m_data.sCustomStatements[cat].size(); ++i )
 		{
 			// Knoten anlegen
-			wxXmlNode *xmlTemplatesChild = new wxXmlNode( xmlTemplates, wxXML_ELEMENT_NODE, "template" ); 
+			wxXmlNode *xmlTemplatesChild = new wxXmlNode( xmlTemplates, wxXML_ELEMENT_NODE, "template" );
 
 			// Attribut hinzufügen
-			xmlTemplatesChild->AddAttribute( "category", categories[cat] );			
+			xmlTemplatesChild->AddAttribute( "category", categories[cat] );
 
 			// Inhalt hinzufügen
 			new wxXmlNode( xmlTemplatesChild, wxXML_TEXT_NODE, "template", m_data.sCustomStatements[cat][i] );
@@ -396,7 +396,7 @@ void CBerylliumDocument::LoadGeneralFromXmlNode( wxXmlNode *parent )
 	// Wurzel Ast für Ast durchgehen
     wxXmlNode *node = parent->GetChildren();
 
-	while (node) 
+	while (node)
 	{
 		// Nur Elemente sammeln
 		if ( node->GetType() != wxXML_ELEMENT_NODE )
@@ -426,7 +426,7 @@ void CBerylliumDocument::LoadGeneralFromXmlNode( wxXmlNode *parent )
 
 		// Veranstaltung/Event (ehemalig szChemistry)
 		else if ( name == "institute" )
-			m_data.szEvent = content;		
+			m_data.szEvent = content;
 
 		// Statement: Student
 		else if ( name == "statementleft" )
@@ -443,7 +443,7 @@ void CBerylliumDocument::LoadGeneralFromXmlNode( wxXmlNode *parent )
 		// Unterschrift: Assistent
 		else if ( name == "signaturright" )
 			m_data.szSignaturSupervisor = content;
-		
+
 
 		// Nächster Ast
 		node = node->GetNext();
@@ -460,7 +460,7 @@ void CBerylliumDocument::LoadPersonalFromXmlNode( wxXmlNode *parent )
 	wxString firstname = "";
 	wxString lastname = "";
 
-	while (node) 
+	while (node)
 	{
 		// Nur Elemente sammeln
 		if ( node->GetType() != wxXML_ELEMENT_NODE )
@@ -507,7 +507,7 @@ void CBerylliumDocument::LoadProductFromXmlNode( wxXmlNode *parent )
 	// Wurzel Ast für Ast durchgehen
     wxXmlNode *node = parent->GetChildren();
 
-	while (node) 
+	while (node)
 	{
 		// Nur Elemente sammeln
 		if ( node->GetType() != wxXML_ELEMENT_NODE )
@@ -545,7 +545,7 @@ void CBerylliumDocument::LoadTemplatesFromXmlNode( wxXmlNode *parent )
 	// Wurzel Ast für Ast durchgehen
     wxXmlNode *node = parent->GetChildren();
 
-	while (node) 
+	while (node)
 	{
 		// Nur Elemente mit Namen "template" sammeln
 		if ( (node->GetType() != wxXML_ELEMENT_NODE) || (node->GetName() != "template") )
@@ -593,7 +593,7 @@ void CBerylliumDocument::LoadOptionsFromXmlNode( wxXmlNode *parent )
 	// Wurzel Ast für Ast durchgehen
     wxXmlNode *node = parent->GetChildren();
 
-	while (node) 
+	while (node)
 	{
 		// Nur Elemente sammeln
 		if ( node->GetType() != wxXML_ELEMENT_NODE )

@@ -30,9 +30,9 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
+#include "../stdafx.h"
 
-#include "BerylliumData.h"
+#include "berylliumdata.h"
 
 // Konstruktor
 CBerylliumData::CBerylliumData(void)

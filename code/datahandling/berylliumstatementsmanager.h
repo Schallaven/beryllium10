@@ -36,7 +36,7 @@
 #include <string>
 
 #include "../betool.h"
-#include "BerylliumStatement.h"
+#include "berylliumstatement.h"
 
 class CBerylliumStatementsManager
 {

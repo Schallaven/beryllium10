@@ -30,8 +30,8 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
-#include "BerylliumStatement.h"
+#include "../stdafx.h"
+#include "berylliumstatement.h"
 
 CBerylliumStatement::CBerylliumStatement(wxString token, wxString statement, wxString group)
 {

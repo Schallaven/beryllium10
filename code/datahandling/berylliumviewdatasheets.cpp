@@ -30,17 +30,17 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
+#include "../stdafx.h"
 
-#include "BerylliumViewDataSheets.h"
+#include "berylliumviewdatasheets.h"
 #include "../berylliummainframe_identifiers.h"
 
-#include "../BerylliumApplication.h"
+#include "../berylliumapplication.h"
 
-#include "../Dialoge/BerylliumSubstanceSearchDialog.h"
-#include "../Dialoge/BerylliumSubstanceProperties.h"
+#include "../dialoge/berylliumsubstancesearchdialog.h"
+#include "../dialoge/berylliumsubstanceproperties.h"
 
-#include "BerylliumViewDataSheetsPrinting.h"
+#include "berylliumviewdatasheetsprinting.h"
 
 
 CBerylliumViewDataSheets::CBerylliumViewDataSheets( CBerylliumDocument &doc, wxWindow &parent ) : m_Document(doc), m_Parent(parent)

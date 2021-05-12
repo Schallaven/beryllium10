@@ -30,25 +30,25 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
+#include "../stdafx.h"
 
-#include "BerylliumViewSafetySheets.h"
+#include "berylliumviewsafetysheets.h"
 #include "../berylliummainframe_identifiers.h"
 
-#include "../BerylliumApplication.h"
+#include "../berylliumapplication.h"
 
-#include "BerylliumViewSafetySheetsPrinting.h"
+#include "berylliumviewsafetysheetsprinting.h"
 
-#include "../Dialoge/BerylliumViewSafetySheetsProperties.h"
-#include "../Dialoge/BerylliumSafetySheetsGeneral.h"
-#include "../Dialoge/BerylliumSubstanceSearchDialog.h"
-#include "../Dialoge/BerylliumSubstanceProperties.h"
-#include "../Dialoge/BerylliumStatementEditor.h"
-#include "../Dialoge/BerylliumPhraseSelector.h"
+#include "../dialoge/berylliumviewsafetysheetsproperties.h"
+#include "../dialoge/berylliumsafetysheetsgeneral.h"
+#include "../dialoge/berylliumsubstancesearchdialog.h"
+#include "../dialoge/berylliumsubstanceproperties.h"
+#include "../dialoge/berylliumstatementeditor.h"
+#include "../dialoge/berylliumphraseselector.h"
 
 // Bitmaps
-#include "../../Resources/Bitmaps/icon_up.xpm"
-#include "../../Resources/Bitmaps/icon_down.xpm"
+#include "../../resources/bitmaps/icon_up.xpm"
+#include "../../resources/bitmaps/icon_down.xpm"
 
 #include <wx/choicdlg.h>
 
@@ -550,7 +550,7 @@ void CBerylliumViewSafetySheets::DrawFrontSheetSubstances( wxDC &dc, unsigned in
 
 		// Substanzen durchgehen
 		for ( unsigned int j = iSubstanceIndex; j <= iLastSubstanceIndex; ++j )
-		{	
+		{
 			// Erste Substanz bekommt keinen Hoch-Pfeil
 			if ( j != 0 )
 				dc.DrawBitmap( bmpUp, 0, 255+50+(j-iSubstanceIndex)*50 + 9, true );
@@ -578,7 +578,7 @@ void CBerylliumViewSafetySheets::DrawFrontSheetSubstances( wxDC &dc, unsigned in
 
 		// Spaltenkopf zeichnen
 		wxPoint columnpoint(iPosition, 255);
-		m_Columns[i]->DrawHeader( dc, columnpoint );		
+		m_Columns[i]->DrawHeader( dc, columnpoint );
 
 		// Inhalte zeichnen
 		for ( unsigned int j = iSubstanceIndex; j < m_Document.GetData().sdCompounds.size(); j++ )
@@ -1237,13 +1237,13 @@ void CBerylliumViewSafetySheets::OnMouseClick(wxMouseEvent &event)
 					// Erster Index
 					unsigned int iIndexFirst = m_iSubselected + (m_iPage / 2) * 9;
 					// Index zum Tauschen (mit m_iSelected)
-					unsigned int iIndexSwitchWith = iIndexFirst + (( m_iColumnSelected == 0 ) ? -1 : +1); 
+					unsigned int iIndexSwitchWith = iIndexFirst + (( m_iColumnSelected == 0 ) ? -1 : +1);
 
 					// Daten holen
 					CBerylliumData data; m_Document.GetData(data);
 
 					// Tauschen
-					data.SwitchSubstancesByIndex( iIndexFirst, iIndexSwitchWith); 
+					data.SwitchSubstancesByIndex( iIndexFirst, iIndexSwitchWith);
 
 					// Setzen
 					m_Document.SetData( data );
@@ -1378,7 +1378,7 @@ void CBerylliumViewSafetySheets::OnMouseMove(wxMouseEvent &event)
 				m_iSubselected = (ptMouse.y - 305) / 52;
 
 				// m_iColumnSelected setzen wir auf 0, falls der Pfeil nach oben ausgewählt ist
-				// und auf 1 falls der Pfeil nach unten ausgewählt ist				
+				// und auf 1 falls der Pfeil nach unten ausgewählt ist
 				m_iColumnSelected = (( ptMouse.y - 305 - (m_iSubselected * 52) - 9 ) / 16);
 
 				// Sollte einen Wert von 0 oder 1 haben, ansonsten nichts auswählen
@@ -2012,7 +2012,7 @@ void CBerylliumViewSafetySheets::SubstanceAdd()
 	if ( m_dialogsearch.ShowModal() == wxID_OK )
 	{
 		// Daten einfügen (benachrichtig automatisch alle Beobachter, etc.)
-		m_Document.AddSubstance(  m_dialogsearch.GetData() );		
+		m_Document.AddSubstance(  m_dialogsearch.GetData() );
 
 		// Auf welcher Seite befinden wir uns?
 		unsigned int iPage = m_Document.GetData().sdCompounds.size() / 9;

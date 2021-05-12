@@ -30,8 +30,8 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
-#include "BerylliumPhraseSelector.h"
+#include "../stdafx.h"
+#include "berylliumphraseselector.h"
 
 #include <wx/bookctrl.h>
 
@@ -78,17 +78,17 @@ wxPanel *CBerylliumPhraseSelector::CreatePageRisks(wxWindow* parent)
 
 	// Hier werden die Elemente erstellt...
 	wxBoxSizer* bSizer1;	bSizer1 = new wxBoxSizer( wxVERTICAL );
-	
+
 	wxStaticText* m_staticText1;
 	m_staticText1 = new wxStaticText( panel, wxID_ANY, _(L"Markieren Sie die R-Sätze, die in der Betriebsanweisung angezeigt werden sollen:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText1->Wrap( 450 );
-	bSizer1->Add( m_staticText1, 0, wxALL, 10 );	
-	
+	bSizer1->Add( m_staticText1, 0, wxALL, 10 );
+
 	m_listRisks = new wxCheckListBox( panel, wxID_ANY, wxDefaultPosition, wxSize( 450, 290), 0, NULL, wxLB_NEEDED_SB|wxLB_SINGLE );
-	
+
 	bSizer1->Add( m_listRisks, 1, wxALL|wxALIGN_RIGHT, 10 );
 	bSizer1->AddSpacer(10);
-	
+
 	panel->SetSizer( bSizer1 );
 	panel->Layout();
 
@@ -103,17 +103,17 @@ wxPanel *CBerylliumPhraseSelector::CreatePageSafeties(wxWindow* parent)
 
 	// Hier werden die Elemente erstellt...
 	wxBoxSizer* bSizer1;	bSizer1 = new wxBoxSizer( wxVERTICAL );
-	
+
 	wxStaticText* m_staticText1;
 	m_staticText1 = new wxStaticText( panel, wxID_ANY, _(L"Markieren Sie die S-Sätze, die in der Betriebsanweisung angezeigt werden sollen:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText1->Wrap( 450 );
-	bSizer1->Add( m_staticText1, 0, wxALL, 10 );	
-	
+	bSizer1->Add( m_staticText1, 0, wxALL, 10 );
+
 	m_listSafeties = new wxCheckListBox( panel, wxID_ANY, wxDefaultPosition, wxSize( 450, 290), 0, NULL, wxLB_NEEDED_SB|wxLB_SINGLE );
-	
-	bSizer1->Add( m_listSafeties, 1, wxALL|wxALIGN_RIGHT, 10 );	
+
+	bSizer1->Add( m_listSafeties, 1, wxALL|wxALIGN_RIGHT, 10 );
 	bSizer1->AddSpacer(10);
-	
+
 	panel->SetSizer( bSizer1 );
 	panel->Layout();
 
@@ -128,17 +128,17 @@ wxPanel *CBerylliumPhraseSelector::CreatePageHarzards(wxWindow* parent)
 
 	// Hier werden die Elemente erstellt...
 	wxBoxSizer* bSizer1;	bSizer1 = new wxBoxSizer( wxVERTICAL );
-	
+
 	wxStaticText* m_staticText1;
 	m_staticText1 = new wxStaticText( panel, wxID_ANY, _(L"Markieren Sie die H-Sätze, die in der Betriebsanweisung angezeigt werden sollen:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText1->Wrap( 450 );
-	bSizer1->Add( m_staticText1, 0, wxALL, 10 );	
-	
+	bSizer1->Add( m_staticText1, 0, wxALL, 10 );
+
 	m_listHarzards = new wxCheckListBox( panel, wxID_ANY, wxDefaultPosition, wxSize( 450, 290), 0, NULL, wxLB_NEEDED_SB|wxLB_SINGLE );
-	
-	bSizer1->Add( m_listHarzards, 1, wxALL|wxALIGN_RIGHT, 10 );	
+
+	bSizer1->Add( m_listHarzards, 1, wxALL|wxALIGN_RIGHT, 10 );
 	bSizer1->AddSpacer(10);
-	
+
 	panel->SetSizer( bSizer1 );
 	panel->Layout();
 
@@ -153,17 +153,17 @@ wxPanel *CBerylliumPhraseSelector::CreatePagePrecautionaries(wxWindow* parent)
 
 	// Hier werden die Elemente erstellt...
 	wxBoxSizer* bSizer1;	bSizer1 = new wxBoxSizer( wxVERTICAL );
-	
+
 	wxStaticText* m_staticText1;
 	m_staticText1 = new wxStaticText( panel, wxID_ANY, _(L"Markieren Sie die P-Sätze, die in der Betriebsanweisung angezeigt werden sollen:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText1->Wrap( 450 );
-	bSizer1->Add( m_staticText1, 0, wxALL, 10 );	
-	
+	bSizer1->Add( m_staticText1, 0, wxALL, 10 );
+
 	m_listPrecautionaries = new wxCheckListBox( panel, wxID_ANY, wxDefaultPosition, wxSize( 450, 290), 0, NULL, wxLB_NEEDED_SB|wxLB_SINGLE );
-	
-	bSizer1->Add( m_listPrecautionaries, 1, wxALL|wxALIGN_RIGHT, 10 );	
+
+	bSizer1->Add( m_listPrecautionaries, 1, wxALL|wxALIGN_RIGHT, 10 );
 	bSizer1->AddSpacer(10);
-	
+
 	panel->SetSizer( bSizer1 );
 	panel->Layout();
 
@@ -243,7 +243,7 @@ void CBerylliumPhraseSelector::InsertListInto( wxCheckListBox *m_listcontrol, st
 			// Soll versteckt werden?
 			if ( std::find( m_hidephrases.begin(), m_hidephrases.end(), prefix + stringlist[i]) != m_hidephrases.end() )
 				continue;
-			
+
 			// Ansonsten checken
 			m_listcontrol->Check(i, true);
 		}

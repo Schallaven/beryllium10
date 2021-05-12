@@ -37,7 +37,7 @@
 #include <wx/listctrl.h>
 #include <wx/hyperlink.h>
 
-#include "../Datahandling/BerylliumSubstanceData.h"
+#include "../datahandling/berylliumsubstancedata.h"
 
 // Seiten
 #define bePAGE_SUBSTANCE_GENERAL	0

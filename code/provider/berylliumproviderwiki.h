@@ -31,7 +31,7 @@
 // **********************************************************************************
 
 #pragma once
-#include "../Interfaces/IProvider.h"
+#include "../interfaces/iprovider.h"
 
 // Sucht in einem entsprechenden Wikipedia-Artikel
 // Besonderheit: Enthält nur EINE Substanz.
@@ -93,7 +93,7 @@ private:
 
 	// Hilfsfunktion: Gibt alles zurück was zwischen {{ und }} zu finden ist
 	// und entfernt es aus dem Text
-	wxString ExtractFromBrackets( wxString &szText );	
+	wxString ExtractFromBrackets( wxString &szText );
 
 	// Hilfsfunktion: Holt ein Parameter <-> Wert - Tupel aus der Infobox
 	void GetParameterTuple( wxString &szText, wxString &szName, wxString &szValue );

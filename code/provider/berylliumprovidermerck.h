@@ -31,7 +31,7 @@
 // **********************************************************************************
 
 #pragma once
-#include "../Interfaces/IProvider.h"
+#include "../interfaces/iprovider.h"
 
 class CBerylliumProviderMerck : public IProvider
 {
@@ -94,5 +94,5 @@ private:
 	void PreParseData();
 
 	// Hilfsfunktion: Entfernt Größer/Kleiner Zeichen mit Leerzeichen
-	void RemoveEmptyBrackets( wxString &data );		
+	void RemoveEmptyBrackets( wxString &data );
 };

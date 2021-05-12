@@ -34,11 +34,11 @@
 
 #include <vector>
 
-#include "../Interfaces/IView.h"
-#include "../Datahandling/BerylliumStatementsManager.h"
+#include "../interfaces/iview.h"
+#include "../datahandling/berylliumstatementsmanager.h"
 
-#include "BerylliumViewSafetySheetsColumn.h"
-#include "BerylliumDocument.h"
+#include "berylliumviewsafetysheetscolumn.h"
+#include "berylliumdocument.h"
 
 // Ansichtsklasse für Gruppenbetriebsanweisungen
 class CBerylliumViewSafetySheets : public IView

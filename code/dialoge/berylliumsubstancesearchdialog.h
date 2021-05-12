@@ -37,9 +37,9 @@
 #include <wx/statline.h>
 #include <wx/htmllbox.h>
 
-#include "../Datahandling/BerylliumSubstanceData.h"
-#include "../Datahandling/BerylliumDataLibrary.h"
-#include "../Interfaces/IProvider.h"
+#include "../datahandling/berylliumsubstancedata.h"
+#include "../datahandling/berylliumdatalibrary.h"
+#include "../interfaces/iprovider.h"
 
 // Buttons
 #define beID_Continue			6001

@@ -30,13 +30,13 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
-#include "BerylliumInfoDialog.h"
+#include "../stdafx.h"
+#include "berylliuminfodialog.h"
 
-#include "../BerylliumApplication.h"
+#include "../berylliumapplication.h"
 
-// Versionsinfos
-#include "../AutoBuild.h"
+// versionsinfos
+#include "../autobuild.h"
 
 // Constructor
 CBerylliumInfoHTML::CBerylliumInfoHTML(wxWindow *parent, wxWindowID id, const wxPoint& pos,
@@ -187,5 +187,5 @@ void CBerylliumInfoDialog::CreateInfoPage()
 		"</body></html>";
 
 	// Seite setzen
-	infobox->SetPage( html );	
+	infobox->SetPage( html );
 }

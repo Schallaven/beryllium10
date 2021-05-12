@@ -26,13 +26,13 @@
 //   Gewährleistung der MARKTFÄHIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.
 //   Siehe die GNU General Public License für weitere Details.
 //
-//   Sie sollten eine Kopie der GNU General Public License zusammen mit 
+//   Sie sollten eine Kopie der GNU General Public License zusammen mit
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
 #include "stdafx.h"
 
-#include "BerylliumApplication.h"
+#include "berylliumapplication.h"
 
 #include <wx/xml/xml.h>
 #include <wx/fs_arc.h>
@@ -42,7 +42,7 @@
 #include <wx/protocol/http.h>
 
 // Versionsinfos
-#include "AutoBuild.h"
+#include "autobuild.h"
 
 // Implementiert die eigentliche Einsprungsfunktion und die Hauptschleife
 IMPLEMENT_APP(CBerylliumApplication)
@@ -54,7 +54,7 @@ bool CBerylliumApplication::OnInit()
 	m_iLanguage = wxLANGUAGE_GERMAN;
 
 	// Config-Datei laden
-	LoadConfig(); 
+	LoadConfig();
 
 	// Lädt und setzt die Sprache
 	InitLocale();
@@ -82,7 +82,7 @@ bool CBerylliumApplication::OnInit()
 	::wxDisplaySize( &width, &height );
 
 	// Kommandozeile parsen
-	wxCmdLineParser cmdline( this->argc, this->argv ); 
+	wxCmdLineParser cmdline( this->argc, this->argv );
 
 	// Mögliche Schalter
 	cmdline.AddSwitch( "funatwork" );
@@ -95,7 +95,7 @@ bool CBerylliumApplication::OnInit()
 
 	// Easter Eggs
 	bool bEasterEgg = false;
-	
+
 	// Ohne "Fehler"
 	if (cmdline.Parse() == 0)
 	{
@@ -146,7 +146,7 @@ void CBerylliumApplication::LoadGraphicsToMemory()
 	// Icon
 	// ----
 	wxFSFile *iconfile = filesystem->OpenFile("beryllium10.dat#zip:beryllium10.png");
-	
+
 	if ( iconfile != NULL )
 	{
 		// ein Image-Objekt anlegen
@@ -177,7 +177,7 @@ void CBerylliumApplication::LoadGraphicsToMemory()
 		// Datei konnte nicht geladen werden
 		if ( file == NULL )
 			continue;
-		
+
 		// ein Image-Objekt anlegen
 		wxImage img( *file->GetStream(), wxBITMAP_TYPE_PNG  );
 
@@ -206,7 +206,7 @@ void CBerylliumApplication::LoadGraphicsToMemory()
 		// Datei konnte nicht geladen werden
 		if ( file == NULL )
 			continue;
-		
+
 		// ein Image-Objekt anlegen
 		wxImage img( *file->GetStream(), wxBITMAP_TYPE_JPEG  );
 
@@ -261,7 +261,7 @@ void CBerylliumApplication::LoadConfig()
 {
 	// Config-Datei laden
 	wxXmlDocument config;
-	
+
 	// Datei konnte nicht geladen werden? Raus hier!
 	if ( !config.Load( wxPathOnly(argv[0]) + "/config/config.xml" ) )
 		return;
@@ -273,7 +273,7 @@ void CBerylliumApplication::LoadConfig()
     // Wurzel Ast für Ast durchgehen
     wxXmlNode *option = config.GetRoot()->GetChildren();
 
-    while (option) 
+    while (option)
 	{
 		// Sprache?
 		if ((option->GetType() ==  wxXML_ELEMENT_NODE) && (option->GetName().compare("language") == 0))
@@ -288,7 +288,7 @@ void CBerylliumApplication::LoadConfig()
 		// Andere Einträge einfach in die HashMap schreiben
 		else if ( option->GetType() == wxXML_ELEMENT_NODE )
 		{
-			m_configHashMap[ option->GetName() ] = option->GetNodeContent();			
+			m_configHashMap[ option->GetName() ] = option->GetNodeContent();
 		}
 
 		// Nächster Ast
@@ -324,7 +324,7 @@ void CBerylliumApplication::LoadStatements()
 	{
 		// Datei laden
 		wxXmlDocument file;
-	
+
 		// Datei konnte nicht geladen werden? Raus hier!
 		if ( !file.Load( wxPathOnly(argv[0]) + "/config/" + names[i] + wxSuffix + ".xml" ) )
 			continue;
@@ -336,7 +336,7 @@ void CBerylliumApplication::LoadStatements()
 		// Wurzel Ast für Ast durchgehen
 		wxXmlNode *statement = file.GetRoot()->GetChildren();
 
-		while (statement) 
+		while (statement)
 		{
 			// Gefunden?
 			if ( statement->GetType() ==  wxXML_ELEMENT_NODE )
@@ -405,7 +405,7 @@ void CBerylliumApplication::LoadTemplates()
 
 		// Statement holen...
 		wxString sContent = statement->GetNodeContent();
-		
+
 		// Kategorie holen
 		wxString sCategory = statement->GetAttribute( "category", "danger" );
 
@@ -427,7 +427,7 @@ void CBerylliumApplication::LoadTemplates()
 				list[j] = sNumbers[0] + list[j];
 
 			// Hinzufügen
-			m_Templates.AddStatementToToken( list[j], sContent.ToStdString(), sCategory.ToStdString() );			
+			m_Templates.AddStatementToToken( list[j], sContent.ToStdString(), sCategory.ToStdString() );
 		}
 	}
 }
@@ -446,12 +446,12 @@ void CBerylliumApplication::SaveConfig()
 	wxXmlNode *xmlRoot = new wxXmlNode( wxXML_ELEMENT_NODE , "beryllium" );
 
 	// Wurzel setzen
-	config.SetRoot( xmlRoot );	
-	
+	config.SetRoot( xmlRoot );
+
 	// Sprache
 	wxXmlNode *xmllanguage = new wxXmlNode( xmlRoot, wxXML_ELEMENT_NODE, "language" );
 	wxXmlNode *xmllanguagetext = new wxXmlNode( xmllanguage, wxXML_TEXT_NODE, "language", wxString::Format("%ld",m_iLanguage) );
-	
+
 	// Andere Einstellungen (Hash-Map)
 	configHashMapTyp::iterator it;
 
@@ -462,9 +462,9 @@ void CBerylliumApplication::SaveConfig()
 		wxString value = it->second;
 
 		wxXmlNode *xmlconfigdata		= new wxXmlNode( xmlRoot, wxXML_ELEMENT_NODE, key );
-		new wxXmlNode( xmlconfigdata, wxXML_TEXT_NODE, key, value );				
+		new wxXmlNode( xmlconfigdata, wxXML_TEXT_NODE, key, value );
 	}
-	
+
 	// Datei speichern (Einrückung von 2 Zeichen pro Zeile)
 	config.Save( wxPathOnly(argv[0]) + "/config/config.xml", 2 );
 }
@@ -493,7 +493,7 @@ bool CBerylliumApplication::IsThereANewVersion()
 
 	// Theoretisch würde es reichen nur die Build-Nummer zu überprüfen, da diese ja einfach
 	// hochgezählt wird. Aber wer weiß, ob ich dieses System nicht mal ändere. Jedenfalls
-	// überprüfen wir vorher AUCH die Hauptversionsnummer! 
+	// überprüfen wir vorher AUCH die Hauptversionsnummer!
 
 	// Hauptversion größer
 	if ( version_update.major > version_old.major )
@@ -549,7 +549,7 @@ void CBerylliumApplication::LoadUpdateData()
 
 		// Daten lesen
 		httpStream->Read(dataStream);
- 
+
 		// Daten holen und nach version_update kopieren
 		LoadUpdateDataContent(data);
 
@@ -588,7 +588,7 @@ void CBerylliumApplication::LoadUpdateDataContent( const wxString &data )
 	// Wurzel Ast für Ast durchgehen
     wxXmlNode *node = doc.GetRoot()->GetChildren();
 
-	while (node) 
+	while (node)
 	{
 		// Nur Elemente sammeln
 		if ( node->GetType() != wxXML_ELEMENT_NODE )

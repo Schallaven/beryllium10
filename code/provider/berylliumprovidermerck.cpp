@@ -30,8 +30,8 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
-#include "BerylliumProviderMerck.h"
+#include "../stdafx.h"
+#include "berylliumprovidermerck.h"
 
 #include "../betool.h"
 
@@ -79,7 +79,7 @@ bool CBerylliumProviderMerck::SearchForCompound( const wxString searchtext, bool
 	// UK?
 	if ( iCountry == 1 )
 		merckaddress = "/is-bin/INTERSHOP.enfinity/WFS/Merck-GB-Site/en_US/-/GBP/ViewSearch-ParametricSearchIndexQuery?WFSimpleSearch_NameOrID=%s";
-	
+
 	// Anfrage mit Proxy?
 	if ( proxyhost.length() > 0 )
 	{
@@ -123,7 +123,7 @@ bool CBerylliumProviderMerck::SearchForCompound( const wxString searchtext, bool
 		wxTempFileOutputStream dataStream("beryllium10.temp");
 		wxLogMessage( _(L"ProviderMerck, %d: Temporäre Datei 'beryllium10.temp' anlegen."), __LINE__ );
 #endif
-		
+
 		// Daten lesen
 		httpStream->Read(dataStream);
 
@@ -158,7 +158,7 @@ bool CBerylliumProviderMerck::SearchForCompound( const wxString searchtext, bool
 
 // 2. Daten mit entsprechender ID holen
 void CBerylliumProviderMerck::GetDataOfCompound( const int iSerial, CBerylliumSubstanceData &m_data )
-{	
+{
 	// Datenblock löschen
 	CBerylliumSubstanceData newdata; tempdata = newdata;
 
@@ -481,7 +481,7 @@ void CBerylliumProviderMerck::PreParseData()
 	// Inhalt reinschreiben
 	if ( !fiW.Write( data ) )
 		wxLogError( _(L"ProviderMerck, %d: Temporäre Datei konnte nicht beschrieben werden."), __LINE__ );
-	
+
 	// Datei schließen (ENDE: Schreibmodus)
 	fiW.Close();
 }
@@ -574,7 +574,7 @@ void CBerylliumProviderMerck::LoadDataFromUrl( wxString URL )
 
 		// Loggen
 		wxLogMessage( _(L"ProviderMerck, %d: Verbinden ohne Proxy."), __LINE__ );
-	}	
+	}
 
 	// InputStream erzeugen
 	wxInputStream *httpStream = m_http.GetInputStream( URL );

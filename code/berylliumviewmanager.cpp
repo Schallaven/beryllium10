@@ -33,10 +33,10 @@
 
 #include "stdafx.h"
 
-#include "BerylliumViewManager.h"
+#include "berylliumviewmanager.h"
 
-#include "Datahandling/BerylliumViewSafetySheets.h"
-#include "Datahandling/BerylliumViewDataSheets.h"
+#include "datahandling/berylliumviewsafetysheets.h"
+#include "datahandling/berylliumviewdatasheets.h"
 
 // Alle Ereignisse werden hier behandelt
 BEGIN_EVENT_TABLE(CBerylliumViewManager, wxScrolledWindow)

@@ -30,10 +30,10 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
-#include "BerylliumProviderLocal.h"
+#include "../stdafx.h"
+#include "berylliumproviderlocal.h"
 
-#include "../BerylliumApplication.h"
+#include "../berylliumapplication.h"
 
 #include <wx/filename.h>
 

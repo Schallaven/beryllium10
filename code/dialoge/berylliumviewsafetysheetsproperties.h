@@ -36,8 +36,8 @@
 #include <wx/propdlg.h>
 #include <wx/checkbox.h>
 
-#include "../Datahandling/BerylliumViewSafetySheetsColumn.h"
-#include "../Datahandling/BerylliumData.h"
+#include "../datahandling/berylliumviewsafetysheetscolumn.h"
+#include "../datahandling/berylliumdata.h"
 
 class CBerylliumViewSafetySheetsProperties : public wxPropertySheetDialog
 {

@@ -32,9 +32,9 @@
 
 #pragma once
 
-#include "../Interfaces/IView.h"
+#include "../interfaces/iview.h"
 
-#include "BerylliumDocument.h"
+#include "berylliumdocument.h"
 
 // Ansichtsklasse für Einzelbetriebsanweisungen
 class CBerylliumViewDataSheets : public IView
@@ -102,11 +102,11 @@ private:
 	void DoPopupMenu( wxCommandEvent &event );
 
 	// Zeichnet die "Hinzufügen"-Seite
-	void DrawNewSubstancePage( wxDC &dc );	
+	void DrawNewSubstancePage( wxDC &dc );
 
 	// Substanzseite: Rahmen
 	void DrawSubstancePageBorder( wxDC &dc );
-	
+
 	// Substanzseite: Zeichnet die Markierungen
 	void DrawSubstancePageSelection( wxDC &dc, unsigned int iPage );
 
@@ -127,7 +127,7 @@ private:
 
 	// Substanzseite: Zeichnet die speziellen Hinweise einer Substanz (z.B. Entsorgung)
 	void DrawSubstancePageStatements( wxDC &dc, unsigned int iPage );
-	
+
 	// Hilfsfunktion: Zeichnet den Text als Block und gibt die neue y-Koordinate zurück
 	int DrawSubstanceTextBlock( wxDC &dc, int x, int y, int maxwidth, wxString text, int indentfirstline = 0 );
 

@@ -30,8 +30,8 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
-#include "BerylliumStatementEditor.h"
+#include "../stdafx.h"
+#include "berylliumstatementeditor.h"
 
 
 IMPLEMENT_CLASS(CBerylliumStatementEditor, wxPropertySheetDialog)
@@ -72,7 +72,7 @@ wxPanel *CBerylliumStatementEditor::CreatePageEditor(wxWindow* parent)
 	wxStaticText* m_staticText1;
 	m_staticText1 = new wxStaticText( panel, wxID_ANY, _(L"Fügen Sie hier die Zeilen ein, die zusätzlich in das Datenblatt eingefügt werden sollen:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText1->Wrap( 605 );
-	bSizer1->Add( m_staticText1, 0, wxALL, 10 );	
+	bSizer1->Add( m_staticText1, 0, wxALL, 10 );
 
 	// Textfeld anlegen
 	m_textctrl = new wxTextCtrl( panel, wxID_ANY, "", wxDefaultPosition, wxSize( 605, 290 ), wxTE_MULTILINE|wxTE_DONTWRAP );

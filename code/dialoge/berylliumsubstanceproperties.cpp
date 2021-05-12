@@ -30,8 +30,8 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
-#include "BerylliumSubstanceProperties.h"
+#include "../stdafx.h"
+#include "berylliumsubstanceproperties.h"
 
 #include <wx/bookctrl.h>
 #include <wx/filesys.h>
@@ -42,8 +42,8 @@
 	#include <commctrl.h>
 #endif
 
-#include "BerylliumStatementEditor.h"
-#include "BerylliumLethalDialog.h"
+#include "berylliumstatementeditor.h"
+#include "berylliumlethaldialog.h"
 
 IMPLEMENT_CLASS(CBerylliumSubstanceProperties, wxPropertySheetDialog)
 
@@ -1288,10 +1288,10 @@ void CBerylliumSubstanceProperties::OnLD50Activate( wxListEvent &event )
 void CBerylliumSubstanceProperties::OnLD50KeyDown( wxListEvent &event )
 {
 	// Index holen
-	long index = event.GetIndex();	
+	long index = event.GetIndex();
 
 	// Entfernen-Taste gedrückt und Eintrag selektiert?
-	if ( (index > -1) && (index < (m_listLD50->GetItemCount()-1)) && ((event.GetKeyCode() == WXK_DELETE) || (event.GetKeyCode() == WXK_NUMPAD_DELETE)) ) 
+	if ( (index > -1) && (index < (m_listLD50->GetItemCount()-1)) && ((event.GetKeyCode() == WXK_DELETE) || (event.GetKeyCode() == WXK_NUMPAD_DELETE)) )
 	{
 		// Datenindex holen (Vorzeichen wegschmeißen)
 		unsigned long data = (unsigned)event.GetData();
@@ -1301,7 +1301,7 @@ void CBerylliumSubstanceProperties::OnLD50KeyDown( wxListEvent &event )
 			return;
 
 		// Nachfrage ist nicht nötig, also Eintrag einfach entfernen
-		m_ld50values.erase( m_ld50values.begin() + data );		
+		m_ld50values.erase( m_ld50values.begin() + data );
 
 		// Die Liste aktualisieren (und evtl. neusortieren)
 		FillLethalDoseList();

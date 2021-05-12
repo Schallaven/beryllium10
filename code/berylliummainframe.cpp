@@ -40,38 +40,38 @@
 #include <wx/sstream.h>
 
 // Versionsinfos
-#include "AutoBuild.h"
+#include "autobuild.h"
 
-#include "BerylliumViewManager.h"
+#include "berylliumviewmanager.h"
 
-#include "BerylliumMainframe.h"
+#include "berylliummainframe.h"
 #include "berylliummainframe_identifiers.h"
 
-#include "BerylliumApplication.h"
+#include "berylliumapplication.h"
 
-#include "Dialoge/BerylliumMultiplierDialog.h"
-#include "Dialoge/BerylliumOptionsDialog.h"
-#include "Dialoge/BerylliumInfoDialog.h"
+#include "dialoge/berylliummultiplierdialog.h"
+#include "dialoge/berylliumoptionsdialog.h"
+#include "dialoge/berylliuminfodialog.h"
 
 // Easter Egg: Breakout Clone :)
-#include "Misc/BerylliumBreakoutDialog.h"
+#include "misc/berylliumbreakoutdialog.h"
 
 // Bitmaps für Symbolleiste einfügen
-#include "../Resources/Bitmaps/icon_empty_menu.xpm"
-#include "../Resources/Bitmaps/icon_new.xpm"
-#include "../Resources/Bitmaps/icon_new_menu.xpm"
-#include "../Resources/Bitmaps/icon_open.xpm"
-#include "../Resources/Bitmaps/icon_open_menu.xpm"
-#include "../Resources/Bitmaps/icon_save.xpm"
-#include "../Resources/Bitmaps/icon_save_menu.xpm"
-#include "../Resources/Bitmaps/icon_print.xpm"
-#include "../Resources/Bitmaps/icon_print_menu.xpm"
-#include "../Resources/Bitmaps/icon_help.xpm"
-#include "../Resources/Bitmaps/icon_help_menu.xpm"
-#include "../Resources/Bitmaps/icon_left.xpm"
-#include "../Resources/Bitmaps/icon_right.xpm"
-#include "../Resources/Bitmaps/icon_useghs.xpm"
-#include "../Resources/Bitmaps/icon_psebreaker.xpm"
+#include "../resources/bitmaps/icon_empty_menu.xpm"
+#include "../resources/bitmaps/icon_new.xpm"
+#include "../resources/bitmaps/icon_new_menu.xpm"
+#include "../resources/bitmaps/icon_open.xpm"
+#include "../resources/bitmaps/icon_open_menu.xpm"
+#include "../resources/bitmaps/icon_save.xpm"
+#include "../resources/bitmaps/icon_save_menu.xpm"
+#include "../resources/bitmaps/icon_print.xpm"
+#include "../resources/bitmaps/icon_print_menu.xpm"
+#include "../resources/bitmaps/icon_help.xpm"
+#include "../resources/bitmaps/icon_help_menu.xpm"
+#include "../resources/bitmaps/icon_left.xpm"
+#include "../resources/bitmaps/icon_right.xpm"
+#include "../resources/bitmaps/icon_useghs.xpm"
+#include "../resources/bitmaps/icon_psebreaker.xpm"
 
 // Alle Ereignisse werden hier behandelt
 BEGIN_EVENT_TABLE(CBerylliumMainframe, wxFrame)
@@ -730,7 +730,7 @@ void CBerylliumMainframe::OnEventBugReport( wxCommandEvent &event )
 		http.SetHeader( "Content-type", "application/x-www-form-urlencoded; charset=utf-8" );
 		http.SetTimeout(20); // 20 Sekunden TimeOut
 
-		// Post-Daten vorbereiten 
+		// Post-Daten vorbereiten
 #if wxCHECK_VERSION(2, 9, 4)
 		// neuer Stil für wxWidgets 2.9.4 oder höher
 		http.SetPostText( "application/x-www-form-urlencoded; charset=utf-8",
@@ -911,7 +911,7 @@ void CBerylliumMainframe::OnEventOptions( wxCommandEvent &event )
 
 		// Speichern
 		::wxGetApp().SetConfigData( "proxyhost", host );
-		::wxGetApp().SetConfigData( "proxyport", port );		
+		::wxGetApp().SetConfigData( "proxyport", port );
 	}
 }
 

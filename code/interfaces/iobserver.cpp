@@ -31,9 +31,9 @@
 // **********************************************************************************
 
 
-#include "stdafx.h"
+#include "../stdafx.h"
 
-#include "IObserver.h"
+#include "iobserver.h"
 
 IObserver::IObserver(void)
 {

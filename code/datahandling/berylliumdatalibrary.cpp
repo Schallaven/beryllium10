@@ -30,9 +30,9 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
+#include "../stdafx.h"
 
-#include "BerylliumDataLibrary.h"
+#include "berylliumdatalibrary.h"
 
 CBerylliumDataLibrary::CBerylliumDataLibrary(void)
 {
@@ -99,7 +99,7 @@ void CBerylliumDataLibrary::Add( const CBerylliumSubstanceData &add )
 void CBerylliumDataLibrary::SortByNames()
 {
 	// Sortieren...
-	std::sort(m_vData.begin(), m_vData.end(), CBerylliumDataLibrary::StaticSortByNames);	
+	std::sort(m_vData.begin(), m_vData.end(), CBerylliumDataLibrary::StaticSortByNames);
 }
 
 // Sucht ein Element anhand der CAS-Nummer
@@ -118,16 +118,16 @@ int CBerylliumDataLibrary::LookForCAS( const wxString cas )
 }
 
 void CBerylliumDataLibrary::LoadFromXML( wxXmlNode *root )
-{	
+{
 	for( wxXmlNode* element = root->GetChildren(); element; element = element->GetNext() )
 	{
 		// Nur "substance" Knoten finden
 		if ( element->GetName().compare("substance") != 0 )
-			continue;		
+			continue;
 
 		// Temporäres Objekt anlegen
 		CBerylliumSubstanceData temp;
-		
+
 		// Substanz auslesen
 		temp.LoadFromXmlNode(element);
 
@@ -149,7 +149,7 @@ void CBerylliumDataLibrary::SaveToXml( wxXmlNode *root )
 		root->InsertChildAfter( xmlSubstance, lastNode );
 
 		// Daten anhängen (allerdings ohne Ansatzgröße)
-		m_vData[i].SaveToXmlNode( xmlSubstance );		
+		m_vData[i].SaveToXmlNode( xmlSubstance );
 
 		// Letzten Knoten setzen
 		lastNode = xmlSubstance;
@@ -167,7 +167,7 @@ void CBerylliumDataLibrary::LoadFromFile( const wxString sFileName )
 
 	// Wurzel finden
     if (file.GetRoot()->GetName() != "library")
-        return;	
+        return;
 
 	// Erstmal alle alten Daten löschen
 	Clear();
@@ -192,7 +192,7 @@ void CBerylliumDataLibrary::SaveToFile( const wxString sFileName )
 
 	// Wurzel setzen
 	file.SetRoot( xmlRoot );
-	
+
 	// Substanzen hinzufügen
 	SaveToXml( xmlRoot );
 

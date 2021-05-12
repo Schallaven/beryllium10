@@ -32,7 +32,7 @@
 
 #pragma once
 
-#include "../Interfaces/IProvider.h"
+#include "../interfaces/iprovider.h"
 
 class CBerylliumProviderGESTIS :
 	public IProvider

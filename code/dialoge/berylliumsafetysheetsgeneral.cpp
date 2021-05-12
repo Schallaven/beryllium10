@@ -30,8 +30,8 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
-#include "BerylliumSafetySheetsGeneral.h"
+#include "../stdafx.h"
+#include "berylliumsafetysheetsgeneral.h"
 
 #include <wx/bookctrl.h>
 
@@ -81,11 +81,11 @@ wxPanel *CBerylliumSafetySheetsGeneral::CreatePageGeneral(wxWindow* parent)
 
 	// Hier werden die Elemente erstellt...
 	wxBoxSizer* bSizer1;	bSizer1 = new wxBoxSizer( wxVERTICAL );
-	
+
 	wxStaticText* m_staticText1;
 	m_staticText1 = new wxStaticText( panel, wxID_ANY, _(L"Betriebsanweisungstitel:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText1->Wrap( 460 );
-	bSizer1->Add( m_staticText1, 0, wxALL, 10 );	
+	bSizer1->Add( m_staticText1, 0, wxALL, 10 );
 
 	m_textTitle = new wxTextCtrl( panel, wxID_ANY, m_data.szTitle, wxDefaultPosition, wxSize( 450,-1 ), 0 );
 	bSizer1->Add( m_textTitle, 0, wxRIGHT|wxBOTTOM|wxALIGN_RIGHT, 10 );
@@ -93,7 +93,7 @@ wxPanel *CBerylliumSafetySheetsGeneral::CreatePageGeneral(wxWindow* parent)
 	wxStaticText* m_staticText4;
 	m_staticText4 = new wxStaticText( panel, wxID_ANY, _(L"Betriebsanweisungstitel (GHS):"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText4->Wrap( 460 );
-	bSizer1->Add( m_staticText4, 0, wxALL, 10 );	
+	bSizer1->Add( m_staticText4, 0, wxALL, 10 );
 
 	m_textTitleGHS = new wxTextCtrl( panel, wxID_ANY, m_data.szGHSTitle, wxDefaultPosition, wxSize( 450,-1 ), 0 );
 	bSizer1->Add( m_textTitleGHS, 0, wxRIGHT|wxBOTTOM|wxALIGN_RIGHT, 10 );
@@ -101,7 +101,7 @@ wxPanel *CBerylliumSafetySheetsGeneral::CreatePageGeneral(wxWindow* parent)
 	wxStaticText* m_staticText2;
 	m_staticText2 = new wxStaticText( panel, wxID_ANY, _(L"Aufenthalts-/Bestimmungsort:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText2->Wrap( 460 );
-	bSizer1->Add( m_staticText2, 0, wxALL, 10 );	
+	bSizer1->Add( m_staticText2, 0, wxALL, 10 );
 
 	m_textLocation = new wxTextCtrl( panel, wxID_ANY, m_data.szLocation, wxDefaultPosition, wxSize( 450,-1 ), 0 );
 	bSizer1->Add( m_textLocation, 0, wxRIGHT|wxBOTTOM|wxALIGN_RIGHT, 10 );
@@ -109,7 +109,7 @@ wxPanel *CBerylliumSafetySheetsGeneral::CreatePageGeneral(wxWindow* parent)
 	wxStaticText* m_staticText3;
 	m_staticText3 = new wxStaticText( panel, wxID_ANY, _(L"Veranstaltung:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText3->Wrap( 460 );
-	bSizer1->Add( m_staticText3, 0, wxALL, 10 );	
+	bSizer1->Add( m_staticText3, 0, wxALL, 10 );
 
 	m_textEvent = new wxTextCtrl( panel, wxID_ANY, m_data.szEvent, wxDefaultPosition, wxSize( 450,-1 ), 0 );
 	bSizer1->Add( m_textEvent, 0, wxRIGHT|wxBOTTOM|wxALIGN_RIGHT, 10 );
@@ -128,19 +128,19 @@ wxPanel *CBerylliumSafetySheetsGeneral::CreatePagePersonal(wxWindow* parent)
 
 	// Hier werden die Elemente erstellt...
 	wxBoxSizer* bSizer1;	bSizer1 = new wxBoxSizer( wxVERTICAL );
-	
+
 	wxStaticText* m_staticText1;
 	m_staticText1 = new wxStaticText( panel, wxID_ANY, _(L"Name, Vorname:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText1->Wrap( 460 );
-	bSizer1->Add( m_staticText1, 0, wxALL, 10 );	
+	bSizer1->Add( m_staticText1, 0, wxALL, 10 );
 
 	m_textName = new wxTextCtrl( panel, wxID_ANY, m_data.GetName(), wxDefaultPosition, wxSize( 450,-1 ), 0 );
-	bSizer1->Add( m_textName, 0, wxRIGHT|wxBOTTOM|wxALIGN_RIGHT, 10 );	
+	bSizer1->Add( m_textName, 0, wxRIGHT|wxBOTTOM|wxALIGN_RIGHT, 10 );
 
 	wxStaticText* m_staticText2;
 	m_staticText2 = new wxStaticText( panel, wxID_ANY, _(L"Platznummer:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText2->Wrap( 460 );
-	bSizer1->Add( m_staticText2, 0, wxALL, 10 );		
+	bSizer1->Add( m_staticText2, 0, wxALL, 10 );
 
 	m_textPosition = new wxTextCtrl( panel, wxID_ANY, m_data.szPosition, wxDefaultPosition, wxSize( 450,-1 ), 0 );
 	bSizer1->Add( m_textPosition, 0, wxRIGHT|wxBOTTOM|wxALIGN_RIGHT, 10 );
@@ -148,7 +148,7 @@ wxPanel *CBerylliumSafetySheetsGeneral::CreatePagePersonal(wxWindow* parent)
 	wxStaticText* m_staticText3;
 	m_staticText3 = new wxStaticText( panel, wxID_ANY, _(L"Assistent/Betreuer:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText3->Wrap( 460 );
-	bSizer1->Add( m_staticText3, 0, wxALL, 10 );	
+	bSizer1->Add( m_staticText3, 0, wxALL, 10 );
 
 	m_textSupervisor = new wxTextCtrl( panel, wxID_ANY, m_data.szSupervisor, wxDefaultPosition, wxSize( 450,-1 ), 0 );
 	bSizer1->Add( m_textSupervisor, 0, wxRIGHT|wxBOTTOM|wxALIGN_RIGHT, 10 );
@@ -167,22 +167,22 @@ wxPanel *CBerylliumSafetySheetsGeneral::CreatePagePreparation(wxWindow* parent)
 
 	// Hier werden die Elemente erstellt...
 	wxBoxSizer* bSizer1;	bSizer1 = new wxBoxSizer( wxVERTICAL );
-	
+
 	wxStaticText* m_staticText1;
 	m_staticText1 = new wxStaticText( panel, wxID_ANY, _(L"Name der Verbindung:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText1->Wrap( 460 );
-	bSizer1->Add( m_staticText1, 0, wxALL, 10 );	
+	bSizer1->Add( m_staticText1, 0, wxALL, 10 );
 
 	m_textPrepName = new wxTextCtrl( panel, wxID_ANY, m_data.sdPreparation.GetName(), wxDefaultPosition, wxSize( 450,-1 ), 0 );
-	bSizer1->Add( m_textPrepName, 0, wxRIGHT|wxBOTTOM|wxALIGN_RIGHT, 10 );	
+	bSizer1->Add( m_textPrepName, 0, wxRIGHT|wxBOTTOM|wxALIGN_RIGHT, 10 );
 
 	wxStaticText* m_staticText2;
 	m_staticText2 = new wxStaticText( panel, wxID_ANY, _(L"Summenformel der Verbindung:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText2->Wrap( 460 );
-	bSizer1->Add( m_staticText2, 0, wxALL, 10 );	
+	bSizer1->Add( m_staticText2, 0, wxALL, 10 );
 
 	m_textPrepFormula = new wxTextCtrl( panel, wxID_ANY, m_data.sdPreparation.GetFormula(), wxDefaultPosition, wxSize( 450,-1 ), 0 );
-	bSizer1->Add( m_textPrepFormula, 0, wxRIGHT|wxBOTTOM|wxALIGN_RIGHT, 10 );	
+	bSizer1->Add( m_textPrepFormula, 0, wxRIGHT|wxBOTTOM|wxALIGN_RIGHT, 10 );
 
 	panel->SetSizer( bSizer1 );
 	panel->Layout();
@@ -200,7 +200,7 @@ void CBerylliumSafetySheetsGeneral::OnInitDialog( wxInitDialogEvent &event )
 void CBerylliumSafetySheetsGeneral::OnOK( wxCommandEvent &event )
 {
 	// Steuerelemente auslesen und in der Kopie des Datenobjektes speichern
-	m_data.szTitle		= m_textTitle->GetValue(); 
+	m_data.szTitle		= m_textTitle->GetValue();
 	m_data.szGHSTitle	= m_textTitleGHS->GetValue();
 	m_data.szLocation	= m_textLocation->GetValue();
 	m_data.szEvent		= m_textEvent->GetValue();
@@ -220,7 +220,7 @@ void CBerylliumSafetySheetsGeneral::OnOK( wxCommandEvent &event )
 }
 
 void CBerylliumSafetySheetsGeneral::SetPage( int iPage )
-{ 
-	if ( (iPage >= 0) && (iPage < 3) ) 
-		GetBookCtrl()->ChangeSelection( iPage ); 
+{
+	if ( (iPage >= 0) && (iPage < 3) )
+		GetBookCtrl()->ChangeSelection( iPage );
 }

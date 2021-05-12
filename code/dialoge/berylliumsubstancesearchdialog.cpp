@@ -30,21 +30,21 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
-#include "BerylliumSubstanceSearchDialog.h"
+#include "../stdafx.h"
+#include "berylliumsubstancesearchdialog.h"
 
-#include "../BerylliumApplication.h"
+#include "../berylliumapplication.h"
 
 #include <wx/progdlg.h>
 
-// Bitmap für den Dialog
-#include "../../Resources/Bitmaps/insert_substance.xpm"
+// bitmap für den dialog
+#include "../../resources/bitmaps/insert_substance.xpm"
 
-// Hersteller
-#include "../Provider/BerylliumProviderWiki.h"
-#include "../Provider/BerylliumProviderMerck.h"
-#include "../Provider/BerylliumProviderGESTIS.h"
-#include "../Provider/BerylliumProviderLocal.h"
+// hersteller
+#include "../provider/berylliumproviderwiki.h"
+#include "../provider/berylliumprovidermerck.h"
+#include "../provider/berylliumprovidergestis.h"
+#include "../provider/berylliumproviderlocal.h"
 
 // Für das Suchfeld (wird vom Sprachbibliotheksprogramm gefunden und übersetzt)
 const wxString searchtext = _("Search");
@@ -444,10 +444,10 @@ void CBerylliumSubstanceSearchDialog::OnSearch( wxCommandEvent &event )
 
 			// Liste füllen
 			m_providerlist[i]->GetResults( m_results );
-			
+
 			// Ergebnisse in Liste einfügen
 			for ( unsigned int j = 0; j < m_results.size(); ++j )
-				AddToList( m_results[j].name, m_providerlist[i], m_results[j].serial, m_results[j].data, m_results[j].info );			
+				AddToList( m_results[j].name, m_providerlist[i], m_results[j].serial, m_results[j].data, m_results[j].info );
 		}
 
 		// Keine Ergebnisse oder Fehler?
@@ -470,7 +470,7 @@ void CBerylliumSubstanceSearchDialog::OnSearch( wxCommandEvent &event )
 
     // Existiert? Dann löschen!
     if ( tempfile.FileExists() )
-        ::wxRemoveFile("beryllium10.temp");	
+        ::wxRemoveFile("beryllium10.temp");
 
 	// Log anzeigen, falls aktiviert.
 	if ( bEnableLogging )

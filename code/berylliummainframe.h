@@ -34,10 +34,10 @@
 
 #include <sstream>
 
-#include "Interfaces/IObserver.h"
-#include "Datahandling/BerylliumStatementsManager.h"
+#include "interfaces/iobserver.h"
+#include "datahandling/berylliumstatementsmanager.h"
 
-#include "BerylliumViewManager.h"
+#include "berylliumviewmanager.h"
 
 // Kümmert sich um alles was das Hauptfenster betrifft...
 class CBerylliumMainframe : public wxFrame, public IObserver

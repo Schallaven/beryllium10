@@ -30,8 +30,8 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
-#include "BerylliumViewSafetySheetsPrinting.h"
+#include "../stdafx.h"
+#include "berylliumviewsafetysheetsprinting.h"
 
 CBerylliumViewSafetySheetsPrinting::CBerylliumViewSafetySheetsPrinting( CBerylliumViewSafetySheets &view, CBerylliumDocument &document ) : wxPrintout ( document.GetFilename() ), m_view(view), m_document(document)
 {
@@ -44,7 +44,7 @@ CBerylliumViewSafetySheetsPrinting::~CBerylliumViewSafetySheetsPrinting(void)
 // Mögliche Seiten zurückgeben
 void CBerylliumViewSafetySheetsPrinting::GetPageInfo(int *minPage, int *maxPage, int *pageFrom, int *pageTo)
 {
-	// Minimale Seite 
+	// Minimale Seite
 	*minPage = 1;
 
 	// Maximale Seite

@@ -26,13 +26,13 @@
 //   Gewährleistung der MARKTFÄHIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.
 //   Siehe die GNU General Public License für weitere Details.
 //
-//   Sie sollten eine Kopie der GNU General Public License zusammen mit 
+//   Sie sollten eine Kopie der GNU General Public License zusammen mit
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
+#include "../stdafx.h"
 
-#include "BerylliumBreakoutDialog.h"
+#include "berylliumbreakoutdialog.h"
 
 IMPLEMENT_CLASS(CBerylliumBreakoutDialog, wxDialog)
 

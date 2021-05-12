@@ -34,19 +34,19 @@
 
 #include <string>
 
-#include "BerylliumSubstanceData.h"
+#include "berylliumsubstancedata.h"
 
 // Abstrakte Klasse für die Spalten...
 class IBerylliumViewSafetySheetsColumn
 {
 public:
 	// Konstruktor: setzt die Standardgröße einer Spalte (-1 = variabel)
-	IBerylliumViewSafetySheetsColumn(wxString szTitle = "Column", int iWidth = -1) 
-	{ 
-		m_iWidth = iWidth; m_iHeight = 50; m_szTitle = szTitle; 
+	IBerylliumViewSafetySheetsColumn(wxString szTitle = "Column", int iWidth = -1)
+	{
+		m_iWidth = iWidth; m_iHeight = 50; m_szTitle = szTitle;
 		bShow = true;
 		bPrinting = false;
-		bDynamic = ( iWidth < 0 ); 
+		bDynamic = ( iWidth < 0 );
 		m_iPage = 0;
 	};
 
@@ -103,7 +103,7 @@ public:
 
 protected:
 	// Wird diese Spalte angezeigt?
-	bool bShow; 
+	bool bShow;
 
 	// Dynamische Breite?
 	bool bDynamic;

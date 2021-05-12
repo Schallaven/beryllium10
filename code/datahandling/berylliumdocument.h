@@ -35,8 +35,8 @@
 #include <vector>
 #include <string>
 
-#include "../Interfaces/IObserver.h"
-#include "BerylliumData.h"
+#include "../interfaces/iobserver.h"
+#include "berylliumdata.h"
 
 #include <wx/xml/xml.h>
 
@@ -51,7 +51,7 @@ public:
 	~CBerylliumDocument(void);
 
 	// Daten aus Datei laden
-	int LoadFromFile( wxString szFilename ); 
+	int LoadFromFile( wxString szFilename );
 
 	// Daten in Datei speichern
 	int SaveToFile();
