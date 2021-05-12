@@ -4,3 +4,10 @@ macosx/obj/*
 .DS_Store
 binary/.DS_Store
 
+
+# Linux related
+linux/obj/*
+linux/*.depend
+linux/*.layout
+
+
