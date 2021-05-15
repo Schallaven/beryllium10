@@ -237,8 +237,10 @@ void CBerylliumApplication::InitLocale()
 			break;
 
 		// Standardsprache für Beryllium ist Deutsch
+		// Wichtig: auch m_iLanguage setzen, damit nicht unterstützte Sprachen herausgefiltert werden!
 		default:
 			wxFileName += "de";
+			m_iLanguage = wxLANGUAGE_GERMAN;
 			break;
 	};
 
@@ -311,7 +313,9 @@ void CBerylliumApplication::LoadStatements()
 			break;
 
 		// Standardsprache für Beryllium ist Deutsch
+		// Wichtig: m_iLanguage auch setzen, damit nicht unterstützte Sprachen herausgefiltert werden
 		default:
+            m_iLanguage = wxLANGUAGE_GERMAN;
 			wxSuffix += "_de";
 			break;
 	};
