@@ -49,7 +49,7 @@ class CBerylliumApplication : public wxApp
 {
 private:
 	// Lokalisierungsobjekt: Wird für die Übersetzungen benötigt
-	wxLocale m_Locale;
+	wxLocale *mpLocale = nullptr;
 
 	// Version-Infos
 	struct versionblock {
@@ -116,8 +116,8 @@ private:
 	// Lädt alle oft genutzen Grafiken in den Zwischenspeicher
 	void LoadGraphicsToMemory();
 
-	// Lädt und setzt die Sprache
-	void InitLocale();
+	/* Initializes the language of Beryllium */
+	void InitLocale(int language);
 
 	// H/P/R/S-Sätze-Datei laden
 	void LoadStatements();

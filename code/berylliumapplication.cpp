@@ -1,4 +1,4 @@
-﻿// **********************************************************************************
+// **********************************************************************************
 //   This file is part of Beryllium¹º.
 //
 //   Beryllium¹º is free software: you can redistribute it and/or modify
@@ -57,7 +57,7 @@ bool CBerylliumApplication::OnInit()
 	LoadConfig();
 
 	// Lädt und setzt die Sprache
-	InitLocale();
+	InitLocale(m_iLanguage);
 
 	// Statements-Datei laden
 	LoadStatements();
@@ -222,40 +222,38 @@ void CBerylliumApplication::LoadGraphicsToMemory()
 
 }
 
-// Lädt und setzt die Sprache
-void CBerylliumApplication::InitLocale()
+/*
+    Initializes the language set in the config file or
+    English as default if language is not found/known.
+*/
+void CBerylliumApplication::InitLocale(int language)
 {
-	// Feld mit den Dateinamen der entsprechenden Sprachen
-	wxString	wxFileName = "beryllium_";
+#ifdef _DEBUG
+    wxLog::AddTraceMask("i18n");
+#endif
+    /* Delete the old wxLocale object if it exists; otherwise, there will be a
+       conflict between the new and the old one. */
+    if (mpLocale != nullptr) {
+        delete mpLocale;
+    }
 
-	// Welche Sprache ist gesetzt?
-	switch( m_iLanguage )
-	{
-		// Englisch
-		case wxLANGUAGE_ENGLISH:
-			wxFileName += "en";
-			break;
+	/* Set the language and locals to the ID given. */
+	m_iLanguage = language;
+    mpLocale = new wxLocale(language);
 
-		// Standardsprache für Beryllium ist Deutsch
-		// Wichtig: auch m_iLanguage setzen, damit nicht unterstützte Sprachen herausgefiltert werden!
-		default:
-			wxFileName += "de";
-			m_iLanguage = wxLANGUAGE_GERMAN;
-			break;
-	};
+    /* Since Beryllium is a portable app (as in "runs on a flash drive"), it is
+       convenient to add an extra lang-directory under the binary-directory as
+       lookup path in which all the available languages are saved in sub-directory
+       (e.g. ../lang/en_GB/beryllium.mo for British English). */
+	mpLocale->AddCatalogLookupPathPrefix(wxPathOnly(argv[0]) + "/lang");
+    mpLocale->AddCatalog("beryllium");
 
-	// Setzt die "Locale" (falls verfügbar)
-	// Die Sprache selbst wird dadurch gesetzt, dass weiter unten die entsprechende Katalogdatei gewählt wird
-	if( m_Locale.IsAvailable( m_iLanguage ) )
-		m_Locale.Init( m_iLanguage );
-	else
-		m_Locale.Init();
-
-	// Pfad hinzufügen
-	m_Locale.AddCatalogLookupPathPrefix(wxPathOnly(argv[0]) + "/config" );
-
-	// Katalogdatei setzen
-    m_Locale.AddCatalog( wxFileName );
+    /* If the language could not be loaded, let's try to load English instead. If
+       that should not work it will default to the internal strings, which are in
+       German. */
+    if (!mpLocale->IsLoaded("beryllium") && (language != wxLANGUAGE_ENGLISH)) {
+        InitLocale(wxLANGUAGE_ENGLISH);
+    }
 }
 
 // Lädt die Config-Datei und setzt die entsprechenden Optionen
