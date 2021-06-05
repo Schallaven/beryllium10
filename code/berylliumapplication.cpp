@@ -81,31 +81,31 @@ bool CBerylliumApplication::OnInit()
 	int width = 0, height = 0;
 	::wxDisplaySize( &width, &height );
 
-	// Kommandozeile parsen
+	/* Parse command line: Adding options for help, funatwork, and file opening. */
 	wxCmdLineParser cmdline( this->argc, this->argv );
+	cmdline.AddSwitch("h", "help", _("Zeigt diese Hilfe."), wxCMD_LINE_OPTION_HELP);
+	cmdline.AddSwitch("" , "funatwork", _("Fügt etwas dem Hilfemenu hinzu."), 0);
+	cmdline.AddParam("", wxCMD_LINE_VAL_STRING, wxCMD_LINE_PARAM_OPTIONAL | wxCMD_LINE_PARAM_MULTIPLE);
 
-	// Mögliche Schalter
-	cmdline.AddSwitch( "funatwork" );
-
-	// evtl. Dateiübergeben
-	cmdline.AddParam( "", wxCMD_LINE_VAL_STRING, wxCMD_LINE_PARAM_OPTIONAL | wxCMD_LINE_PARAM_MULTIPLE);
-
-	// evtl. Datei
 	wxString FileToOpen;
-
-	// Easter Eggs
 	bool bEasterEgg = false;
 
-	// Ohne "Fehler"
-	if (cmdline.Parse() == 0)
-	{
-		// "Easter-Egg"-Modus
-		bEasterEgg = cmdline.Found( "funatwork" );
+	/* Parsing the command line: -1 for "help shown", 0 for "everything ok", and 1 for "error happened". */
+    switch(cmdline.Parse()) {
+        case -1:
+            return false;
 
-		// Datei angegeben?
-		if ( cmdline.GetParamCount() > 0 )
-			FileToOpen = cmdline.GetParam(0);
-	}
+        case 0:
+            bEasterEgg = cmdline.Found( "funatwork" );
+
+            if ( cmdline.GetParamCount() > 0 )
+                FileToOpen = cmdline.GetParam(0);
+            break;
+
+        default:
+            wxLogError(_("Fehler beim Auswerten der Befehlszeile. Beryllium wird beendet.\n\n" + cmdline.GetUsageString()));
+            return false;
+    }
 
 	// Hauptfenster erstellen
 	CBerylliumMainframe *beFrame = new CBerylliumMainframe( _(L"Beryllium¹º"), 100, 100, width - 200, height - 200, bEasterEgg);
