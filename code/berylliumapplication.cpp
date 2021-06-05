@@ -40,6 +40,7 @@
 #include <wx/cmdline.h>
 #include <wx/sstream.h>
 #include <wx/protocol/http.h>
+#include <wx/display.h>
 
 // Versionsinfos
 #include "autobuild.h"
@@ -77,10 +78,6 @@ bool CBerylliumApplication::OnInit()
 	// Lädt alle (oft benutzten) Grafiken in den Speicher
 	LoadGraphicsToMemory();
 
-	// Ausmaße des Bildschirms ermitteln
-	int width = 0, height = 0;
-	::wxDisplaySize( &width, &height );
-
 	/* Parse command line: Adding options for help, funatwork, and file opening. */
 	wxCmdLineParser cmdline( this->argc, this->argv );
 	cmdline.AddSwitch("h", "help", _("Zeigt diese Hilfe."), wxCMD_LINE_OPTION_HELP);
@@ -107,8 +104,16 @@ bool CBerylliumApplication::OnInit()
             return false;
     }
 
-	// Hauptfenster erstellen
-	CBerylliumMainframe *beFrame = new CBerylliumMainframe( _(L"Beryllium¹º"), 100, 100, width - 200, height - 200, bEasterEgg);
+    /* Get size of the current display, i.e. the display the mouse cursor is on right now. */
+    int display = wxDisplay::GetFromPoint(::wxGetMousePosition());
+    wxRect displayRect = wxDisplay(display).GetClientArea();
+
+    printf("Display: %d (%d, %d, %d, %d)\n", display, displayRect.x, displayRect.y, displayRect.width, displayRect.height);
+
+	/* Create main window in the middle of the current display */
+	CBerylliumMainframe *beFrame = new CBerylliumMainframe( _(L"Beryllium¹º"),
+                                                            displayRect.x + 100, displayRect.y + 100, displayRect.width - 200, displayRect.height - 200,
+                                                            bEasterEgg);
 
 	// Datei zu öffnen
 	if ( FileToOpen.length() > 0 )
