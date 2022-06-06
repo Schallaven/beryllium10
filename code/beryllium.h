@@ -30,22 +30,25 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-// Vorkompilierte Header-Datei
+#pragma once
 
-// Entfernt die CRT-Sicherheitswarnungen des VC-Compilers
-#define _CRT_SECURE_NO_WARNINGS
-
-// wxWidget: GUI
+/*  wxWidget defines */
 #define wxUSE_GUI 1
 
-// Defines für Windows
-#ifdef WIN32	
-	#define WINVER 0x0400
+/* MacOS defines */
+
+/* Windows defines */
+#ifdef WIN32
+    /* Windows 7 (= Version 6.1 internally) is the minimum requirement for Beryllium */
+    #define WINVER 0x0601
+    #define _WIN32_WINNT 0x0601
+
+    /* To speed up compilation time let's not include everything from Windows' header files */
 	#define WIN32_MEAN_AND_LEAN
 	#include <windows.h>
 #endif
 
-// Includes für oft genutzte wxWidget-Klassen
+/* some WxWidget includes for convenience */
 #include <wx/wx.h>
 #include <wx/scrolwin.h>
 #include <wx/dc.h>
