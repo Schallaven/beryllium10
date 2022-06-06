@@ -30,11 +30,11 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "stdafx.h"
+#include "beryllium.h"
 
 #include "betool.h"
 
-// Liefert für einen bestimmten Wert das Prefix und passt den Wert an 
+// Liefert für einen bestimmten Wert das Prefix und passt den Wert an
 // die entsprechende Dimension an
 wxString BeTool::UnitPrefix( double &dbValue )
 {
@@ -119,7 +119,7 @@ void BeTool::StringToList( wxString sLine, wxString sSeparator, std::vector<wxSt
 	}
 }
 
-// Macht aus einer Liste einen String 
+// Macht aus einer Liste einen String
 wxString BeTool::ListToString( const std::vector< wxString > &sList, wxString sep )
 {
 	// String erstellen
@@ -155,11 +155,11 @@ void BeTool::trim( wxString &str )
 		pos = str.find_first_not_of(' ');
 
 		// Gefunden? Dann: Bis dorthin löschen!
-		if ( pos != wxString::npos ) 
+		if ( pos != wxString::npos )
 			str.erase(0, pos);
 	}
 
 	// Ansonsten den ganzen String leeren (besteht also quasi nur aus Leerzeichen)
-	else 
+	else
 		str.erase(str.begin(), str.end());
 }

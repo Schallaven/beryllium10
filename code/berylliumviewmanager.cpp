@@ -31,7 +31,7 @@
 // **********************************************************************************
 
 
-#include "stdafx.h"
+#include "beryllium.h"
 
 #include "berylliumviewmanager.h"
 

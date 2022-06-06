@@ -30,7 +30,7 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "../stdafx.h"
+#include "../beryllium.h"
 #include "berylliumviewdatasheetsprinting.h"
 
 CBerylliumViewDataSheetsPrinting::CBerylliumViewDataSheetsPrinting( CBerylliumViewDataSheets &view, CBerylliumDocument &document ) : wxPrintout(document.GetFilename()), m_view(view), m_document(document)

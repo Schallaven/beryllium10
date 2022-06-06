@@ -47,6 +47,7 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="../code/autobuild.h" />
+		<Unit filename="../code/beryllium.h" />
 		<Unit filename="../code/berylliumapplication.cpp" />
 		<Unit filename="../code/berylliumapplication.h" />
 		<Unit filename="../code/berylliummainframe.cpp" />
@@ -116,8 +117,6 @@
 		<Unit filename="../code/provider/berylliumprovidermerck.h" />
 		<Unit filename="../code/provider/berylliumproviderwiki.cpp" />
 		<Unit filename="../code/provider/berylliumproviderwiki.h" />
-		<Unit filename="../code/stdafx.cpp" />
-		<Unit filename="../code/stdafx.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

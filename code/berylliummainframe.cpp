@@ -31,7 +31,7 @@
 // **********************************************************************************
 
 
-#include "stdafx.h"
+#include "beryllium.h"
 
 #include <wx/print.h>
 #include <wx/textdlg.h>

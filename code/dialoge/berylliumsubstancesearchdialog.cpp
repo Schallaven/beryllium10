@@ -30,7 +30,7 @@
 //   Beryllium¹º erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 // **********************************************************************************
 
-#include "../stdafx.h"
+#include "../beryllium.h"
 #include "berylliumsubstancesearchdialog.h"
 
 #include "../berylliumapplication.h"
