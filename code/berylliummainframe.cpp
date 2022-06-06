@@ -267,29 +267,32 @@ void CBerylliumMainframe::BeCreateToolBar(void)
 	if ( toolbar == NULL )
 		return;
 
-	// Bitmaps laden
-	wxBitmap bmpEmpty(16, 16);
-	wxBitmap bmpNew(icon_new_xpm);
-	wxBitmap bmpOpen(icon_open_xpm);
-	wxBitmap bmpSave(icon_save_xpm);
-	wxBitmap bmpPrint(icon_print_xpm);
-	wxBitmap bmpHelp(icon_help_xpm);
-	wxBitmap bmpLeft(icon_left_xpm);
-	wxBitmap bmpRight(icon_right_xpm);
-	wxBitmap bmpGHS(icon_useghs_xpm);
+	/* Load all the toolbar icons and resize them appropriately, otherwise they might be
+	   to large (512x512) or small for the toolbar */
+    wxSize sizeToolBitmap(32, 32);
+	wxBitmap bmpEmpty(sizeToolBitmap);
+
+	wxImage imgNew(icon_new_xpm); imgNew.Rescale(sizeToolBitmap.x, sizeToolBitmap.y, wxIMAGE_QUALITY_BILINEAR );
+	wxImage imgOpen(icon_open_xpm); imgOpen.Rescale(sizeToolBitmap.x, sizeToolBitmap.y, wxIMAGE_QUALITY_BILINEAR );
+	wxImage imgSave(icon_save_xpm); imgSave.Rescale(sizeToolBitmap.x, sizeToolBitmap.y, wxIMAGE_QUALITY_BILINEAR );
+	wxImage imgPrint(icon_print_xpm); imgPrint.Rescale(sizeToolBitmap.x, sizeToolBitmap.y, wxIMAGE_QUALITY_BILINEAR );
+	wxImage imgHelp(icon_help_xpm); imgHelp.Rescale(sizeToolBitmap.x, sizeToolBitmap.y, wxIMAGE_QUALITY_BILINEAR );
+	wxImage imgLeft(icon_left_xpm); imgLeft.Rescale(sizeToolBitmap.x, sizeToolBitmap.y, wxIMAGE_QUALITY_BILINEAR );
+	wxImage imgRight(icon_right_xpm); imgRight.Rescale(sizeToolBitmap.x, sizeToolBitmap.y, wxIMAGE_QUALITY_BILINEAR );
+	wxImage imgGHS(icon_useghs_xpm); imgGHS.Rescale(sizeToolBitmap.x, sizeToolBitmap.y, wxIMAGE_QUALITY_BILINEAR );
 
 	// Tools hinzufügen
-	toolbar->AddTool( beID_NEW, _(L"Neue Betriebsanweisung"), bmpNew, _(L"Neue Betriebsanweisung") );
-	toolbar->AddTool( beID_OPEN, _(L"Betriebsanweisung öffnen"), bmpOpen, _(L"Betriebsanweisung öffnen") );
-	toolbar->AddTool( beID_SAVE, _(L"Betriebsanweisung speichern"), bmpSave, _(L"Betriebsanweisung speichern") );
+	toolbar->AddTool( beID_NEW, _(L"Neue Betriebsanweisung"), wxBitmap(imgNew), _(L"Neue Betriebsanweisung") );
+	toolbar->AddTool( beID_OPEN, _(L"Betriebsanweisung öffnen"), wxBitmap(imgOpen), _(L"Betriebsanweisung öffnen") );
+	toolbar->AddTool( beID_SAVE, _(L"Betriebsanweisung speichern"), wxBitmap(imgSave), _(L"Betriebsanweisung speichern") );
 	toolbar->AddSeparator();
-	toolbar->AddTool( beID_PAGE_LEFT, _(L"Vorherige Seite"), bmpLeft, _(L"Vorherige Seite") );
-	toolbar->AddTool( beID_PAGE_RIGHT, _(L"Nächste Seite"), bmpRight, _(L"Nächste Seite") );
+	toolbar->AddTool( beID_PAGE_LEFT, _(L"Vorherige Seite"), wxBitmap(imgLeft), _(L"Vorherige Seite") );
+	toolbar->AddTool( beID_PAGE_RIGHT, _(L"Nächste Seite"), wxBitmap(imgRight), _(L"Nächste Seite") );
 	toolbar->AddSeparator();
-	toolbar->AddTool( beID_SWITCH_GHS, _(L"\"Globally Harmonized System of Classification\" benutzen"), bmpGHS, _(L"\"Globally Harmonized System of Classification\" benutzen"), wxITEM_CHECK );
+	toolbar->AddTool( beID_SWITCH_GHS, _(L"\"Globally Harmonized System of Classification\" benutzen"), wxBitmap(imgGHS), _(L"\"Globally Harmonized System of Classification\" benutzen"), wxITEM_CHECK );
 	toolbar->AddSeparator();
-	toolbar->AddTool( beID_PRINT, _(L"Betriebsanweisung drucken"), bmpPrint, _(L"Betriebsanweisung drucken") );
-	toolbar->AddTool( beID_HELP_INFO, _(L"Info über Beryllium"), bmpHelp, _(L"Info über Beryllium") );
+	toolbar->AddTool( beID_PRINT, _(L"Betriebsanweisung drucken"), wxBitmap(imgPrint), _(L"Betriebsanweisung drucken") );
+	toolbar->AddTool( beID_HELP_INFO, _(L"Info über Beryllium"), wxBitmap(imgHelp), _(L"Info über Beryllium") );
 
 	// Symbolleiste updaten
 	toolbar->Realize();
